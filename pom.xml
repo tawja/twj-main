@@ -41,7 +41,7 @@
     </organization>
 
     <name>Tawja</name>
-    <description>Tawja Project</description>
+    <description>Methodology &amp; Toolbox to build modular modern applications</description>
     <inceptionYear>2015</inceptionYear>
 
     <url>${project.organization.url}/project/maven/</url>
@@ -77,7 +77,7 @@
     
     <scm>
         <connection>scm:git:git@github.com:tawja/twj-main.git</connection>
-        <developerConnection>scm:git:git@github.com:tawja/twj-main.git</developerConnection>
+        <developerConnection>scm:git@bitbucket.org:tawja/twj-main.git</developerConnection>
         <url>https://github.com/tawja/twj-main/tree/master</url>
         <tag>HEAD</tag>
     </scm>
