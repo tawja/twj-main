@@ -47,7 +47,7 @@
                                     <executable>chmod</executable>
                                     <arguments>
                                         <argument>+x</argument>
-                                        <argument>${basedir}/target-grunt/build-create-offline.sh</argument>
+                                        <argument>${basedir}/target-grunt/*.sh</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
