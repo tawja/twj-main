@@ -46,16 +46,16 @@
 
     <url>${project.organization.url}/project/maven/</url>
 	
-	<modules>
-		<module>twj-utils</module>
-		<!--<module>twj-infra</module>-->
-		<module>twj-design</module>
-		<module>twj-docs</module>
-		<module>twj-maven</module>
-		<module>twj-platform</module>
-		<module>twj-website</module>
-		<module>twj-dist</module>
-	</modules>
+    <modules>
+        <module>twj-utils</module>
+        <!--<module>twj-infra</module>-->
+        <module>twj-design</module>
+        <module>twj-docs</module>
+        <module>twj-maven</module>
+        <module>twj-platform</module>
+        <module>twj-website</module>
+        <module>twj-dist</module>
+    </modules>
 
     <properties>
         <!-- System Properties -->       
@@ -103,20 +103,25 @@
         <!-- Google Analytics is defined in settings.xml to avoid generating fake/test web that update statistics -->
         <tawja.site.googleAnalyticsCode>${tawja.settings.googleAnalyticsCode}</tawja.site.googleAnalyticsCode>
         <!-- Project Distribution Management : SFTP -->
-		<!--
-        <tawja.dm.site>scp://ftp.tawja.org/home/tawja/www/project/maven</tawja.dm.site>
-        <tawja.dm.releases>scp://ftp.tawja.org/home/tawja/www/repo/maven/releases</tawja.dm.releases>
-        <tawja.dm.snapshots>scp://ftp.tawja.org/home/tawja/www/repo/maven/snapshots</tawja.dm.snapshots>
-		-->
+        <!--
+<tawja.dm.site>scp://ftp.tawja.org/home/tawja/www/project/maven</tawja.dm.site>
+<tawja.dm.releases>scp://ftp.tawja.org/home/tawja/www/repo/maven/releases</tawja.dm.releases>
+<tawja.dm.snapshots>scp://ftp.tawja.org/home/tawja/www/repo/maven/snapshots</tawja.dm.snapshots>
+        -->
         <!-- Tawja Maven Messages -->
         <tawja.message.doc.build>Please check build documentation : http://${organization.site}/project/doc/maven.</tawja.message.doc.build>
         <!-- Project SCM -->
-		<!--
-        <tawja.scm.site>https://github.com/tawja/twj-main/tree/master</tawja.scm.site>
-        <tawja.scm.connexion>scm:git@github.com:tawja/twj-main.git</tawja.scm.connexion>
-        <tawja.scm.connexion.dev>scm:git:git@bitbucket.org:tawja/twj-main.git</tawja.scm.connexion.dev>
-		-->
+        <!--
+<tawja.scm.site>https://github.com/tawja/twj-main/tree/master</tawja.scm.site>
+<tawja.scm.connexion>scm:git@github.com:tawja/twj-main.git</tawja.scm.connexion>
+<tawja.scm.connexion.dev>scm:git:git@bitbucket.org:tawja/twj-main.git</tawja.scm.connexion.dev>
+        -->
         <!-- Others -->
+        <tawja.deploy.protocol>ftp</tawja.deploy.protocol>
+        <!--
+        <tawja.deploy.protocol>scp</tawja.deploy.protocol>
+        <tawja.deploy.protocol>sftp</tawja.deploy.protocol>
+        -->
         <!-- Java Versions -->
         <java.version.source>1.8</java.version.source>
         <java.version.target>1.8</java.version.target>
@@ -145,6 +150,7 @@
         <exec-maven-plugin.version>1.4.0</exec-maven-plugin.version>
         <maven-resources-plugin.version>2.7</maven-resources-plugin.version>
         <wagon-ssh.version>2.9</wagon-ssh.version>
+        <wagon-ftp.version>2.9</wagon-ftp.version>
         <wagon-maven-plugin.version>1.0</wagon-maven-plugin.version>
         <!-- Report Plugins Versions -->
         <maven-project-info-reports-plugin.version>2.7</maven-project-info-reports-plugin.version>
@@ -301,38 +307,38 @@
             </activation>
             <build>
                 <pluginManagement>
-                <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>${maven-site-plugin.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.tawja.maven.skin</groupId>
-                            <artifactId>twj-maven-skin-tools</artifactId>
-                            <version>1.0.0-SNAPSHOT</version>
-                        </dependency>
-                        <!-- Reflow skin requires Velocity >= 1.7  -->
-                        <dependency>
-                            <groupId>org.apache.velocity</groupId>
-                            <artifactId>velocity</artifactId>
-                            <version>${velocity.version}</version>
-                        </dependency>
-                    </dependencies>
-                    <configuration>
-                        <generateReports>true</generateReports>
-                        <inputEncoding>UTF-8</inputEncoding>
-                        <outputEncoding>UTF-8</outputEncoding>
-                        <!-- Default documentation language should be english -->
-                        <!--
-                            <locales>en,fr</locales>
-                        -->
-                        <locales>en</locales>
-                        <skipDeploy>false</skipDeploy>
-                        <stagingDirectory>${tawja.home.dev.site.doc.dir}</stagingDirectory>
-                    </configuration>
-                </plugin>
-                </plugins>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-site-plugin</artifactId>
+                            <version>${maven-site-plugin.version}</version>
+                            <dependencies>
+                                <dependency>
+                                    <groupId>org.tawja.maven.skin</groupId>
+                                    <artifactId>twj-maven-skin-tools</artifactId>
+                                    <version>1.0.0-SNAPSHOT</version>
+                                </dependency>
+                                <!-- Reflow skin requires Velocity >= 1.7  -->
+                                <dependency>
+                                    <groupId>org.apache.velocity</groupId>
+                                    <artifactId>velocity</artifactId>
+                                    <version>${velocity.version}</version>
+                                </dependency>
+                            </dependencies>
+                            <configuration>
+                                <generateReports>true</generateReports>
+                                <inputEncoding>UTF-8</inputEncoding>
+                                <outputEncoding>UTF-8</outputEncoding>
+                                <!-- Default documentation language should be english -->
+                                <!--
+                                    <locales>en,fr</locales>
+                                -->
+                                <locales>en</locales>
+                                <skipDeploy>false</skipDeploy>
+                                <stagingDirectory>${tawja.home.dev.site.doc.dir}</stagingDirectory>
+                            </configuration>
+                        </plugin>
+                    </plugins>
                 </pluginManagement>
             </build>
         </profile>
@@ -563,19 +569,19 @@
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>scp://ftp.tawja.org/home/tawja/www/project/maven/</url>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org/home/tawja/www/project/maven/</url>
         </site>
         <snapshotRepository>
             <uniqueVersion>false</uniqueVersion>
             <id>tawja-snapshots</id>
             <name>Tawja Snapshots Repository</name>
-            <url>scp://ftp.tawja.org/home/tawja/www/repo/maven/snapshots</url>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org/home/tawja/www/repo/maven/snapshots</url>
         </snapshotRepository>
         <repository>
             <uniqueVersion>false</uniqueVersion>
             <id>tawja-releases</id>
             <name>Tawja Releases Repository</name>
-            <url>scp://ftp.tawja.org/home/tawja/www/repo/maven/releases</url>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org/home/tawja/www/repo/maven/releases</url>
         </repository>
     </distributionManagement>
     
@@ -646,7 +652,14 @@
     
     <build>
         <extensions>
-            <extension><!-- add support for ssh/scp -->
+            <!-- Enabling the use of FTP -->
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ftp</artifactId>
+                <version>${wagon-ftp.version}</version>
+            </extension>
+            <!-- Enabling the use of SSH/SCP -->
+            <extension>
                 <groupId>org.apache.maven.wagon</groupId>
                 <artifactId>wagon-ssh</artifactId>
                 <version>${wagon-ssh.version}</version>
@@ -1422,19 +1435,19 @@
             </snapshots>
         </repository>
         <!-- Codehaus Repository -->
-		<!-- DEAD REPO
-        <repository> 
-            <id>codehaus-releases-repository</id> 
-            <name>Codehaus Releases Repository</name>
-            <url>http://repository.codehaus.org</url> 
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-		-->
+        <!-- DEAD REPO
+<repository> 
+    <id>codehaus-releases-repository</id> 
+    <name>Codehaus Releases Repository</name>
+    <url>http://repository.codehaus.org</url> 
+    <releases>
+        <enabled>true</enabled>
+    </releases>
+    <snapshots>
+        <enabled>false</enabled>
+    </snapshots>
+</repository>
+        -->
         <!-- OPS4J Release repository -->
         <repository>
             <id>ops4j.sonatype.releases.deploy</id>
