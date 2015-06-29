@@ -43,7 +43,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <goals>clean install site site:deploy deploy</goals>
-  <aggregatorStyleBuild>false</aggregatorStyleBuild>
+  <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
   <archivingDisabled>true</archivingDisabled>

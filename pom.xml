@@ -122,6 +122,10 @@
         <tawja.deploy.protocol>scp</tawja.deploy.protocol>
         <tawja.deploy.protocol>sftp</tawja.deploy.protocol>
         -->
+        <tawja.deploy.path></tawja.deploy.path>
+        <!--
+        <tawja.deploy.path>/home/tawja</tawja.deploy.path>
+        -->
         <!-- Java Versions -->
         <java.version.source>1.8</java.version.source>
         <java.version.target>1.8</java.version.target>
@@ -569,19 +573,19 @@
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org/home/tawja/www/project/maven/</url>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/maven/</url>
         </site>
         <snapshotRepository>
             <uniqueVersion>false</uniqueVersion>
             <id>tawja-snapshots</id>
             <name>Tawja Snapshots Repository</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org/home/tawja/www/repo/maven/snapshots</url>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/repo/maven/snapshots</url>
         </snapshotRepository>
         <repository>
             <uniqueVersion>false</uniqueVersion>
             <id>tawja-releases</id>
             <name>Tawja Releases Repository</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org/home/tawja/www/repo/maven/releases</url>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/repo/maven/releases</url>
         </repository>
     </distributionManagement>
     

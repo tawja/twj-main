@@ -131,7 +131,7 @@
                         <configuration>
                             <fromFile>${project.build.directory}/${project.build.finalName}.war</fromFile>
                             <serverId>tawja-website</serverId>
-                            <url>scp://ftp.tawja.org</url>
+                            <url>${tawja.deploy.protocol}://ftp.tawja.org</url>
                             <toDir>/home/tawja/www-contexts</toDir>
                         </configuration>
                         -->
