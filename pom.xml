@@ -116,7 +116,7 @@
 		<!--
         <tawja.scm.site>https://github.com/tawja/twj-main/tree/master</tawja.scm.site>
         <tawja.scm.connexion>scm:git@github.com:tawja/twj-main.git</tawja.scm.connexion>
-        <tawja.scm.connexion.dev>scm:git@bitbucket.org:tawja/twj-main.git</tawja.scm.connexion.dev>
+        <tawja.scm.connexion.dev>scm:git:git@bitbucket.org:tawja/twj-main.git</tawja.scm.connexion.dev>
 		-->
         <!-- Others -->
         <!-- Java Versions -->
