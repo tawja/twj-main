@@ -61,7 +61,7 @@
   <publishers>
     <org.jenkinsci.plugins.discardbuild.DiscardBuildPublisher plugin="discard-old-build@1.05">
       <daysToKeep>-1</daysToKeep>
-      <numToKeep>10</numToKeep>
+      <numToKeep>5</numToKeep>
       <resultsToDiscard/>
       <minLogFileSize>-1</minLogFileSize>
       <maxLogFileSize>-1</maxLogFileSize>
