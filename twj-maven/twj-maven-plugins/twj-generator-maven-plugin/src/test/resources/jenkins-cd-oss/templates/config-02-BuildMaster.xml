@@ -123,7 +123,7 @@
   <buildWrappers/>
   <prebuilders>
     <hudson.tasks.Maven>
-      <targets>versions:set -DgenerateBackupPoms=false -DnewVersion=${r"${BUILD_TIMESTAMP}"} </targets>
+      <targets>versions:update-parent versions:set -DgenerateBackupPoms=false -DnewVersion=${r"${BUILD_TIMESTAMP}"} </targets>
       <mavenName>Maven</mavenName>
       <usePrivateRepository>false</usePrivateRepository>
       <settings class="jenkins.mvn.DefaultSettingsProvider"/>
