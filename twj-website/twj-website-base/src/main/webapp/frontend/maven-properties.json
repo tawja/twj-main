@@ -1,0 +1,6 @@
+{
+    "tawjaModeDev": "${tawja.mode.dev}",
+    "version": "${project.version}",
+    "webdir": "${tawja.project.webdir}",
+    "googleAnalyticsCode": "${tawja.site.googleAnalyticsCode}"
+}

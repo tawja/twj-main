@@ -1,0 +1,86 @@
+/**************************************************************/
+/*                 Main Styles import                         */
+/**************************************************************/
+
+@import "../main-theme-vars"; // Modify this for custom value
+
+/**************************************************************/
+/*                 Other Styles import                        */
+/**************************************************************/
+
+
+
+/**************************************************************/
+/*                  Variables                                 */
+/**************************************************************/
+
+// Cf. main-theme-vars.less
+
+/**************************************************************/
+/*                  Styles                                    */
+/**************************************************************/
+
+/* =================================
+Price Table
+================================= */ 
+.price-table {
+    background: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 3px solid #cccccc;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    margin-bottom: 20px;
+}
+.price-table:hover {
+    background: rgba(0,0,0, .03);
+    border-color: #666666;
+}
+.price-table .price-table-heading {
+    color: @twj-frame;
+    background: #eeeeee;
+    padding: 5px 5px;
+    margin: 0;
+}
+.price-table .price-table-heading .title {
+    color: @twj-frame;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+.price-table > .price-table-body {
+    color: #FFFFFF;
+    background: @twj-frame;
+    padding: 10px 0 5px;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+.price-table > .price-table-body .value {
+    font-size: 32px;
+    font-weight: 500;
+    color: #FFFFFF;
+    padding: 0;
+}
+.price-table > .price-table-body .value small {
+    font-size: 14px;
+}
+.price-table > .list-group {
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+.price-table > .list-group .list-group-item {
+    color: #333;
+    font-weight: 400;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    padding: 3px 5px;
+    text-align: left;
+}
+.price-table-footer {
+    background: #eeeeee;
+    padding: 5px 5px;
+}

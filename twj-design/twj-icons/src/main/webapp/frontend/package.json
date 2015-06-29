@@ -1,0 +1,12 @@
+{
+  "name": "twj-design-icons",
+  "devDependencies": {
+    "grunt-webfont": "^0.5.1",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-webfont-svg-extractor": "^0.0.2",
+    "grunt-svg2png": "git://github.com/dovyden/grunt-svg2png.git#master",
+    "phantomjs": "^1.9.15"
+  }
+}

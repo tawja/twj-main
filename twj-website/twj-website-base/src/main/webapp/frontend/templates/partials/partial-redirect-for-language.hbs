@@ -1,0 +1,34 @@
+<script>
+    var redirectorActivated = true;
+    var userLocale = navigator.language || navigator.userLanguage;
+    var userLang = userLocale.substring(0, 2);
+
+    var enIndexPage = 'en/index.html';
+    var frIndexPage = 'fr/index.html';
+
+
+    switch (userLang) {
+        case 'en':
+            if (redirectorActivated)
+            {
+                window.location.href = enIndexPage;
+            }
+            break;
+        case 'fr':
+            if (redirectorActivated)
+            {
+                window.location.href = frIndexPage;
+            }
+            break;
+        default:
+            // If it's something else fall back to the default
+            if (redirectorActivated)
+            {
+                window.location.href = enIndexPage;
+            }
+            break;
+    }
+</script>
+<div style="width: 100%; height: 200px; padding: 50px;">
+    <p style="text-align: center;"><a href="en/index.html">English</a> | <a href="fr/index.html">Français</a></p>
+</div>

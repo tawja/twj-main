@@ -1,0 +1,22 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+class java.util.List
+class java.util.Map
+class org.apache.felix.ipojo.annotations.Component
+class org.osgi.framework.BundleActivator
+class org.osgi.framework.launch.Framework
+class org.tawja.platform.api.TwjConstants
+class org.tawja.platform.api.core.TwjCoreConstants
+class org.tawja.platform.api.core.TwjCoreProperties
+interface org.osgi.service.log.LogService
+interface org.tawja.platform.api.TwjApplicationStarter
+interface org.tawja.platform.api.core.Hello
+interface org.tawja.platform.api.logging.TwjLoggingServiceInterface
+org.tawja.platform.api.TwjApplicationStarter ..> java.util.List
+org.tawja.platform.api.TwjApplicationStarter ..> java.util.Map
+org.tawja.platform.api.TwjApplicationStarter ..> org.osgi.framework.BundleActivator
+org.tawja.platform.api.TwjApplicationStarter ..> org.osgi.framework.launch.Framework
+org.tawja.platform.api.core.Hello ..> org.apache.felix.ipojo.annotations.Component
+org.tawja.platform.api.logging.TwjLoggingServiceInterface --|> org.osgi.service.log.LogService
+@enduml

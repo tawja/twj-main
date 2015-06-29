@@ -1,0 +1,106 @@
+/**************************************************************/
+/*                 Main Styles import                         */
+/**************************************************************/
+
+@import "variables"; // Modify this for custom value
+@import "mixins"; // Modify this for custom value
+@import "main-theme-vars"; // Modify this for custom value
+
+/**************************************************************/
+/*                 Other Styles import                        */
+/**************************************************************/
+
+
+
+/**************************************************************/
+/*                  Variables                                 */
+/**************************************************************/
+
+// Cf. main-theme-vars.less
+
+
+/**************************************************************/
+/*                  Styles                                    */
+/**************************************************************/
+
+body {
+    padding: 10px !important;
+    margin: 0px !important;
+}
+
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+    display: none !important;
+}
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+    display: none !important;
+}
+
+/* Special printed elements management (hide browser one and display printed one) */
+.print_none {
+    display: none !important;
+}
+.print_only {
+    display: inline !important;
+}
+
+.container-print {
+    display: block !important;
+}
+
+header .container {
+    padding-top: 20px !important;
+}
+
+a[href]:after {
+    content: none !important;
+}
+
+.scroll-top, .scroll-bottom {
+    display: none !important;
+}
+
+footer .footer-below {
+    border-top: 1px solid #CACACA;
+    border-bottom: 1px solid #CACACA;
+}
+
+[class*="col-sm-"] {
+  float: left;
+  width: 100%;
+}
+
+
+* {
+ /*CSS transitions*/
+ -o-transition-property: none !important;
+ -moz-transition-property: none !important;
+ -ms-transition-property: none !important;
+ -webkit-transition-property: none !important;
+ transition-property: none !important;
+ /*CSS transforms*/
+ -o-transform: none !important;
+ -moz-transform: none !important;
+ -ms-transform: none !important;
+ -webkit-transform: none !important;
+ transform: none !important;
+ /*CSS animations*/
+ -webkit-animation: none !important;
+ -moz-animation: none !important;
+ -o-animation: none !important;
+ -ms-animation: none !important;
+ animation: none !important;
+}

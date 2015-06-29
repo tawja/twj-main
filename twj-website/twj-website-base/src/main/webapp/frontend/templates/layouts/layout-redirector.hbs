@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{#if lang}}{{lang}}{{else}}{{configSite.lang}}{{/if}}">
+    <head>
+        <meta charset="UTF-8"/>
+        <!--IE Compatibility modes-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <!--Mobile first-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <!-- Page Information -->
+        <title>{{configSite.name}} - {{configSite.slogan}}</title>
+        <meta name="description" content="{{configSite.name}} - {{configSite.slogan}}"/>
+        <meta name="author" content="{{configSite.name}}"/>
+
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+        {{> partial-analytics }}
+    </head>
+    <body>
+        {{> partial-redirect-for-language }}
+        {{> body }}
+    </body>
+</html>

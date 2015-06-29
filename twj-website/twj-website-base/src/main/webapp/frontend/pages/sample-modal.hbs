@@ -1,0 +1,62 @@
+---
+title: Test Modal
+layout: layout-default-with-title
+---
+<!-- Modal : Legal Notice  -->
+<button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#model_legal_notice">
+    Legal notice
+</button>
+
+<!-- Modal : Legal Notice -->
+<div class="modal fade" id="model_legal_notice" tabindex="-1" role="dialog" aria-labelledby="modelLegalNoticeLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title" id="modelLegalNoticeLabel">Legal notice</h3>
+            </div>
+            <div class="modal-body">
+                <h4 class="section">Owner, Design and Implementation</h4>
+                <p>
+                    {{> snippet-lorem-paragraph }}
+                </p>
+
+                <h4 class="section">Hosting</h4>
+                <p>
+                    {{> snippet-lorem-paragraph }}
+                </p>
+
+                <h4 class="section">Registrations</h4>
+                <p>
+                    {{> snippet-lorem-paragraph }}
+                </p>
+
+                <h4 class="section">Licenses</h4>
+                <p>
+                    {{> snippet-lorem-paragraph }}
+                </p>
+                <p>
+                    <span style="font-size: 30px">&copy;</span>
+                    {{> snippet-lorem-paragraph }}
+                </p>
+                <p>
+                    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="{{assets}}/img/default/licenses/cc.png" /></a>
+                    {{> snippet-lorem-paragraph }}
+                </p>
+                <p>
+                    <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0"><img alt="Apache Licence 2.0" style="border-width:0" src="{{assets}}/img/default/licenses/apache.png" /></a>
+                    {{> snippet-lorem-paragraph }}
+                </p>
+                <p>
+                    {{> snippet-lorem-paragraph }}
+                </p>
+                <p>
+                    {{> snippet-lorem-paragraph }}
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

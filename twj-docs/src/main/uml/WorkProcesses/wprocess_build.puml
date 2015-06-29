@@ -1,0 +1,32 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+'left to right direction
+
+start
+
+
+partition "Development of Module" {
+
+    repeat
+        :Write Tawja Domain DSL file;
+        :Define Entities description
+         Import related DSL|
+
+        if (Need new Tawja DSL logic?) then (YES)
+            :Write/Update Tawja DSL Plugins;
+            :Write/Update Tawja DSL Generators;
+        else (NO)
+        endif
+
+        :Write/Update Tests;
+
+        :Maven Build and Test;
+        :Manual Checks;
+    repeat while (Answer the need?) is(NO) not(YES)
+
+}
+
+stop
+
+@enduml

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	
+    <parent>
+        <groupId>org.tawja.platform.plugins</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <!--<relativePath>../pom.xml</relativePath>-->
+    </parent>
+	
+    <groupId>org.tawja.platform.plugins</groupId>
+    <artifactId>twj-plugin-database</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+	
+    <packaging>pom</packaging>
+
+    <name>Tawja : Platform : Plugin : Database</name>
+
+    <modules>
+        <module>twj-plugin-database-api</module>
+        <module>twj-plugin-database-base</module>
+        <module>twj-plugin-database-jdbc</module>
+        <module>twj-plugin-database-commands</module>
+        <module>twj-plugin-database-impl-hsql</module>
+        <module>twj-plugin-database-impl-h2</module>
+        <module>twj-plugin-database-test</module>
+    </modules>
+
+</project>

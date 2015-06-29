@@ -1,0 +1,9 @@
+data: {
+    projects: csv(../../data/projects-test.csv,
+        {
+            separator: ';',
+            trimCells: true,
+            decimalSeparator: '.'
+        }   
+    )
+}

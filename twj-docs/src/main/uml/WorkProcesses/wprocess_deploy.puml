@@ -1,0 +1,42 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+'left to right direction
+
+actor SystemManager
+actor AppManager
+
+box "Workspace"
+	participant SystemMonitorW
+	participant SystemDeployerW
+	participant AppDeployerW
+end box
+
+box "Server1"
+	participant SystemMonitor1
+	participant SystemDeployer1
+	participant AppDeployer1
+end box
+
+box "ServerN"
+	participant SystemMonitorN
+	participant SystemDeployerN
+	participant AppDeployerN
+end box
+
+participant Monitor
+
+SystemMonitor1 -> SystemMonitorW : register
+SystemMonitorN -> SystemMonitorW : register
+
+SystemManager -> SystemDeployerW : command
+activate SystemDeployerW
+SystemDeployerW -> SystemMonitorW : listServers
+SystemDeployerW -> SystemDeployer1 : dispatchCommand
+activate SystemDeployer1
+SystemDeployer1 -> SystemDeployer1 : executeCommand
+destroy SystemDeployer1
+SystemDeployerW -> SystemDeployerN : dispatchCommand
+destroy SystemDeployerW
+
+@enduml

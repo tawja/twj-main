@@ -1,0 +1,28 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+'left to right direction
+
+package ModuleDirectory {
+    class Entity #FDFDAA
+    class Organization
+    class Person
+    class UserAcccount #DDDDDD
+    note bottom : Linked to User
+    class Company
+    class Association
+    class Project
+ 
+    Entity <|-- Person
+    Entity <|-- Organization
+    Organization <|-- Company
+    Organization   <|-- Association
+    Organization   <|-- Project
+    'UserAcccount "1" -- "1" User
+    UserAcccount "*" -- "1" Person
+
+}
+
+'UserAcccount "*" -- "1" User
+
+@enduml

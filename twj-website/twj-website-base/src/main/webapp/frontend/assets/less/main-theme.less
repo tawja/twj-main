@@ -1,0 +1,710 @@
+/**************************************************************/
+/*                 Main Styles import                         */
+/**************************************************************/
+
+/*@import "bootstrap.less"; // Call Bootstrap. Custom variables will be used.*/
+@import "variables"; // Modify this for custom value
+@import "mixins"; // Modify this for custom value
+@import "main-theme-vars"; // Modify this for custom value
+
+/**************************************************************/
+/*                 Other Styles import                        */
+/**************************************************************/
+
+
+
+/**************************************************************/
+/*                  Variables                                 */
+/**************************************************************/
+
+// Cf. main-theme-vars.less
+
+/**************************************************************/
+/*                  Styles                                    */
+/**************************************************************/
+
+/* Spacial anchor to adjust depending on top menu height */
+body {
+    padding-top: 50px;
+}
+@media (min-width: @screen-sm-min) {
+    body {
+        padding-top: 100px;
+    }
+}
+
+body {
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    color: #333;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+/* Special printed elements management (hide browser one and display printed one) */
+.container-print {
+    display: none !important;
+    border-bottom: 1px solid @twj-primary !important;
+}
+.print_only {
+    display: none !important;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:active {
+    color: #23527C;
+    border-bottom: 3px solid @twj-primary;
+}
+
+.navbar-default
+.navbar-nav > li > a {
+    color: @twj-primary;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .active > a {
+    color: #23527C;
+    border-bottom: 3px solid @twj-primary;
+}
+
+.navbar,
+footer .footer-below {
+    background: linear-gradient(#FAFAFA, #EAEAEA) repeat scroll 0% 0% transparent;
+    border-bottom: 1px solid #CACACA;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 0px 10px rgba(0, 0, 0, 0.1);   
+}
+
+
+.navbar-fixed-top,
+.navbar-top-panel {
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;    
+}
+
+
+/* Manage the 2 header navbar sizes */
+@media (min-width: @screen-sm-min) {
+    .navbar-fixed-top .navbar-brand {
+        height: 100px;
+    }
+    .navbar-fixed-top.navbar-shrink .navbar-brand {
+        height: 50px;
+    }
+}
+
+.navbar {
+    min-height:35px;
+    /*
+    z-index: 5000;
+    */
+}
+
+.navbar img{
+    /*display:block;*/
+    /*height: 100%;*/
+    /*min-height:50px;*/
+    margin: 0 0 0 0;
+    padding:0 0 0 0;
+}
+
+/* Adjust the logo image centered */
+.navbar-fixed-top .navbar-brand {
+    margin: 0px 0px 0px 0px;
+    padding:0px 0px 0px 0px; 
+}
+
+/* Header height management for menu links */ 
+.anchor
+{
+    padding-top: 105px;
+}
+/*
+@media (min-width: @screen-sm-min) {
+    .anchor
+    {
+        padding-top: 100px;
+    }
+}
+*/
+.anchor-page-top
+{
+    position: absolute;
+    top: -105px;
+    line-height: 0; 
+    font-size: 0;
+    color: transparent;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    visibility:hidden;
+}
+/*
+@media (min-width: @screen-sm-min) {
+    .anchor-page-top
+    {
+        top: -60px;
+    }
+}
+*/
+
+.hidden_anchor
+{
+    height: 0;
+    line-height: 0; 
+    font-size: 0;
+    color: transparent;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    visibility:hidden;
+    /*display: none;*/
+}
+
+.hidden
+{
+    visibility:hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: bold;
+}
+
+/* Titles */
+h1.section,
+h2.section,
+h3.section,
+h4.section,
+h5.section,
+h6.section {
+    color: #fff;
+    background-color: @twj-primary;
+    padding: 3px 5px 7px 5px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15) inset, 0px 1px 5px rgba(0, 0, 0, 0.075);
+    text-shadow: 1px 1px 1px #333333;
+}
+
+h1.section,
+h2.section {
+    margin: 10px 0px 10px 0px;
+    border-bottom: 3px solid @twj-primary;
+}
+
+h3.section,
+h4.section,
+h5.section,
+h6.section {
+    margin: 20px 0px 10px 0px;
+}
+
+/* Footer image link with shadow */
+footer .footer-above a img{
+    box-shadow: 0px 5px 3px rgba(0,0,0, 0.5);
+    margin: 5px 5px;
+    border-radius: 4px;
+}
+
+footer .footer-above a:hover img{
+    box-shadow: 0px 3px 1px rgba(0,0,0, 0.5);
+}
+
+/* Top menu shrink */
+.navbar-nav > li > a {
+    padding: 3px 3px 3px 3px; 
+}
+
+/* Sections design */
+nav,
+navbar,
+header,
+.section-01,
+.section-02,
+.section-03,
+.section-04,
+.section-05,
+.section-06,
+.section-grey,
+.section-blue,
+section.success,
+footer .footer-above,
+footer .footer-below,
+.section-01-light,
+.section-02-light,
+.section-03-light,
+.section-04-light,
+.section-05-light,
+.section-06-light,
+.section-grey-light,
+.section-blue-light
+{
+    /*background-image: linear-gradient(to bottom, #FFF 0%, #F8F8F8 100%);*/
+    /*background-image: linear-gradient(to top, rgba(51, 51, 51, 0.5) 0%, rgba(51, 51, 51, 0) 5px);*/
+
+    /*background-image: linear-gradient(to top, rgba(248, 248, 248, 0.5) 0%, rgba(255, 255, 255, 0) 100%);*/
+    /*background-repeat: repeat-x;*/
+    /*border-radius: 4px;*/
+    /*box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15) inset, 0px 1px 5px rgba(0, 0, 0, 0.075);*/
+    border-bottom: 1px solid #CACACA;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 0px 10px rgba(0, 0, 0, 0.1);   
+}
+
+/* Sections design */
+.section-01,
+.section-02,
+.section-03,
+.section-04,
+.section-05,
+.section-06,
+.section-grey,
+.section-blue,
+section.success,
+.section-01-light,
+.section-02-light,
+.section-03-light,
+.section-04-light,
+.section-05-light,
+.section-06-light,
+.section-grey-light,
+.section-blue-light
+{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+header {
+    text-align: center;
+    background-color: @twj-primary;
+    color: white;
+}
+
+header .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+header img {
+    display: block;
+    margin: 0 auto 0px;
+}
+
+header .intro-text {
+    margin-bottom: 10px;
+}
+header .intro-text .name {
+    display: block;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 200%;
+    text-shadow: 1px 1px 1px #333333;
+}
+header .intro-text .skills {
+    display: block;
+    font-size: 18px;
+    line-height: 200%;
+    text-shadow: 1px 1px 1px #333333;
+}
+
+header .intro-text .info {
+    display: block;
+    font-size: 14px;
+    line-height: 150%;
+    text-shadow: 1px 1px 1px #333333;
+}
+
+@media (max-width: @screen-sm-max) {
+    header .intro-text .name {
+        font-size: 22px;
+        line-height: 150%;
+    }
+    header .intro-text .skills {
+        font-size: 18px;
+        line-height: 150%;
+    }
+    header .intro-text .info {
+        font-size: 14px;
+        line-height: 110%;
+    }
+}
+
+hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.section-01 {
+    background-color: #ffcc66;
+}
+.section-02 {
+    background-color: #ccff66;
+}
+.section-03 {
+    background-color: #66ff99;
+}
+.section-04 {
+    background-color: #3399ff;
+}
+.section-05 {
+    background-color: #cc66ff;
+}
+.section-06 {
+    background-color: #ff66cc;
+}
+
+
+/*
+.section-white {
+  background-color: #ffffff;
+}
+
+.section-white-shadow {
+  background-color: #ffffff;
+}
+*/
+
+.section-grey {
+    background-color: #999999;
+    color: #ffffff;
+}
+
+.section-blue {
+    background-color: @twj-primary;
+    color: #ffffff;
+}
+/*
+.section-blue a {
+        color: #ffffff;
+}
+*/
+
+
+.section-01-light {
+    background-color: #ffdd99;
+}
+.section-02-light {
+    background-color: #ddff99;
+}
+.section-03-light {
+    background-color: #99ffcc;
+}
+.section-04-light {
+    background-color: #66ccff;
+}
+.section-05-light {
+    background-color: #dd99ff;
+}
+.section-06-light {
+    background-color: #ff99dd;
+}
+
+.section-grey-light {
+    background-color: #cccccc;
+    color: #333333;
+}
+.section-blue-light {
+    background-color: #3399cc;
+    color: #ffffff;
+}
+
+/*
+.navbar,
+footer .footer-below {
+    background-color: #eeeeee;
+    background: linear-gradient(#FAFAFA, #EAEAEA) repeat scroll 0% 0% transparent;
+    border-bottom: 1px solid #CACACA;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 0px 10px rgba(0, 0, 0, 0.1);    
+}
+*/
+
+footer .footer-above {
+    background-color: #666666;
+    color: #fff;
+}
+
+footer .footer-below {
+    font-size: 13px;
+}
+
+/* Footer buttons */
+.btn-social {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    border: 2px solid @twj-primary;
+    background-color: @twj-primary;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+}
+.btn:focus,
+.btn:active,
+.btn.active {
+    outline: none;
+}
+
+.btn-outline {
+    color: white;
+    font-size: 20px;
+    border: solid 2px white;
+    background: transparent;
+    /*transition: all 0.3s ease-in-out;*/
+    /*margin-top: 15px;*/
+}
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active,
+.btn-outline.active {
+    color: @twj-primary;
+    background: white;
+    border: solid 2px @twj-primary;
+    text-decoration: none;
+}
+
+div.white a,
+p.white a {
+    color: #ffffff;
+}
+
+div.white .nav a:hover {
+    color: @twj-primary !important;
+}
+
+.vcenter-320 {
+    display: table !important;
+    height: 320px;
+    min-height: 320px;
+}
+.vcenter-320 > div {
+    display: table-cell;
+    vertical-align: middle !important;
+}
+
+.vcenter-170 {
+    display:table !important;
+    height: 170;
+}
+.vcenter-170 > div {
+    display: table-cell;
+    vertical-align: middle !important;
+}
+
+/*
+header a,
+.footer-above a,
+.section-blue a {
+    color: #ffffff;
+}
+
+header .input-group a {
+    color: #ffffff;
+}
+*/
+
+/*
+.affix,
+.affix-top {
+    min-height: 35px;
+    height: 35px;
+}
+*/
+
+/* Fixed subnav on scroll, but only for 980px and up (sorry IE!) */
+@media (min-width: @screen-sm-min) {
+    .navbar.affix-top {
+        z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
+    }
+
+    .navbar.affix {
+        position: fixed;
+        top: 50px;
+        right: 0;
+        left: 0;
+        z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
+        margin-bottom: 0;
+    }
+    /*
+        .navbar.affix .navbar-inner {
+            border-width: 0 0 1px;
+            padding-right: 0;
+            padding-left: 0;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+            -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1);
+        }
+    */
+    .navbar.affix .container {
+        width: 940px;
+    }
+
+    .toc-bar-container {
+        height: 35px;
+    }
+}
+
+/* Other screen sizes navbar container width */
+@media (min-width: @screen-lg-min) {
+    .navbar.affix .container {
+        width: 1170px;
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .navbar.affix {
+        position: fixed;
+        top: 50px;
+        right: 0;
+        left: 0;
+        z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
+        margin-bottom: 0;
+    }
+
+    /*
+    .navbar.affix {
+        position: static;
+    }
+    */
+    /* Give a positive z-index to ToC bar, otherwise the pseudo elements before may overlap and
+       make the button unclickable. */
+    #toc-bar {
+        /*position: relative;*/
+        z-index:1020;
+        /*margin-bottom: 20px;*/
+    }
+}
+
+.toc-separator {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+/* hack to solve jqBootstapValidation  issue with bootstrap 3 */ 
+.text-danger {   
+    color: #a94442 !important;
+}
+
+.scroll-top {
+    right: 5px;
+    bottom: 30px;
+}
+
+.scroll-bottom {
+    right: 5px;
+    top: 60px;
+}
+
+@media (min-width: @screen-sm-min) {
+    .scroll-bottom {
+        top: 60px;
+    }
+}
+.scroll-bottom,
+.scroll-top {
+    position: fixed;
+    z-index: 1049;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.scroll-bottom .btn:focus,
+.scroll-top .btn:focus
+{
+    outline: none;
+}
+
+.tab-authentication .tab-content {
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #dddddd;
+    border-radius: 0 0 4px 4px;
+}
+
+.tab-authentication .input-group {
+    margin: 10px 10px 10px 10px;
+}
+
+.nav-tabs > li > a {
+    border: 1px solid #dddddd;;
+    border-radius: 4px 4px 0 0;
+}
+
+.modal-header {
+    background-color: @twj-primary;
+    color: #ffffff;
+}
+
+.navbar-toggle {
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px;
+}
+
+small, .small {
+    font-size: 70%;
+}
+
+a:focus > span.twj,
+a:hover > span.twj,
+a:focus > span.twj,
+a:active > span.twj
+{
+    text-decoration: none;
+}
+
+/*
+.toc-navbar-toggle {
+    float: left;
+}
+*/
+
+
+.sidebar-nav .navbar li ul li a {
+    padding-left: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    /*text-align: right;*/
+}
+.sidebar-nav .navbar li ul {
+    margin: 10px 10px !important;
+}
+
+/* make sidebar nav vertical */ 
+@media (min-width: 768px) {
+    .sidebar-nav .navbar .navbar-collapse {
+        padding: 0;
+        max-height: none;
+    }
+    .sidebar-nav .navbar ul {
+        float: none;
+    }
+    .sidebar-nav .navbar ul:not {
+        display: block;
+    }
+    .sidebar-nav .navbar li {
+        float: none;
+        display: block;
+    }
+    .sidebar-nav .navbar li a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
+.divider {
+    float: none;
+    display: block;
+    border-top: 1px solid #CCCCCC;
+}
+
+.tooltip > .tooltip-inner {
+    color: #ffffff;
+    background-color: #333333;
+}
+
+.tooltip > .tooltip-arrow {
+    color: #ffffff;
+    border-bottom-color:#333333;
+}

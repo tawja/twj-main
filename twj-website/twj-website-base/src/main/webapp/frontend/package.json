@@ -1,0 +1,66 @@
+{
+    "name": "Tawja-WebSite",
+    "description": "Websites Tawja Project.",
+    "version": "1.0.0-SNAPSHOT",
+    "homepage": "http://www.tawja.org",
+    "author": {
+        "name": "Jaafar BENNANI-SMIRES"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tawja/twj-websites.git"
+    },
+    "bugs": {
+        "url": "https://github.com/tawja/twj-websites/issues"
+    },
+    "license": {
+        "type": "Apache-2.0",
+        "url": "https://github.com/tawja/twj-websites/blob/master/LICENSE.md"
+    },
+    "keywords": [
+        "twbs",
+        "bootstrap",
+        "assemble",
+        "grunt",
+        "grunt-cli",
+        "bower",
+        "less",
+        "admin",
+        "template"
+    ],
+    "main": "Gruntfile.js",
+    "engines": {
+        "node": ">=0.10.0"
+    },
+    "scripts": {
+        "bower": "bower install",
+        "grunt": "grunt",
+        "build": "npm run bower && npm run grunt"
+    },
+    "dependencies": {
+        "assemble": "^0.4.42",
+        "assemble-middleware-sitemap": "^0.2.5",
+        "grunt-banner": "^0.3.1",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-concat": "^0.5.1",
+        "grunt-contrib-connect": "^0.9.0",
+        "grunt-contrib-copy": "^0.8.0",
+        "grunt-contrib-csslint": "^0.4.0",
+        "grunt-contrib-cssmin": "^0.12.2",
+        "grunt-contrib-htmlmin": "^0.4.0",
+        "grunt-contrib-jshint": "^0.11.0",
+        "grunt-contrib-less": "^1.0.0",
+        "grunt-contrib-uglify": "^0.8.0",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-modernizr": "^0.6.0",
+        "grunt-sync": "^0.2.3",
+        "handlebars-helpers": "^0.5.8",
+        "handlebars-helper-analytics": "^0.1.1",
+        "less": "^2.4.0",
+        "load-grunt-tasks": "^3.1.0",
+        "pretty": "^1.0.0",
+        "time-grunt": "^1.1.0",
+        "clean-css": "^3.1.1",
+        "grunt-verb": "^0.2.4 "
+    }
+}

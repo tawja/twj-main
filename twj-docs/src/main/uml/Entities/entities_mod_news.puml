@@ -1,0 +1,27 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+'left to right direction
+
+package ModuleNews {
+    class NewsArticle #FDFDAA
+    class NewsArticleType #FFFFFF
+    note bottom : Configurable : News, Analysis, Knowledge, ....
+    class NewsEvent #FDFDAA
+    class NewsEventType #FFFFFF
+    note bottom : Configurable : Meeting, Show, ....
+    class NewsArticleComment #DDDDDD
+    class NewsEventComment #DDDDDD
+
+    NewsArticle "*" -- "1" NewsArticle
+    NewsArticle "*" -- "1" NewsArticleType
+    NewsEvent "*" -- "1" NewsEvent
+    NewsEvent "*" -- "1" NewsEventType
+    NewsArticleComment "*" -- "1" NewsArticle
+    NewsEventComment "*" -- "1" NewsEvent
+}
+
+NewsEventComment "*" -- "1" CommentInfo
+NewsArticleComment "*" -- "1" CommentInfo
+
+@enduml

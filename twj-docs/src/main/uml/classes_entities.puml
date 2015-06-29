@@ -1,0 +1,64 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+left to right direction
+
+legend right
+  + <b>Yellow</b>  : Entity elements.
+  + <b>Grey</b>  : Link elements.
+  + <b>White</b>  : Enum elements (not in database).
+endlegend
+
+package "ModuleSecurity" {
+    class User #FDFDAA
+    note bottom : Quite all working tables audit the user.\nThose relations are not shown here.
+    class Profile
+    note bottom : Admin, Manager, Contributor, Follower.
+    class Group
+    class SecurityRight #DDDDDD
+    SecurityRight " *" -- "1" User
+    SecurityRight " *" -- "1" Profile
+    SecurityRight " *" -- "1" Group
+}
+package "ModuleRepository" {
+    class Directory #FDFDAA
+    note bottom : No file details.\nRights depends on activity profile.
+    class DocumentTemplate #FDFDAA
+    note bottom : Templates are global or user dedicated.
+}
+package "ModuleNetwork" {
+    class MessageInfo #DDDDDD
+    class MessageType #FFFFFF
+    note bottom : Configurable : Communication, Qestion, Information, ...
+    class Message #FDFDAA
+    class CommentInfo #DDDDDD
+    class CommentType #FFFFFF
+    note bottom : Message without target.\nConfigurable : Like, Error, Opinion, ...
+    class Comment #FDFDAA
+    Message "1" -- "1" MessageInfo
+    MessageInfo "*" -- "1" MessageType
+    MessageInfo "*" -- "1" UserAcccount : sender
+    MessageInfo "*" -- "1..*" Person : target
+    Comment "1" -- "1" CommentInfo
+    CommentInfo "*" -- "1" MessageType
+    CommentInfo "*" -- "1" UserAcccount : sender
+}
+package "ModuleNews" {
+    class NewsArticle #FDFDAA
+    class NewsArticleType #FFFFFF
+    note bottom : Configurable : News, Analysis, Knowledge, ....
+    class NewsEvent #FDFDAA
+    class NewsEventType #FFFFFF
+    note bottom : Configurable : Meeting, Show, ....
+    class NewsArticleComment #DDDDDD
+    class NewsEventComment #DDDDDD
+    NewsArticle "*" -- "1" NewsArticle
+    NewsArticle "*" -- "1" NewsArticleType
+    NewsEvent "*" -- "1" NewsEvent
+    NewsEvent "*" -- "1" NewsEventType
+    NewsArticleComment "*" -- "1" NewsArticle
+    NewsArticleComment "*" -- "1" CommentInfo
+    NewsEventComment "*" -- "1" NewsEvent
+    NewsEventComment "*" -- "1" CommentInfo
+}
+@enduml

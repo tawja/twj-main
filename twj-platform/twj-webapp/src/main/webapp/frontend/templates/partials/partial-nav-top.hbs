@@ -1,0 +1,32 @@
+<nav class="navbar navbar-default navbar-fixed-top navbar-top-panel navbar-shrink">
+    <button class="toggle-left" id="toggle-left">
+        <span class="twj twj-fa-chevron-left">
+        </span><span class="twj twj-fa-gears"></span>
+    </button>
+    <button class="toggle-right" id="toggle-right" style="float: right;">
+        <span class="twj twj-fa-gear"></span>
+        <span class="twj twj-fa-chevron-right"></span>
+    </button>
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <!-- Top Nav Buttons-->
+            <button type="button" class="navbar-toggle top-navbar-toggle" data-toggle="collapse" data-target="#top-navbar">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="twj twj-fw twj-fa-navicon"></span>
+            </button>
+            <!-- Top Menu Buttons-->
+            <button type="button" class="navbar-toggle collapsed menu-navbar-toggle" data-toggle="collapse" data-target="#menu-navbar">
+                <span class="sr-only">Toggle Sitemap</span>
+                <span class="twj fa-fw twj-fa-sitemap"></span>
+            </button>
+            <!-- Inner Shortcuts Buttons-->
+            <button type="button" class="navbar-toggle collapsed toc-navbar-toggle" data-toggle="collapse" data-target="#toc-navbar">
+                <span class="sr-only">Toggle Shortcuts</span>
+                <span class="twj twj-fw twj-fa-bookmark"></span>
+            </button>
+            <a class="navbar-brand" href="./index.html"><img class="navbar-logo-img" src="{{assets}}/img/logo.png" alt="{{configSite.name}}"/></a>
+        </div>
+        <!-- TOP Navigation Content -->
+        {{> partial-nav-top-content }}
+    </div>
+</nav>

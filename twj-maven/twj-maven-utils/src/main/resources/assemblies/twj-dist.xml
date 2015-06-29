@@ -1,0 +1,42 @@
+<assembly xmlns="http://maven.apache.org/POM/4.0.0/assembly"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0/assembly http://maven.apache.org/xsd/assembly-1.0.0.xsd ">
+    <id>twj-dist</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <!-- Site files -->
+        <fileSet>
+            <directory>target/webapp</directory>
+            <outputDirectory>webapps/${tawja.project.webdir}</outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+        </fileSet>
+        <!-- Distribution files -->
+        <fileSet>
+            <directory>target/dist</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+        </fileSet>
+        <!-- Design files-->
+        <fileSet>
+            <directory>src/design</directory>
+            <outputDirectory>design</outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>target/generated-design</directory>
+            <outputDirectory>design</outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

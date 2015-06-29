@@ -1,0 +1,41 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+'left to right direction
+
+package "org.tawja.platform.plugins.database.api" {
+    enum TwjServerStatus
+    interface TwjDatabase
+    interface TwjDatabaseCommand
+    interface TwjDatabaseContainer
+    interface TwjDatabaseControler
+    interface TwjDatabaseFactory
+    note top : Implentations for embeded servers.\n(ex: hsqldb, h2, derby, orientdb, ...)
+    interface TwjDatabaseServer
+
+    interface TwjDatabaseService {
+        +Map<String, TwjDatabaseFactory> getFactories()
+        +void createServer(...)
+    }
+
+    TwjDatabaseCommand "0..*" --> "1" TwjDatabaseService
+
+    'TwjDatabaseService "1" --> "1" TwjDatabaseContainer
+    TwjDatabaseService "1" --> "1" TwjDatabaseControler
+    TwjDatabaseControler "1" --> "1" TwjDatabaseContainer
+    TwjDatabaseControler "1" o--> "0..*" TwjDatabaseFactory
+
+    TwjDatabaseContainer "1" o--> "0..*" TwjDatabaseServer
+    TwjDatabaseServer "1" o--> "0..*" TwjDatabase
+
+    TwjDatabaseServer "*" -- "1" TwjServerStatus
+
+    TwjDatabaseFactory .down.> TwjDatabaseServer : "Create"
+    TwjDatabaseFactory .down.> TwjDatabase : "Create"
+
+    mix_actor XXX
+    XXX .right.> TwjDatabaseCommand : Use
+    XXX .down.> TwjDatabaseService : Call
+}
+
+@enduml

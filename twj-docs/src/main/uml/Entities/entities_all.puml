@@ -1,0 +1,15 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+left to right direction
+
+!define MYTDIR D:\Work\Projects\Tawja\twj-documents\src\main\uml\Entities
+
+!include MYTDIR/entities_mod_security.puml
+!include MYTDIR/entities_mod_directory.puml
+!include MYTDIR/entities_mod_repository.puml
+!include MYTDIR/entities_mod_network.puml
+!include MYTDIR/entities_mod_news.puml
+!include MYTDIR/entities_mod_resource.puml
+
+@enduml

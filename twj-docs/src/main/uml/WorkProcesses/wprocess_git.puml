@@ -1,0 +1,97 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+'left to right direction
+
+autonumber "<b>[00]"
+
+box "DeveloperPC"
+    actor Developer
+    participant PC
+end box
+
+box "FactoryServer"
+    participant Factory
+    note right Factory : Jenkins, ...
+    participant WorkspaceProject
+    note right WorkspaceProject : Local clone of Git repo
+    participant DEVEnvironment 
+    participant ArtifactSnapshotRepository
+    note right ArtifactSnapshotRepository : Snapshot Repo (local one exposed)
+    participant ArtifactReleaseRepository
+    note right ArtifactReleaseRepository : Release Repo (can be distant)
+end box
+
+box "GitRepository"
+    note right Git : BitBucket, GitHub, ...
+    participant Git
+end box
+
+box "PRODServer"
+    participant PRODEnvironment 
+    note right PRODEnvironment : Could be multiple servers...
+end box
+
+== Developement ==
+
+Developer -> PC : Developement
+note right Developer : On 'develop' branch, with version '1.0.0-SNAPSHOT'
+Developer -> PC : Build
+note right Developer : Manual or local Factory
+PC -> ArtifactSnapshotRepository : Download Snapshot Artifacts
+ArtifactSnapshotRepository --> PC : Jar, zip, ...
+Developer -> PC : Commit
+PC -> Git : Commit
+activate Git
+Git -> Factory : Hook
+note right Factory : HTTP REST Hook with info about repo and branch (standard)
+destroy Git
+
+... <color red>Wait for a Factory to build</color> ...
+
+== Checkin - Factory Work ==
+
+Factory -> WorkspaceProject : Checkout 'develop'
+note left Factory : BUILD
+activate Factory
+Factory -> WorkspaceProject : Change maven versions
+note right WorkspaceProject : Current project to '<major>.<minor>.<build_number>'\nOther maven projects from same projects with latest release version (versions.maven.plugin)
+Factory -> WorkspaceProject : Build
+destroy Factory
+WorkspaceProject -> ArtifactReleaseRepository : Download Release Artifacts
+ArtifactReleaseRepository --> WorkspaceProject : Jar, zip, ...
+WorkspaceProject --> ArtifactReleaseRepository : Upload Artifacts with version '<major>.<minor>.<build_number>' (Jar, zip, ...)
+Factory -> WorkspaceProject : [OK] Merge current 'develop' to 'master'
+note left Factory : POST BUILD
+activate Factory
+WorkspaceProject -> Git : [OK] Merge current 'develop' to 'master'
+Factory -> WorkspaceProject : [OK] Tag 'master' with '<major>.<minor>.<build_number>'
+Factory -> WorkspaceProject : [OK] Tag 'master' with '<major>.<minor>.<build_number>'
+Factory -> WorkspaceProject : [NOT OK] ... nothing... (or revert)
+destroy Factory
+
+== Release DEV-UAT ==
+
+Factory -> WorkspaceProject : Deploy to DEV-UAT Environment
+note left Factory : JOB (same Workspace)
+note right WorkspaceProject : Just one pre-prod Environment
+activate DEVEnvironment
+WorkspaceProject --> DEVEnvironment : Copy distribution files
+DEVEnvironment -> DEVEnvironment : Unzip, Stop services, copy files, changes writes, Restart services, ...
+note right DEVEnvironment : CRON
+destroy DEVEnvironment
+
+== Release PROD ==
+
+Developer -> Factory : Ask to Deploy to PROD Environment
+Factory -> WorkspaceProject : Deploy to PROD Environment
+note left Factory : JOB (same Workspace) or JOB with Parameters
+note right WorkspaceProject : Just one pre-prod Environment
+activate PRODEnvironment
+WorkspaceProject --> PRODEnvironment : Copy distribution files
+PRODEnvironment -> PRODEnvironment : Unzip, Stop services, copy files, changes writes, Restart services, ...
+note right PRODEnvironment : CRON
+PRODEnvironment -> Developer : Send mail
+destroy PRODEnvironment
+
+@enduml
