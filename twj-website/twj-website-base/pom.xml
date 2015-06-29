@@ -45,11 +45,28 @@
                                 </goals>
                                 <configuration>
                                     <workingDirectory>${basedir}/target-grunt</workingDirectory>
-                                    <executable>chmod</executable>
+                                    <executable>chmod </executable>
                                     <arguments>
                                         <argument>+x</argument>
-                                        <argument>*.sh</argument>
+                                        <argument>install-tools.sh</argument>
+                                        <argument>offline-create.sh</argument>
+                                        <argument>build-create-offline.sh</argument>
                                     </arguments>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <!-- Duplicated from above because, we are unable to execute 2 goals in same phase like expected with profiles definition... -->
+                                <id>build-create-offline</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <workingDirectory>${basedir}/target-grunt</workingDirectory>
+                                    <executable>sh</executable>
+                                    <arguments>
+                                        <argument>build-create-offline.sh</argument>
+                                    </arguments>                        
                                 </configuration>
                             </execution>
                         </executions>
