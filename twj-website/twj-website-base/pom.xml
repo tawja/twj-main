@@ -44,10 +44,11 @@
                                     <goal>exec</goal>
                                 </goals>
                                 <configuration>
+                                    <workingDirectory>${basedir}/target-grunt</workingDirectory>
                                     <executable>chmod</executable>
                                     <arguments>
                                         <argument>+x</argument>
-                                        <argument>${basedir}/target-grunt/*.sh</argument>
+                                        <argument>*.sh</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
