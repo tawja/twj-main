@@ -115,7 +115,7 @@
         <!-- Project SCM -->
 		<!--
         <tawja.scm.site>https://github.com/tawja/twj-main/tree/master</tawja.scm.site>
-        <tawja.scm.connexion>scm:git:git@github.com:tawja/twj-main.git</tawja.scm.connexion>
+        <tawja.scm.connexion>scm:git@github.com:tawja/twj-main.git</tawja.scm.connexion>
         <tawja.scm.connexion.dev>scm:git@bitbucket.org:tawja/twj-main.git</tawja.scm.connexion.dev>
 		-->
         <!-- Others -->
@@ -583,7 +583,7 @@
     
     <scm>
         <connection>scm:git:git@github.com:tawja/twj-main.git</connection>
-        <developerConnection>scm:git@bitbucket.org:tawja/twj-main.git</developerConnection>
+        <developerConnection>scm:git:git@bitbucket.org:tawja/twj-main.git</developerConnection>
         <url>https://github.com/tawja/twj-main/tree/master</url>
         <tag>HEAD</tag>
     </scm>
