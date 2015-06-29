@@ -24,36 +24,34 @@
     </properties>
 	
     <profiles>
-		<profiles>
-		  <profile>
-			<activation>
-			  <os>
-				<family>!windows</family>
-			  </os>
-			</activation>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>${exec-maven-plugin.version}</version>
-				<executions>
-				   <execution>
-						<id>script-chmod</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>chmod</executable>
-							<arguments>
-								<argument>+x</argument>
-								<argument>${basedir}/target-grunt/build-create-offline.sh</argument>
-							</arguments>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		  </profile>
-		</profiles>
+	  <profile>
+		<activation>
+		  <os>
+			<family>!windows</family>
+		  </os>
+		</activation>
+		<plugin>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>exec-maven-plugin</artifactId>
+			<version>${exec-maven-plugin.version}</version>
+			<executions>
+			   <execution>
+					<id>script-chmod</id>
+					<phase>process-resources</phase>
+					<goals>
+						<goal>exec</goal>
+					</goals>
+					<configuration>
+						<executable>chmod</executable>
+						<arguments>
+							<argument>+x</argument>
+							<argument>${basedir}/target-grunt/build-create-offline.sh</argument>
+						</arguments>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+	  </profile>
         <profile>
             <id>tawja-generateOfflineArchives</id>
             <activation>
