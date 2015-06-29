@@ -6,13 +6,13 @@
     <parent>
         <groupId>org.tawja.website</groupId>
         <artifactId>parent</artifactId>
-        <version>2015.06.29152022</version>
+        <version>2015.06.30010505</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.website</groupId>
     <artifactId>twj-website-base</artifactId>
-    <version>2015.06.29152022</version>
+    <version>2015.06.30010505</version>
 	
     <packaging>war</packaging>
 
@@ -117,7 +117,7 @@
             <plugin>
                 <groupId>org.tawja.maven.plugins</groupId>
                 <artifactId>twj-frontend-maven-plugin</artifactId>
-                <version>2015.06.29152022</version>
+                <version>2015.06.30010505</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -252,7 +252,7 @@
                     <dependency>
                         <groupId>org.tawja.maven</groupId>
                         <artifactId>twj-maven-utils</artifactId>
-                        <version>2015.06.29152022</version>
+                        <version>2015.06.30010505</version>
                     </dependency>
                 </dependencies>
                 <executions>
@@ -287,28 +287,28 @@
         <dependency>
             <groupId>org.tawja.design</groupId>
             <artifactId>twj-design-icons</artifactId>
-            <version>2015.06.29152022</version>
+            <version>2015.06.30010505</version>
             <type>zip</type>
             <classifier>twj-design</classifier>
         </dependency>
         <dependency>
             <groupId>org.tawja.design</groupId>
             <artifactId>twj-design-logos</artifactId>
-            <version>2015.06.29152022</version>
+            <version>2015.06.30010505</version>
             <type>zip</type>
             <classifier>twj-design</classifier>
         </dependency>
         <dependency>
             <groupId>org.tawja.design</groupId>
             <artifactId>twj-design-pictures</artifactId>
-            <version>2015.06.29152022</version>
+            <version>2015.06.30010505</version>
             <type>zip</type>
             <classifier>twj-design</classifier>
         </dependency>
         <dependency>
             <groupId>org.tawja.design</groupId>
             <artifactId>twj-design-schemas</artifactId>
-            <version>2015.06.29152022</version>
+            <version>2015.06.30010505</version>
             <type>zip</type>
             <classifier>twj-design</classifier>
         </dependency>
