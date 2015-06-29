@@ -1,0 +1,2 @@
+LICENSE : SIL : http://scripts.sil.org/OFL
+https://github.com/aristath/elusive-iconfont

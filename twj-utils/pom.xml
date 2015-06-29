@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2015 Tawja (http://www.tawja.org)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+		<groupId>org.tawja</groupId>
+		<artifactId>parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <!--<relativePath>../twj-parent/pom.xml</relativePath>-->
+    </parent>
+    
+    <groupId>org.tawja.utils</groupId>
+    <artifactId>twj-utils</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <name>Tawja : Utils</name>
+
+    <url>${project.organization.url}/project/maven/utils/</url>
+
+	<!--
+    <modules>
+        <module>twj-??</module>
+    </modules>
+	-->
+
+	<build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${maven-site-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.tawja.maven.skin</groupId>
+                            <artifactId>twj-maven-skins-tools</artifactId>
+                            <version>1.0.0-SNAPSHOT</version>
+                        </dependency>
+                        <!-- Reflow skin requires Velocity >= 1.7  -->
+                        <dependency>
+                            <groupId>org.apache.velocity</groupId>
+                            <artifactId>velocity</artifactId>
+                            <version>${velocity.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <generateReports>true</generateReports>
+                        <inputEncoding>UTF-8</inputEncoding>
+                        <outputEncoding>UTF-8</outputEncoding>
+                        <!-- Default documentation language should be english -->
+                        <!--
+                            <locales>en,fr</locales>
+                        -->
+                        <locales>en</locales>
+                        <skipDeploy>false</skipDeploy>
+                        <stagingDirectory>${tawja.home.dev.site.doc.dir}</stagingDirectory>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>${maven-assembly-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>bin</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <descriptors>
+                                        <descriptor>
+                                            src/assemblies/twj-bin.xml
+                                        </descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+
+</project>

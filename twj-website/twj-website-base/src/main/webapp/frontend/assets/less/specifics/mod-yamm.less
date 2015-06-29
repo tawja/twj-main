@@ -1,0 +1,251 @@
+/**************************************************************/
+/*                 Main Styles import                         */
+/**************************************************************/
+
+@import "../variables"; // Modify this for custom value
+@import "../mixins"; // Modify this for custom value
+@import "../main-theme-vars"; // Modify this for custom value
+
+/**************************************************************/
+/*                 Other Styles import                        */
+/**************************************************************/
+
+
+
+/**************************************************************/
+/*                  Variables                                 */
+/**************************************************************/
+
+// Cf. main-theme-vars.less
+
+/**************************************************************/
+/*                  Styles                                    */
+/**************************************************************/
+
+/* =================================
+Proof Of Concepts
+================================= */ 
+
+.yamm .dropdown {
+    /*border-top: 5px solid #006699;*/
+}
+
+
+.yamm
+{
+    top: 51px;
+    position: fixed;
+    z-index: 1030;
+    left: 51px;
+    right: 51px;
+
+    ul, menu, dir {
+        margin: 0px 0px 0px 0px;
+    }
+
+    a.dropdown-toggle
+    {
+        /*border-top: 1px solid #999999 !important;*/
+        border-bottom: 5px solid transparent !important;
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .yamm
+    {
+        overflow-y: auto;
+        max-height: 90%;
+    }
+}
+
+.yamm .twj-01
+{
+    a.dropdown-toggle {
+        border-top: 3px solid @twj-01;
+    }
+
+    a.dropdown-toggle:focus, a.dropdown-toggle:hover,a.dropdown-toggle:active
+        {
+        border-bottom: 5px solid @twj-01 !important;
+    }
+
+    .dropdown-menu
+    {
+        border-top: 3px solid @twj-01 !important;
+    }
+}
+.yamm .twj-02
+{
+    a.dropdown-toggle {
+        border-top: 3px solid @twj-02;
+    }
+
+    a.dropdown-toggle:focus, a.dropdown-toggle:hover,a.dropdown-toggle:active
+        {
+        border-bottom: 5px solid @twj-02 !important;
+    }
+
+    .dropdown-menu
+    {
+        border-top: 3px solid @twj-02 !important;
+    }
+}
+.yamm .twj-03
+{
+    a.dropdown-toggle {
+        border-top: 3px solid @twj-03;
+    }
+
+    a.dropdown-toggle:focus, a.dropdown-toggle:hover,a.dropdown-toggle:active
+        {
+        border-bottom: 5px solid @twj-03 !important;
+    }
+
+    .dropdown-menu
+    {
+        border-top: 3px solid @twj-03 !important;
+    }
+}
+.yamm .twj-04
+{
+    a.dropdown-toggle {
+        border-top: 3px solid @twj-04;
+    }
+
+    a.dropdown-toggle:focus, a.dropdown-toggle:hover,a.dropdown-toggle:active
+        {
+        border-bottom: 5px solid @twj-04 !important;
+    }
+
+
+    .dropdown-menu
+    {
+        border-top: 3px solid @twj-04 !important;
+    }
+}
+.yamm .twj-05
+{
+    a.dropdown-toggle {
+        border-top: 3px solid @twj-05;
+    }
+
+    a.dropdown-toggle:focus, a.dropdown-toggle:hover,a.dropdown-toggle:active
+        {
+        border-bottom: 5px solid @twj-05 !important;
+    }
+
+
+    .dropdown-menu
+    {
+        border-top: 3px solid @twj-05 !important;
+    }
+}
+.yamm .twj-06
+{
+    a.dropdown-toggle {
+        border-top: 3px solid @twj-06;
+    }
+
+    a.dropdown-toggle:focus, a.dropdown-toggle:hover,a.dropdown-toggle:active
+        {
+        border-bottom: 5px solid @twj-06 !important;
+    }
+
+    .dropdown-menu
+    {
+        border-top: 3px solid @twj-06 !important;
+    }
+}
+
+
+div.yamm {
+    /*background-color: #006699;*/
+}
+
+/* Menu open on hover */
+@media (min-width: @screen-sm-min) {
+
+    .yamm .navbar-nav > li > a {
+        padding: 10px 7px 10px 7px;
+    }
+
+    .yamm ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+        z-index: 2000;
+    }
+
+    /* Center Yamm nav bar */
+    .yamm .navbar .navbar-nav {
+        display: inline-block;
+        float: none !important;
+        border-left: 1px solid #999999;
+    }
+
+    .yamm .navbar .navbar-collapse {
+        text-align: center;
+    }
+
+    .yamm .navbar .navbar-collapse {
+        height: 47px !important;
+    }
+
+    .yamm .navbar .navbar-nav .dropdown {
+        /*border-top: 1px solid #999999;*/
+        border-right: 1px solid #999999;
+    }
+}
+
+/* height to allo hover effect to work */
+.yamm .navbar {
+    margin-bottom: 0px;
+}
+
+.yamm .dropdown-menu {
+    opacity: 0.97;
+    background: linear-gradient(#FAFAFA, #EAEAEA) repeat scroll 0% 0% transparent;
+    border-bottom: 1px solid #CACACA;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.yamm .yamm-content li {
+    /*
+    text-align: center;
+    */
+    padding-left: 15px;
+}
+
+.yamm .yamm-content ul {
+    border-top: 2px solid rgba(0,0,0, 0.1);
+}
+
+.yamm .yamm-content h5 {
+    /*
+    border-bottom: 2px solid rgba(0,0,0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    */
+    /*
+    text-align: center;
+    */
+}
+
+.yamm .yamm-content li > a {
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.yamm .yamm-content {
+    padding: 10px 10px;
+}
+
+@media (max-width: @screen-xs-max) {
+    .navbar {
+        min-height: 0px;
+        //z-index: 1000;
+    }
+    .menu-bar-container {
+        /*border: 0px;*/
+        top: 49px;
+    }
+}

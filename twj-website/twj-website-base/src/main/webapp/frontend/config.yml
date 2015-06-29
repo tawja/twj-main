@@ -1,0 +1,30 @@
+# =============================================
+# BUILD CONFIG
+# =============================================
+
+bower_components: bower_components
+
+#src: ../src/main/webapp/static
+#dest: ../target/webapp
+
+webapp: webapp
+lib: lib
+
+assets: assets
+root: root
+
+tasks: tasks
+templates: templates
+data: data/*.{json,yml}
+partials: templates/partials/**/*.hbs
+helpers: helpers/**/*.js
+layoutdir: templates/layouts
+pages: pages
+articles: articles
+
+analytics: true
+ads: false
+
+dev: false
+livereload: false
+

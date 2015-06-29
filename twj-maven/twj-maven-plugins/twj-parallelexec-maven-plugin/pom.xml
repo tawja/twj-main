@@ -1,0 +1,365 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.tawja.maven.plugins</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <!--<relativePath>../pom.xml</relativePath>-->
+    </parent>
+
+    <groupId>org.tawja.maven.plugins</groupId>
+    <artifactId>twj-parallelexec-maven-plugin</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+	
+    <packaging>maven-plugin</packaging>
+
+    <name>Tawja : Maven : Plugin : ParallelExec</name>
+    <description>Parallel Process Executor Maven Plugin Allows to manage a thread pool of command line executions</description>
+
+    <url>${project.organization.url}/project/maven/maven/plugins/twj-parallelexec-maven-plugin/</url>
+    <!--<url>${project.organization.url}/project/doc/maven/plugins/${project.artifactId}</url>-->
+
+	<!--
+    <developers>
+        <developer>
+            <name>Jaafar BENNANI-SMIRES</name>
+        </developer>
+    </developers>
+	-->
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <!-- TODO : Add configuration to the parent POM -->
+    <scm>
+        <connection>scm:git:git@github.com:tawja/twj-maven-plugins.git</connection>
+        <developerConnection>scm:git:git@github.com:tawja/twj-maven-plugins.git</developerConnection>
+        <url>https://github.com/tawja/twj-maven-plugins</url>
+    </scm>
+
+    <properties>
+        <!-- System Properties -->       
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <file.encoding>UTF-8</file.encoding>
+        <!-- Debug properties -->
+        <debug.port>2810</debug.port>
+    </properties>
+
+
+    <profiles>
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <testResources>
+            <testResource>
+                <directory>${basedir}/src/it</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </testResource>
+        </testResources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${maven-site-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.tawja.maven.skin</groupId>
+                            <artifactId>twj-maven-skins-tools</artifactId>
+                            <version>1.0.0-SNAPSHOT</version>
+                        </dependency>
+                        <!-- Reflow skin requires Velocity >= 1.7  -->
+                        <dependency>
+                            <groupId>org.apache.velocity</groupId>
+                            <artifactId>velocity</artifactId>
+                            <version>${velocity.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <generateReports>true</generateReports>
+                        <inputEncoding>UTF-8</inputEncoding>
+                        <outputEncoding>UTF-8</outputEncoding>
+                        <!-- Default documentation language should be english -->
+                        <!--
+                            <locales>en,fr</locales>
+                        -->
+                        <locales>en</locales>
+                        <skipDeploy>false</skipDeploy>
+                        <stagingDirectory>${tawja.home.dev.site.doc.dir}</stagingDirectory>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.ning.maven.plugins</groupId>
+                <artifactId>maven-dependency-versions-check-plugin</artifactId>
+                <version>2.0.2</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>sisu-maven-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <id>generate-index</id>
+                        <goals>
+                            <goal>main-index</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--
+            <plugin>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-component-metadata</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate-metadata</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-plugin-plugin</artifactId>
+                <version>3.4</version>
+                <configuration>
+                    <goalPrefix>parallelexec</goalPrefix>
+                    <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>mojo-descriptor</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>descriptor</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-invoker-plugin</artifactId>
+                <version>1.9</version>
+                <configuration>
+                    <!--
+                    <debug>true</debug>
+                    -->
+                    <streamLogs>true</streamLogs>                    
+                    <pomIncludes>
+                        <pomInclude>**/pom.xml</pomInclude>
+                        <!--
+                        <pomExclude>inkscape-test/pom.xml</pomExclude>
+                        -->
+                    </pomIncludes>
+                    <!-- Exclude some POM as thay are used only for manual tests -->
+                    <pomExcludes>
+                        <pomExclude>inkscape-test/pom.xml</pomExclude>
+                    </pomExcludes>
+                    <!--
+                        <mavenOpts>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=${debug.port}</mavenOpts>
+                        <skipInvocation>true</skipInvocation>
+                    -->
+                    <showErrors>true</showErrors>
+                    <projectsDirectory>src/it</projectsDirectory>
+                    <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+                    <settingsFile>src/it/settings.xml</settingsFile>
+                    <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
+                    <postBuildHookScript>verify</postBuildHookScript> <!-- no extension required -->
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>integration-test</id>
+                        <goals>
+                            <goal>install</goal>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+<!--
+    <distributionManagement>
+        <repository>
+            <id>sonatype-staging-parallelexec-maven</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <snapshotRepository>
+            <id>sonatype-snapshots-parallelexec-maven</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+-->
+
+    <dependencies>
+        <!--
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-core</artifactId>
+            <version>3.2.5</version>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-model</artifactId>
+            <version>3.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+            <version>3.2.5</version>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>org.apache.maven.plugin-tools</groupId>
+            <artifactId>maven-plugin-annotations</artifactId>
+            <version>3.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-container-default</artifactId>
+            <version>1.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>3.0.21</version>
+        </dependency>
+
+        <!--
+        <dependency>
+            <groupId>org.apache.maven.plugin-tools</groupId>
+            <artifactId>maven-plugin-tools-annotations</artifactId>
+            <version>3.2</version>
+        </dependency>
+        -->
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+        <!-- mojos -->
+        <dependency>
+            <groupId>org.twdata.maven</groupId>
+            <artifactId>mojo-executor</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>2.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+        -->
+
+        <!-- test -->
+        <!--
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.8.17</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>1.7.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.catch-exception</groupId>
+            <artifactId>catch-exception</artifactId>
+            <version>1.2.0</version>
+            <scope>test</scope>
+        </dependency>
+
+                <dependency>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                    <version>18.0</version>
+                    <scope>test</scope>
+                </dependency>
+        -->
+    </dependencies>
+
+</project>

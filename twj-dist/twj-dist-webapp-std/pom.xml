@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	
+    <parent>
+        <groupId>org.tawja.dist</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <!--<relativePath>../twj-parent/pom.xml</relativePath>-->
+    </parent>
+	
+    <groupId>org.tawja.dist</groupId>
+    <artifactId>twj-dist-webapp-std</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+	
+    <packaging>pom</packaging>
+
+    <name>Tawja : Distribution : WebApp Standard</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven-dependency-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>include-grunt-web-base</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.tawja.platform</groupId>
+                                    <artifactId>twj-webapp</artifactId>
+                                    <version>1.0.0-SNAPSHOT</version>
+                                    <type>zip</type>
+                                    <classifier>twj-webapp</classifier>
+                                    <includes>**</includes>
+                                    <excludes>**/WEB-INF/,**/META-INF/</excludes>
+                                    <outputDirectory>${project.build.directory}/dist/platform</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                            <excludeTransitive>true</excludeTransitive>
+                            <excludeTypes>pom</excludeTypes>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${maven-assembly-plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.tawja.maven</groupId>
+                        <artifactId>twj-maven-utils</artifactId>
+                        <version>1.0.0-SNAPSHOT</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>twj-distribution</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptorRefs>
+                                <descriptorRef>twj-distribution</descriptorRef>
+                            </descriptorRefs>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven-deploy-plugin.version}</version>
+                <!-- Remove during simple site deployment
+                -->
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>wagon-maven-plugin</artifactId>
+                <version>${wagon-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>upload-website</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>upload-single</goal>
+                        </goals>
+                        <configuration>
+                            <serverId>tawja-website</serverId>
+                            <url>sftp://ftp.tawja.org/home/tawja/deploy</url>
+                            <fromFile>${project.build.directory}/${project.artifactId}-${project.version}-twj-distribution.zip</fromFile>
+                            <toFile>dist-${project.version}-${buildNumber}-${project.artifactId}.zip</toFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-website</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>sshexec</goal>
+                        </goals>
+                        <configuration>
+                            <serverId>tawja-website</serverId>
+                            <url>sftp://ftp.tawja.org/home/tawja</url>
+                            <displayCommandOutputs>true</displayCommandOutputs>
+                            <commands>
+                                <command>unzip -uo /home/tawja/deploy/dist-${project.version}-${buildNumber}-${project.artifactId}.zip -d /home/tawja/www/</command>
+                                <command>mv /home/tawja/deploy/dist-${project.version}-${buildNumber}-${project.artifactId}.zip /home/tawja/backups/deploy/</command>
+                            </commands>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>        
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,3 @@
+LICENSE : SIL : http://scripts.sil.org/OFL
+Julieta Ulanovsky
+

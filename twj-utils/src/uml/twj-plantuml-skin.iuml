@@ -1,0 +1,41 @@
+@startuml
+
+skinparam backgroundcolor transparent
+
+skinparam activityBorderColor #006699
+skinparam actorBorderColor #006699
+skinparam usecaseBorderColor #006699
+skinparam classBorderColor #006699
+skinparam objectBorderColor #006699
+skinparam packageBorderColor #006699
+skinparam componentBorderColor #006699
+skinparam componentInterfaceBorderColor #006699
+skinparam noteBorderColor #006699
+skinparam stateBorderColor #006699
+
+skinparam activityArrowColor #cc3333
+skinparam usecaseArrowColor #cc3333
+skinparam classArrowColor #cc3333
+skinparam objectArrowColor #cc3333
+skinparam componentArrowColor #cc3333
+skinparam stateArrowColor #cc3333
+skinparam sequenceArrowColor #cc3333
+
+skinparam sequenceLifeLineBorderColor #006699
+skinparam sequenceParticipantBorderColor #006699
+skinparam sequenceBoxLineColor #006699
+
+skinparam activityBackgroundColor #ffffcc
+skinparam actorBackgroundColor #ffffcc
+skinparam usecaseBackgroundColor #ffffcc
+skinparam classBackgroundColor #ffffcc
+skinparam objectBackgroundColor #ffffcc
+'skinparam packageBackgroundColor #ffffcc
+skinparam componentBackgroundColor #ffffcc
+skinparam componentInterfaceBackgroundColor #ffffcc
+skinparam stateBackgroundColor #ffffcc
+skinparam sequenceParticipantBackgroundColor #ffffcc
+
+skinparam noteBackgroundColor #99ddff
+
+@enduml

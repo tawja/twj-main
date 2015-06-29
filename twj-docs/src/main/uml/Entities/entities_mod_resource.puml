@@ -1,0 +1,25 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+'left to right direction
+
+package ModuleResource {
+    class ResourceElement #FDFDAA
+    class ResourceElementType #FFFFFF
+    note bottom : Configurable : Comment, Manual, News, Analysis, Knowledge, ....
+    class ResourceElementComment #DDDDDD
+
+    class TagElement #FDFDAA
+    class ResourceElementTag #DDDDDD
+
+    ResourceElement "*" -- "1" ResourceElement
+    ResourceElement "*" -- "1" ResourceElementType
+    ResourceElementComment "*" -- "1" ResourceElement
+
+    ResourceElementTag "*" -- "1" TagElement
+    ResourceElementTag "*" -- "1" ResourceElement
+}
+
+ResourceElementComment "*" -- "1" CommentInfo
+
+@enduml

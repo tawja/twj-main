@@ -1,0 +1,16 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+'left to right direction
+
+package ModuleRepository {
+    class Directory #FDFDAA
+    note bottom : No file details.\nRights depends on activity profile.
+    class DocumentTemplate #FDFDAA
+    note bottom : Templates are global or user dedicated.
+}
+
+DocumentTemplate "*" -- "1" Group
+Directory "1" -- "1" Group
+
+@enduml

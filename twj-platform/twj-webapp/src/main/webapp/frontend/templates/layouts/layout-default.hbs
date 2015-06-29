@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{#if lang}}{{lang}}{{else}}{{configSite.lang}}{{/if}}">
+    <head>
+        <meta charset="UTF-8"/>
+        <!--IE Compatibility modes-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <!--Mobile first-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <!-- Page Information -->
+        <title>{{title}} - {{configSite.name}} - {{configSite.slogan}}</title>
+        <meta name="description" content="{{configSite.name}} - {{title}} - {{configSite.slogan}}"/>
+        <meta name="author" content="{{configSite.name}}"/>
+
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+        <!-- Bootstrap Core CSS recompiled with custom variables -->
+        <link href="{{assets}}/css/main-bs{{config.minExtPrefix}}.css" rel="stylesheet" type="text/css" property="stylesheet"/>
+        <!-- Bootstrap Theme CSS recompiled with custom variables -->
+        <link href="{{assets}}/css/main-bs-theme{{config.minExtPrefix}}.css" rel="stylesheet" type="text/css" property="stylesheet"/>
+        <!-- Main CSS -->
+        <link href="{{assets}}/css/main-theme{{config.minExtPrefix}}.css" rel="stylesheet" type="text/css" property="stylesheet"/>
+        <!-- Main Icon Font CSS -->
+        <link href="{{assets}}/icons/css/tawja-icons{{config.minExtPrefix}}.css" rel="stylesheet" type="text/css" property="stylesheet"/>
+        <!-- Main Print CSS -->
+        <link href="{{assets}}/css/main-print{{config.minExtPrefix}}.css" rel="stylesheet" type="text/css" media="print" property="stylesheet"/>
+        <!-- Custom Fonts -->
+        <link href="{{assets}}/lib/lato/css/lato.css" rel="stylesheet" type="text/css" property="stylesheet"/>
+
+        <!-- Platform CSS -->
+        <link href="{{assets}}/lib/snapjs/snap.css" rel="stylesheet" type="text/css" property="stylesheet"/>
+        <link href="{{assets}}/css/specifics/mod-snap{{config.minExtPrefix}}.css" rel="stylesheet" type="text/css" property="stylesheet"/>
+        <link href="{{assets}}/lib/yamm3/yamm.css" rel="stylesheet" type="text/css" property="stylesheet"/>
+        <link href="{{assets}}/css/specifics/mod-yamm{{config.minExtPrefix}}.css" rel="stylesheet" type="text/css" property="stylesheet"/>
+
+        <!-- Specific Local CSS -->
+        {{#if stylesheets}}
+        {{helper-css stylesheets}}
+        {{/if}}
+
+        <!-- Specific CDN CSS -->
+        {{#if cdnStylesheets}}
+        {{helper-cdn cdnStylesheets}}
+        {{/if}}
+
+        <!-- Specific CDN Header JavaScript -->
+        {{#if headerCdnJavascripts}}
+        {{helper-cdn headerCdnJavascripts}}
+        {{/if}}
+
+        <!-- Specific Local Header JavaScript -->
+        {{#if headerJavascripts}}
+        {{helper-js headerJavascripts}}
+        {{/if}}
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+        <!-- Top Navigation -->
+        {{> partial-nav-top }}
+
+        <!-- Jumbo Menu Navigation -->
+        {{> partial-menu-top }}
+
+        <!-- Snap Menus -->
+        <div class="snap-drawers">
+            <div class="snap-drawer snap-drawer-left" id="left-drawer" style="padding-top: 50px;">
+                {{> default-snap-left }}
+            </div>
+            <div class="snap-drawer snap-drawer-right" id="right-drawer" style="padding-top: 50px;">
+                {{> default-snap-right }}
+            </div>
+        </div>
+
+        <div id="content" class="snap-content">
+
+            <!-- Body - Content -->
+            <a id="page-top" name="page-top" class="anchor-page-top">&nbsp;</a>
+
+            <div class="container-print">
+                <div>
+                    <a><img src="{{assets}}/img/logo-big.png" alt="{{configSite.name}}" height="50" /></a>
+                </div>
+            </div>
+
+            <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+            <div class="scroll-bottom page-scroll">
+                <a class="btn btn-xs btn-primary" href="#page-bottom">
+                    <i class="twj twj-fa-chevron-down"></i>
+                </a>
+            </div>
+
+            <!-- Body - Like Include PJAX -->
+            <div class="main-included" lang="{{#if lang}}{{lang}}{{else}}{{configSite.lang}}{{/if}}">
+                {{> body }}
+            </div>
+
+            <!-- Footer -->
+            {{> partial-footer }}
+
+            <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+            <div class="scroll-top page-scroll hidden">
+                <a class="btn btn-xs btn-primary" href="#page-top">
+                    <i class="twj twj-fa-chevron-up"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- jQuery - JavaScript -->
+        <script src="{{assets}}/lib/jquery/jquery{{config.minExtPrefix}}.js"></script>
+        <!-- Bootstrap - JavaScript -->
+        <script src="{{assets}}/lib/bootstrap/js/bootstrap{{config.minExtPrefix}}.js"></script>
+
+        <!-- Other Plugins - JavaScript -->
+
+        <!-- Helper to access to HTML classes -->
+        <script src="{{assets}}/lib/classie/classie.js"></script>
+        <!-- Holderjs : Image Place Holder -->
+        <script src="{{assets}}/lib/holderjs/holder{{config.minExtPrefix}}.js"></script>
+
+        <!-- MAIN aggregated - JavaScript -->
+
+        <!-- Main : General -->
+        <script src="{{assets}}/js/main{{config.minExtPrefix}}.js"></script>
+        <!-- Main Core : Common library -->
+        <script src="{{assets}}/js/core{{config.minExtPrefix}}.js"></script>
+        <!-- Main App : Specific to current App library -->
+        <script src="{{assets}}/js/app{{config.minExtPrefix}}.js"></script>
+        <!-- Main WebApp : Specific to current Web App library -->
+        <script src="{{assets}}/js/webapp{{config.minExtPrefix}}.js"></script>
+
+        <!-- Platform - JavaScript -->
+        <script src="{{assets}}/lib/snapjs/snap{{config.minExtPrefix}}.js"></script>
+        <script src="{{assets}}/js/specifics/mod-snap{{config.minExtPrefix}}.js"></script>
+
+        <!-- SPECIFICS - JavaScript -->
+
+        <!-- Specific CDN Footer JavaScript -->
+        {{#if footerCdnJavascripts}}
+        {{helper-cdn footerCdnJavascripts}}
+        {{/if}}
+
+        <!-- Specific Local Footer JavaScript -->
+        {{#if footerJavascripts}}
+        {{helper-js footerJavascripts}}
+        {{/if}}
+
+        {{#if config.livereload}}
+        <!-- LiveReload : With Grunt Watch, enables automatic reload of the page, and avoid using F5 -->
+        <script src="http://localhost:35729/livereload.js"></script>
+        {{/if}}
+
+        <!-- Google Analytics : {{configSite.name}} -->
+        {{> partial-analytics }}
+    </body>
+</html>

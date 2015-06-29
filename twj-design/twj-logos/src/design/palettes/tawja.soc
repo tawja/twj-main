@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<office:color-table xmlns:office="http://openoffice.org/2000/office" xmlns:style="http://openoffice.org/2000/style" xmlns:text="http://openoffice.org/2000/text" xmlns:table="http://openoffice.org/2000/table" xmlns:draw="http://openoffice.org/2000/drawing" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="http://openoffice.org/2000/meta" xmlns:number="http://openoffice.org/2000/datastyle" xmlns:svg="http://www.w3.org/2000/svg" xmlns:chart="http://openoffice.org/2000/chart" xmlns:dr3d="http://openoffice.org/2000/dr3d" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="http://openoffice.org/2000/form" xmlns:script="http://openoffice.org/2000/script">
+
+    <draw:color draw:name="Black" draw:color="#000000"/>
+    <draw:color draw:name="White" draw:color="#ffffff"/>
+
+    <draw:color draw:name="Main Blue (dark)" draw:color="#006699"/>
+    <draw:color draw:name="Main Blue (light)" draw:color="#6699ff"/>
+
+    <draw:color draw:name="Error (dark)" draw:color="#cc0000"/>
+    <draw:color draw:name="Error (light)" draw:color="#ff6666"/>
+    <draw:color draw:name="Warning (dark)" draw:color="#f57900"/>
+    <draw:color draw:name="Warning (light)" draw:color="#ff9966"/>
+    <draw:color draw:name="Succes (dark)" draw:color="#73d216"/>
+    <draw:color draw:name="Succes (light)" draw:color="#66ff66"/>
+    <draw:color draw:name="Info (dark)" draw:color="#3465a4"/>
+    <draw:color draw:name="Info (light)" draw:color="#6666ff"/>
+
+    <draw:color draw:name="Black Grey (dark)" draw:color="#333333"/>
+    <draw:color draw:name="Black Grey (light)" draw:color="#666666"/>
+    <draw:color draw:name="Grey (dark)" draw:color="#999999"/>
+    <draw:color draw:name="Grey (light)" draw:color="#cccccc"/>
+
+    <draw:color draw:name="Theme 01 (dark)" draw:color="#990033"/>
+    <draw:color draw:name="Theme 01 (light)" draw:color="#ff66cc"/>
+    <draw:color draw:name="Theme 02 (dark)" draw:color="#993300"/>
+    <draw:color draw:name="Theme 02 (light)" draw:color="#ffcc66"/>
+    <draw:color draw:name="Theme 03 (dark)" draw:color="#339900"/>
+    <draw:color draw:name="Theme 03 (light)" draw:color="#ccff66"/>
+    <draw:color draw:name="Theme 04 (dark)" draw:color="#009933"/>
+    <draw:color draw:name="Theme 04 (light)" draw:color="#66ff99"/>
+    <draw:color draw:name="Theme 05 (dark)" draw:color="#003399"/>
+    <draw:color draw:name="Theme 05 (light)" draw:color="#3399ff"/>
+    <draw:color draw:name="Theme 06 (dark)" draw:color="#330099"/>
+    <draw:color draw:name="Theme 06 (light)" draw:color="#cc66ff"/>
+
+    <draw:color draw:name="Phase 01 (dark)" draw:color="#cc0033"/>
+    <draw:color draw:name="Phase 01 (light)" draw:color="#ff6699"/>
+    <draw:color draw:name="Phase 02 (dark)" draw:color="#cc9900"/>
+    <draw:color draw:name="Phase 02 (light)" draw:color="#ffff99"/>
+    <draw:color draw:name="Phase 03 (dark)" draw:color="#00cc66"/>
+    <draw:color draw:name="Phase 03 (light)" draw:color="#66ffcc"/>
+    <draw:color draw:name="Phase 04 (dark)" draw:color="#0066cc"/>
+    <draw:color draw:name="Phase 04 (light)" draw:color="#66ccff"/>
+    <draw:color draw:name="Phase 05 (dark)" draw:color="#3300cc"/>
+    <draw:color draw:name="Phase 05 (light)" draw:color="#9966ff"/>
+    <draw:color draw:name="Phase 06 (dark)" draw:color="#9900cc"/>
+    <draw:color draw:name="Phase 06 (light)" draw:color="#ff66ff"/>
+
+</office:color-table>

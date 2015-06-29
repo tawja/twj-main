@@ -1,0 +1,28 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+'left to right direction
+
+package ModuleNetwork {
+    class MessageInfo #DDDDDD
+    note bottom : Linked to User and Person
+    class MessageType #FFFFFF
+    note bottom : Configurable : Communication, Qestion, Information, ...
+    class Message #FDFDAA
+    class CommentInfo #DDDDDD
+    note bottom : Linked to User
+    class CommentType #FFFFFF
+    note bottom : Message without target.\nConfigurable : Like, Error, Opinion, ...
+    class Comment #FDFDAA
+
+    Message "1" -- "1" MessageInfo
+    MessageInfo "*" -- "1" MessageType
+    Comment "1" -- "1" CommentInfo
+    CommentInfo "*" -- "1" CommentType
+}
+
+'MessageInfo "*" -- "1" User : sender
+'CommentInfo "*" -- "1" User : sender
+'MessageInfo "*" -- "1..*" Person : target
+
+@enduml

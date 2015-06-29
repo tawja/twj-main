@@ -1,0 +1,411 @@
+---
+title: Home
+stylesheets:
+- lib/yamm3/yamm.css
+- lib/animate.css/animate.css
+- css/specifics/mod-yamm.css
+footerJavascripts:
+- lib/jquery_appear/jquery.appear.js
+- js/specifics/mod-appear.js
+- lib/jqBootstrapValidation/jqBootstrapValidation-1.3.7.min.js
+- js/specifics/mod-sendmail-contact.js
+---
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="intro-text animated fadeInDown">
+                    <span class="name">Methodology &amp; Toolbox to build modular modern applications</span>
+                    <span class="skills">Open-Source project under Apache License 2.0</span>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="intro-text animated fadeInDown">
+                    <span class="info">Written in Java, HTML5 and Javascript loaded into an OSGi container.</span>
+                    <span class="info">Using Felix, Restlet, Bootstrap, JQuery, AngularJs, Cordova and ...</span>
+                    <span class="info">Built with Ant, Maven, Grunt and Bower.</span>
+                    <span class="info">Tested with JUnit, PaxExam and Karma.</span>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 animated fadeIn">
+                <span class="text-center">
+					<img style="display: block; max-width:480px; max-height:160px; width: 100% !important; height: auto !important;" src="{{assets}}/img/default/pictures/twj-main-03.png"/>
+                </span>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 animated fadeInUp">
+                <p class="name"><strong>More than a technical stuff!</strong> Tawja suggest a way to work in a professional context.</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<hr class="toc-separator invisible" />
+
+<!-- Navigation -->
+<div class="toc-bar-container">
+    <div id="toc-bar" class="navbar navbar-default navbar-top-panel" data-spy="affix" data-target=".snap-content" data-offset-top="450">
+        <div class="">
+            <div id="toc-scroll-target" class="container">
+                <!--
+                <button type="button" class="navbar-toggle collapsed toc-navbar-toggle" data-toggle="collapse" data-target="#toc-navbar">
+                    <span class="sr-only">Toggle Shortcuts</span>
+                    <span class="twj twj-fw twj-fa-bookmark"></span>
+                </button>
+                -->
+                <div class="collapse navbar-collapse  toc-navbar-collapse" id="toc-navbar">
+                    <ul id="toc" class="nav navbar-nav">
+                        <li class="page-scroll">
+                            <a href="#page-top"><span class="twj twj-gi-home"></span></a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#Introduction"><span class="twj twj-fa-play"></span>Introduction</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#Architecture"><span class="twj twj-fa-puzzle-piece"></span>Architecture</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#Tools"><span class="twj twj-fa-gears"></span>Tools</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#Releases"><span class="twj twj-fa-cubes"></span>Releases</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#Licenses"><span class="twj twj-fa-institution"></span>Licenses</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#ContactUs"><span class="twj twj-fa-send"></span> Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ValueAdded Title Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3>
+                    <a id="ValueAdded" class="anchor">&nbsp;</a>
+                    A clear and modular way to build modern applications,
+                    <br/>
+                    portable and easy to use from any device.
+                </h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ValueAdded Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 text-center animated fadeInLeft">
+                <img class="img-circle" style="border: 1px solid #666666;" width="100" height="100" src="{{assets}}/img/default/pictures/twj-value-added-01.png"/>
+                <h4>Ready to use</h4>
+                <p class="text-justify">
+                    {{> snippet-lorem-sentence }}
+                </p>
+            </div>
+            <div class="col-sm-4 text-center animated fadeInUp">
+                <img class="img-circle" style="border: 1px solid #666666;" width="100" height="100" src="{{assets}}/img/default/pictures/twj-value-added-02.png"/>
+                <h4>Organized for different skills</h4>
+                <p class="text-justify">
+                    {{> snippet-lorem-sentence }}
+                </p>
+            </div>
+            <div class="col-sm-4 text-center animated fadeInRight">
+                <img class="img-circle" style="border: 1px solid #666666;" width="100" height="100" src="{{assets}}/img/default/pictures/twj-value-added-03.png"/>
+                <h4>Modular for client and server side</h4>
+                <p class="text-justify">
+                    {{> snippet-lorem-sentence }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction Title Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="section"><a id="Introduction" class="anchor">&nbsp;</a>Introduction</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction Graph Section -->
+<section class="section-01-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <p><strong>...</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction Schema Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center" data-ride="animated" data-animation="fadeIn">
+                <img data-src="holder.js/300x160/gray" width="300" height="160" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" data-holder-rendered="true" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction Content Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div>
+                    <p>
+                        {{> snippet-lorem-paragraph }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Architecture Title Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="section"><a id="Architecture" class="anchor">&nbsp;</a>Architecture</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Architecture Graph Section -->
+<section class="section-02-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <p><strong>...</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Architecture Schema Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center" data-ride="animated" data-animation="fadeIn">
+                <img data-src="holder.js/480x300/gray/auto" style="max-width:480px; max-height:300px; width: 100% !important; height: auto !important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" data-holder-rendered="true" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Architecture Content Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div>
+                    <p>
+                        {{> snippet-lorem-paragraph }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tools Title Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="section"><a id="Tools" class="anchor">&nbsp;</a>Tools</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tools Graph Section -->
+<section class="section-03-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <p><strong>...</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tools Schema Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center" data-ride="animated" data-animation="fadeIn">
+                <img data-src="holder.js/300x160/gray" width="300" height="160" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" data-holder-rendered="true" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tools Content Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div>
+                    <p>
+                        {{> snippet-lorem-paragraph }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Releases Title Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="section"><a id="Releases" class="anchor">&nbsp;</a>Releases</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Releases Graph Section -->
+<section class="section-04-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <p><strong>...</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Releases Schema Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center" data-ride="animated" data-animation="fadeIn">
+                <img data-src="holder.js/300x160/gray" width="300" height="160" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" data-holder-rendered="true" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Releases Content Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div>
+                    <p>
+                        {{> snippet-lorem-paragraph }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Licenses Title Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="section"><a id="Licenses" class="anchor">&nbsp;</a>Licenses</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Licenses Graph Section -->
+<section class="section-05-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <p><strong>...</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Licenses Schema Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center" data-ride="animated" data-animation="fadeIn">
+                <img data-src="holder.js/300x160/gray" width="300" height="160" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" data-holder-rendered="true" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Licenses Content Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div>
+                    <p>
+                        {{> snippet-lorem-paragraph }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ContactUs Title Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="section"><a id="ContactUs" class="anchor">&nbsp;</a>Contact Us</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ContactUs Graph Section -->
+<section class="section-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <p><strong>Do not hesitate to contact us, we will answer you as soon as possible.</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ContactUs Content Section -->
+<section class="section-white-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                {{> partial-sendmail-contact-en }}
+            </div>
+        </div>
+    </div>
+</section>

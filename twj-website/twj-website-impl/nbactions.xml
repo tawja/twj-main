@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Install NotRecursive</actionName>
+            <displayName>Install Not Recursive</displayName>
+            <recursive>false</recursive>
+            <goals>
+                <goal>install</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-Deploy All</actionName>
+            <displayName>Deploy All</displayName>
+            <goals>
+                <goal>deploy</goal>
+            </goals>
+        </action>
+    </actions>

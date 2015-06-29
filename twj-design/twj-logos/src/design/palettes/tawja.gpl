@@ -1,0 +1,56 @@
+GIMP Palette
+Name: Tawja Palette
+Columns: 2
+#
+  0   0   0	Black
+255 255 255	White
+  0   0   0	-
+  0   0   0	-
+  0 102 153	Main Blue (dark)
+102 153	255	Main Blue (light)
+  0   0   0	-
+  0   0   0	-
+255   0  51	Error (dark)
+255 102 102	Error (light)
+255 102   0	Warning (dark)
+255 153 102	Warning (light)
+  0 204  51	Succes (dark)
+102 255 102	Succes (light)
+ 51   0 204	Info (dark)
+102 102 255	Info (light)
+  0   0   0	-
+  0   0   0	-
+ 51  51  51	Black Grey (dark)
+102 102 102	Black Grey (light)
+153 153 153	Grey (dark)
+204 204 204	Grey (light)
+  0   0   0	-
+  0   0   0	-
+204   0 102	Theme 01 (dark)
+255 102 204	Theme 01 (light)
+204 102   0	Theme 02 (dark)
+255 204 102	Theme 02 (light)
+102 204   0	Theme 03 (dark)
+204 255 102	Theme 03 (light)
+  0 204 102	Theme 04 (dark)
+102 255 153	Theme 04 (light)
+  0 102 204	Theme 05 (dark)
+ 51 153 255	Theme 05 (light)
+102   0 204	Theme 06 (dark)
+204 102 255	Theme 06 (light)
+  0   0   0	-
+  0   0   0	-
+255   0 102	Phase 01 (dark)
+255 102 153	Phase 01 (light)
+255 204   0	Phase 02 (dark)
+255 255 153	Phase 02 (light)
+ 51 255 153	Phase 03 (dark)
+102 255 204	Phase 03 (light)
+ 51 153 255	Phase 04 (dark)
+102 204 255	Phase 04 (light)
+102   0 255	Phase 05 (dark)
+153 102 255	Phase 05 (light)
+204   0 255	Phase 06 (dark)
+255 102 255	Phase 06 (light)
+  0   0   0	-
+  0   0   0	-

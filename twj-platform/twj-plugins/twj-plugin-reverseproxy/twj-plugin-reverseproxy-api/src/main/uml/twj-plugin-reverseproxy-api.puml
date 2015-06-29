@@ -1,0 +1,41 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+'left to right direction
+
+package "org.tawja.platform.plugins.database.api" {
+    enum TwjServerStatus
+    interface TwjReverseProxy
+    interface TwjReverseProxyCommand
+    interface TwjReverseProxyContainer
+    interface TwjReverseProxyControler
+    interface TwjReverseProxyFactory
+    note top : Implentations for embeded servers.\n(ex: hsqldb, h2, derby, orientdb, ...)
+    interface TwjReverseProxyServer
+
+    interface TwjReverseProxyService {
+        +Map<String, TwjReverseProxyFactory> getFactories()
+        +void createServer(...)
+    }
+
+    TwjReverseProxyCommand "0..*" --> "1" TwjReverseProxyService
+
+    'TwjReverseProxyService "1" --> "1" TwjReverseProxyContainer
+    TwjReverseProxyService "1" --> "1" TwjReverseProxyControler
+    TwjReverseProxyControler "1" --> "1" TwjReverseProxyContainer
+    TwjReverseProxyControler "1" o--> "0..*" TwjReverseProxyFactory
+
+    TwjReverseProxyContainer "1" o--> "0..*" TwjReverseProxyServer
+    TwjReverseProxyServer "1" o--> "0..*" TwjReverseProxy
+
+    TwjReverseProxyServer "*" -- "1" TwjServerStatus
+
+    TwjReverseProxyFactory .down.> TwjReverseProxyServer : "Create"
+    TwjReverseProxyFactory .down.> TwjReverseProxy : "Create"
+
+    mix_actor XXX
+    XXX .right.> TwjReverseProxyCommand : Use
+    XXX .down.> TwjReverseProxyService : Call
+}
+
+@enduml

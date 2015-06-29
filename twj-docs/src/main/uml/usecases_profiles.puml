@@ -1,0 +1,14 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+'left to right direction
+:User:
+:User: <|-- :Buyer:
+:Registered User:
+:User: <|-- :Registered User:
+:Registered User: <|-- :Manager:
+:Manager: <|-- :Seller:
+:Registered User: <|-- :Coordinator:
+:Registered User: <|-- :Contributor:
+:Registered User: <|-- :StakeHolder:
+@enduml

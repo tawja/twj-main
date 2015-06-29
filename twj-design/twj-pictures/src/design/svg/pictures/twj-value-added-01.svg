@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   id="svg6927"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="twj-value-added-01.svg">
+  <defs
+     id="defs6929">
+    <filter
+       inkscape:label="Inner Shadow"
+       inkscape:menu="Shadows and Glows"
+       inkscape:menu-tooltip="Adds a colorizable drop shadow inside"
+       color-interpolation-filters="sRGB"
+       id="filter7240">
+      <feGaussianBlur
+         stdDeviation="2"
+         result="result8"
+         id="feGaussianBlur7242" />
+      <feOffset
+         dx="2"
+         dy="2"
+         result="result11"
+         id="feOffset7244" />
+      <feComposite
+         result="result6"
+         in="SourceGraphic"
+         operator="in"
+         in2="result11"
+         id="feComposite7246" />
+      <feFlood
+         result="result10"
+         in="result6"
+         flood-opacity="1"
+         flood-color="rgb(0,0,0)"
+         id="feFlood7248" />
+      <feBlend
+         mode="normal"
+         in2="result10"
+         id="feBlend7250"
+         in="result6" />
+      <feComposite
+         result="result2"
+         operator="in"
+         in2="SourceGraphic"
+         id="feComposite7252" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="-1.8293212"
+     inkscape:cy="62.803463"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid6935"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata6932">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-952.36218)">
+    <path
+       sodipodi:type="arc"
+       style="fill:#eeeeee;fill-opacity:1;stroke:none"
+       id="path3001"
+       sodipodi:cx="-120"
+       sodipodi:cy="37.5"
+       sodipodi:rx="35"
+       sodipodi:ry="37.5"
+       d="m -85,37.5 c 0,20.710678 -15.67003,37.5 -35,37.5 -19.32997,0 -35,-16.789322 -35,-37.5 0,-20.710678 15.67003,-37.5 35,-37.5 19.32997,0 35,16.789322 35,37.5 z"
+       transform="matrix(1.4285714,0,0,1.3333333,221.42857,952.36218)" />
+    <path
+       id="path4108"
+       d="m 75,1000.7194 -4.891106,-10.53169 -0.07049,0.0323 v -0.20433 l -0.04526,0.0181 0.0291,-0.0731 -19.021908,-7.74792 -20.612617,7.82939 -0.06596,-0.0259 v 0.0123 l -5.321762,7.83068 5.321762,-0.46945 v 17.53856 l 19.148648,7.5533 v 0.03 h 1.418059 v -0.03 l 19.148647,-7.5533 V 1002.852 L 75,1000.7194 z m -23.970564,-3.20538 -0.0013,-13.75834 17.160907,6.99136 -17.159614,6.76698 z m -1.558377,23.44228 -17.730589,-6.9933 v -21.86256 l 17.730589,6.99395 v 21.86191 z m 19.148647,-6.9933 -17.730589,6.9926 v -21.86057 l 3.897238,10.31247 13.833351,-5.9458 v 10.5013 z"
+       inkscape:connector-curvature="0"
+       style="fill:#666666;fill-opacity:1;filter:url(#filter7240)" />
+  </g>
+</svg>

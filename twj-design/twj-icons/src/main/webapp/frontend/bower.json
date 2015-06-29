@@ -1,0 +1,9 @@
+{
+  "name": "twj-design-icons",
+  "dependencies": {
+    "bootstrap": "^3.3.2",
+    "font-awesome": "^4.3.0",
+    "elusive-iconfont": "git://github.com/reduxframework/elusive-iconfont.git#master",
+	"ionicons": "^2.0.1"
+  }
+}

@@ -1,0 +1,53 @@
+@startuml
+!include %TAWJA_HOME%/utils/uml/twj-plantuml-skin.iuml
+
+'left to right direction
+
+autonumber "<b>[00]"
+
+actor UserOrServer
+
+box "WorkspaceServer"
+	participant MasterDeployer
+end box
+
+box "ServerN"
+	participant ChildDeployer
+end box
+
+box "MonitorServer"
+	participant Monitor
+end box
+
+== Registration ==
+
+MasterDeployer -> Monitor : registerDeployer(master)
+note right Monitor : File:IP:Hostname
+ChildDeployer -> Monitor : registerSystemDeployer(child)
+note right Monitor : File:IP:Hostname
+
+... <color red>Wait for a Command</color> ...
+
+== CommandExecution ==
+
+UserOrServer -> MasterDeployer : sendCommand()
+note right MasterDeployer : File:CommandName:Parameters
+MasterDeployer -> Monitor : getServerList()
+note right Monitor : FROM File:IP:Hostname
+activate MasterDeployer
+Monitor -> MasterDeployer : ServerList
+MasterDeployer -> MasterDeployer : dispatchCommand()
+MasterDeployer -> ChildDeployer : sendCommand()
+note right ChildDeployer : File:CommandName:Parameters
+ChildDeployer -> ChildDeployer : executeCommand()
+activate ChildDeployer
+ChildDeployer -> ChildDeployer : updateStatus()
+destroy ChildDeployer
+MasterDeployer -> ChildDeployer : getStatus()
+note right ChildDeployer : FROM File:Status
+ChildDeployer -> MasterDeployer : Status
+MasterDeployer -> UserOrServer : Status
+note left UserOrServer : PRINT
+destroy MasterDeployer
+
+@enduml

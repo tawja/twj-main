@@ -1,0 +1,27 @@
+<assembly xmlns="http://maven.apache.org/POM/4.0.0/assembly"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0/assembly http://maven.apache.org/xsd/assembly-1.0.0.xsd ">
+    <id>twj-generated-files</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+	<files>
+		<!-- Defaut file to avoid error : "You must set at least one file" -->
+		<file>
+			<source>pom.xml</source>
+            <outputDirectory></outputDirectory>
+			<destName>pom_info.xml</destName>
+		</file>
+	</files>
+	<fileSets>
+		<!-- Generated files -->
+        <fileSet>
+            <directory>target/generated-files</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+        </fileSet>
+   </fileSets>
+</assembly>

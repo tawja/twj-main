@@ -1,0 +1,7 @@
+Id;ModuleId;ContextName;ContextAlias;ContextPrefix;Name;Description;ProjectType;BuildType;GroupId;ArtifactId;GitOriginUrl;GitRemoteName;GitRemoteUrl;JenkinsPrefix;JenkinsCredentialId
+twj-parent;;Tawja;tawja;twj;Tawja;Design for Tawja project;maven;standard;org.tawja;parent;bitbucket.org;github;github.com;DEV-;microsfair-factory
+twj-design;;Tawja;tawja;twj;Tawja : Design;Design for Tawja project;maven;standard;org.tawja.design;parent;bitbucket.org;github;github.com;DEV-;microsfair-factory
+twj-maven-plugins;;Tawja;tawja;twj;Tawja : Maven : Plugins;Maven Plugins used for Tawja project;maven;standard;org.tawja.maven.plugins;parent;bitbucket.org;github;github.com;DEV-;microsfair-factory
+twj-maven-skins;;Tawja;tawja;twj;Tawja : Maven : Skins;Maven Skins used for Tawja project;maven;standard;org.tawja.maven.skin;parent;bitbucket.org;github;github.com;DEV-;microsfair-factory
+twj-platform;;Tawja;tawja;twj;Tawja : Platform;Main Platform for Tawja project;maven;standard;org.tawja.platform;parent;bitbucket.org;github;github.com;DEV-;microsfair-factory
+twj-distribution;twj-dist-website-std;Tawja;tawja;twj;Tawja : Distribution;Main Platform for Tawja project;maven;distribution;org.tawja.distribution;twj-dist-website-std;bitbucket.org;github;github.com;REL-;microsfair-factory

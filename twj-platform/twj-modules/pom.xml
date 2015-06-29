@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	
+    <parent>
+        <groupId>org.tawja.platform</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <!--<relativePath>../pom.xml</relativePath>-->
+    </parent>
+	
+    <groupId>org.tawja.platform.modules</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+	
+    <packaging>pom</packaging>
+
+    <name>Tawja : Platform : Modules</name>
+
+    <url>${project.organization.url}/project/maven/platform/modules/</url>
+
+    <modules>
+        <module>twj-module-website</module>
+    </modules>
+
+    <profiles>
+        <profile>
+            <id>tawja-update-home</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>${maven-antrun-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>package</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <copy todir="${tawja.home.dir}/bundles">
+                                            <fileset dir="${project.build.directory}">
+                                                <include name="*.jar"/>
+                                            </fileset>
+                                        </copy>                                    
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>tawja-update-dev-home</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>${maven-antrun-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>package</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <copy todir="${tawja.home.dev.dir}/bundles">
+                                            <fileset dir="${project.build.directory}">
+                                                <include name="*.jar"/>
+                                            </fileset>
+                                        </copy>                                    
+                                        <copy todir="${tawja.home.dev.dir}/deploy">
+                                            <fileset dir="${project.build.directory}">
+                                                <include name="*.jar"/>
+                                            </fileset>
+                                        </copy>    
+										</target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${maven-bundle-plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+						<!--
+                        <excludeDependencies>*;scope=provided|runtime</excludeDependencies>
+                        <Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
+                        <Embed-Transitive>true</Embed-Transitive>
+						-->
+                        <!--
+                        -->
+                        <_include>-src/main/resources/META-INF/${project.artifactId}.bnd</_include>
+                        <_plugin>org.apache.felix.ipojo.bnd.PojoizationPlugin;use-local-schemas=true</_plugin>
+                        <!-- Dedicated to the bundle -->
+                        <!-- No Bundle Activator as we rely on iPOJO Services definition logic
+                        <Bundle-Activator>${tawja.bundle.activator}</Bundle-Activator>
+                        -->
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <!--
+                        <Export-Package>!org.apache.felix.framework,*</Export-Package>
+                        <Import-Package>!org.apache.felix.framework,*</Import-Package>
+                        -->
+                        <!--
+                        <Export-Package>org.tawja.core</Export-Package>
+                        <Import-Package>org.tawja.api,org.osgi.framework</Import-Package>
+                        -->
+                        <!--
+                        <Import-Package>!org.apache.felix.framework,!org.osgi.*,!org.tawja.api.extension,*</Import-Package>
+                        -->
+                        <!-- Dedicated to the jar information -->
+                        <Built-By>${organization.name}</Built-By>
+                        <Specification-Title>${project.description}</Specification-Title>
+                        <Specification-Version>${tawja.specification.version}</Specification-Version>
+                        <Specification-Vendor>${organization.name}</Specification-Vendor>
+                        <Implementation-Title>${project.description}</Implementation-Title>
+                        <Implementation-Version>${project.version}</Implementation-Version>
+                        <Implementation-Vendor>${organization.name}</Implementation-Vendor>
+                    </instructions>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.felix</groupId>
+                        <artifactId>bnd-ipojo-plugin</artifactId>
+                        <version>${maven-bundle-ipojo-plugin.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${maven-shade-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <artifactSet>
+                                <includes>
+                                    <include>*:*</include>
+                                </includes>
+                            </artifactSet>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            -->
+            <plugin>
+                <groupId>org.ops4j.pax.exam</groupId>
+                <artifactId>maven-paxexam-plugin</artifactId>
+                <version>1.2.4</version>
+                <executions>
+                    <execution>
+                        <id>generate-config</id>
+                        <goals>
+                            <goal>generate-depends-file</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.ning.maven.plugins</groupId>
+                <artifactId>maven-dependency-versions-check-plugin</artifactId>
+                <version>2.0.2</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+	
+    <dependencies>
+        <dependency>
+            <groupId>org.tawja.platform.commons</groupId>
+            <artifactId>twj-commons-osgi</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- OSGi -->
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>${osgi.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.compendium</artifactId>
+            <version>${osgi.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.enterprise</artifactId>
+            <version>${osgi.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- Apache Felix OSGi Implementation -->
+        <!--
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.framework</artifactId>
+            <version>${felix.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        -->
+        
+        <!-- IPOJO -->
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.ipojo</artifactId>
+            <version>${ipojo.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.ipojo.manipulator</artifactId>
+            <version>${ipojo.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.ipojo.annotations</artifactId>
+            <version>${ipojo.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Tawja API and Core -->
+        <dependency>
+            <groupId>org.tawja.platform</groupId>
+            <artifactId>twj-api</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.tawja.platform</groupId>
+            <artifactId>twj-core</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.ipojo.handler.whiteboard</artifactId>
+            <version>1.6.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Logging SLF4J -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>mockito.version</version>
+            <scope>test</scope>
+        </dependency>
+        -->
+
+        <!-- Tawja Tests -->
+        <!--
+        <dependency>
+            <groupId>org.tawja.platform.commons</groupId>
+            <artifactId>twj-commons-tests</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        -->
+		
+        <!--       -->
+        <!-- TESTS -->
+        <!--       -->
+        <dependency>
+            <groupId>org.tawja.platform.tests</groupId>
+            <artifactId>twj-test-dependencies</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.tawja.platform.tests</groupId>
+            <artifactId>twj-test-utils</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+	</dependencies>
+	
+</project>

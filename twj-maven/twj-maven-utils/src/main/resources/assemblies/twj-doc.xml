@@ -1,0 +1,25 @@
+<assembly xmlns="http://maven.apache.org/POM/4.0.0/assembly"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0/assembly http://maven.apache.org/xsd/assembly-1.0.0.xsd ">
+	<id>twj-doc</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<directory>target/site</directory>
+			<outputDirectory></outputDirectory>
+			<includes>
+				<include>**</include>
+			</includes>
+		</fileSet>
+        <fileSet>
+            <directory>target/model/generated-files</directory>
+            <outputDirectory>files</outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+        </fileSet>
+	</fileSets>
+</assembly>

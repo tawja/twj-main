@@ -1,0 +1,22 @@
+<assembly xmlns="http://maven.apache.org/POM/4.0.0/assembly"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0/assembly http://maven.apache.org/xsd/assembly-1.0.0.xsd ">
+    <id>twj-src</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory></directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>src/**</include>
+                <include>*.*</include>
+            </includes>
+            <excludes>
+                <exclude>catalog.xml</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
+</assembly>
