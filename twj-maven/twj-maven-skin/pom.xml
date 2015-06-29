@@ -27,6 +27,7 @@
         <module>twj-maven-skin-impl</module>
     </modules>
 
+	<!--
 	<build>
         <pluginManagement>
             <plugins>
@@ -40,7 +41,9 @@
                             <artifactId>twj-maven-skins-tools</artifactId>
                             <version>1.0.0-SNAPSHOT</version>
                         </dependency>
+						-->
                         <!-- Reflow skin requires Velocity >= 1.7  -->
+						<!--
                         <dependency>
                             <groupId>org.apache.velocity</groupId>
                             <artifactId>velocity</artifactId>
@@ -51,10 +54,12 @@
                         <generateReports>true</generateReports>
                         <inputEncoding>UTF-8</inputEncoding>
                         <outputEncoding>UTF-8</outputEncoding>
+						-->
                         <!-- Default documentation language should be english -->
                         <!--
                             <locales>en,fr</locales>
                         -->
+						<!--
                         <locales>en</locales>
                         <skipDeploy>false</skipDeploy>
                         <stagingDirectory>${tawja.home.dev.site.doc.dir}</stagingDirectory>
@@ -63,5 +68,6 @@
             </plugins>
         </pluginManagement>
     </build>
+	-->
 
 </project>

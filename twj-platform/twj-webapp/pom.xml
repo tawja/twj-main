@@ -140,7 +140,7 @@
                             <includes>**</includes>
                             <excludes>META-INF/**,WEB-INF/**</excludes>
                             <serverId>tawja-website</serverId>
-                            <url>sftp://ftp.tawja.org</url>
+                            <url>${tawja.deploy.protocol}://ftp.tawja.org</url>
                             <toDir>/home/tawja/www/${tawja.project.webdir}</toDir>
                         </configuration>
                     </execution>
