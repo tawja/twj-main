@@ -44,7 +44,7 @@
     <description>Methodology &amp; Toolbox to build modular modern applications</description>
     <inceptionYear>2015</inceptionYear>
 
-    <url>${project.organization.url}/project/maven/</url>
+    <url>${project.organization.url}/project/</url>
 	
     <modules>
         <module>twj-utils</module>
@@ -110,7 +110,7 @@
 <tawja.dm.snapshots>scp://ftp.tawja.org/home/tawja/www/repo/maven/snapshots</tawja.dm.snapshots>
         -->
         <!-- Tawja Maven Messages -->
-        <tawja.message.doc.build>Please check build documentation : http://${organization.site}/project/doc/maven.</tawja.message.doc.build>
+        <tawja.message.doc.build>Please check build documentation : http://${organization.site}/project/.</tawja.message.doc.build>
         <!-- Project SCM -->
         <!--
 <tawja.scm.site>https://github.com/tawja/twj-main/tree/master</tawja.scm.site>
@@ -532,7 +532,7 @@
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/maven/</url>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/</url>
         </site>
         <snapshotRepository>
             <uniqueVersion>false</uniqueVersion>

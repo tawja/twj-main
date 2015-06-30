@@ -83,7 +83,7 @@
                         <configuration>
                             <artifactSet>
                                 <includes>
-                                    <include>*:*</include>
+                                    <include>org.tawja.maven.skin:twj-maven-skin-base</include>
                                 </includes>
                             </artifactSet>
                         </configuration>

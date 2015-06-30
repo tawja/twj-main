@@ -19,7 +19,7 @@
 	
     <name>Tawja : Maven : Skin : Impl</name>
 
-    <url>${project.organization.url}/project/maven/maven/skins/</url>
+    <url>${project.organization.url}/project/maven/skins/</url>
 
     <modules>
         <module>twj-maven-skin-tawja</module>

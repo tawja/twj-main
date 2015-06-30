@@ -18,7 +18,7 @@
 
     <name>Tawja : Platform : Plugins</name>
 
-    <url>${project.organization.url}/project/maven/platform/plugins/</url>
+    <url>${project.organization.url}/project/platform/plugins/</url>
 
     <modules>
         <module>twj-plugin-utils</module>

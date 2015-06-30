@@ -18,7 +18,7 @@
 
     <name>Tawja : Platform : Modules</name>
 
-    <url>${project.organization.url}/project/maven/platform/modules/</url>
+    <url>${project.organization.url}/project/platform/modules/</url>
 
     <modules>
         <module>twj-module-website</module>

@@ -19,7 +19,7 @@
 	
     <name>Tawja : Design</name>
 
-    <url>${project.organization.url}/project/maven/design/</url>
+    <url>${project.organization.url}/project/design/</url>
 
     <modules>
         <module>twj-icons</module>

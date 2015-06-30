@@ -18,7 +18,7 @@
 	
     <name>Tawja : Platform : Commons</name>
 	
-    <url>${project.organization.url}/project/maven/platform/commons/</url>
+    <url>${project.organization.url}/project/platform/commons/</url>
 
     <modules>
         <module>twj-commons-osgi</module>
