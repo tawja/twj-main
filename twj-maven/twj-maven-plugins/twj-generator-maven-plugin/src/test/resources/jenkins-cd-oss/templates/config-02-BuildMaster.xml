@@ -39,7 +39,7 @@
         <options>
           <mergeRemote>origin</mergeRemote>
           <mergeTarget>master</mergeTarget>
-          <mergeStrategy>ours</mergeStrategy>
+          <mergeStrategy>default</mergeStrategy>
           <fastForwardMode>NO_FF</fastForwardMode>
         </options>
       </hudson.plugins.git.extensions.impl.PreBuildMerge>
