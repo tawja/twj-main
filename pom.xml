@@ -55,7 +55,9 @@
         <module>twj-maven</module>
         <module>twj-platform</module>
         <module>twj-website</module>
+        <!-- Done by the factory
         <module>twj-dist</module>
+        -->
     </modules>
 
     <properties>
@@ -1118,7 +1120,7 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <outputDirectory>${basedir}/src/site/resources/images/uml</outputDirectory>
+                        <outputDirectory>${project.build.directory}/site/img/uml</outputDirectory>
                         <sourceFiles>
                             <directory>${basedir}/src/main/uml</directory>
                             <includes>
