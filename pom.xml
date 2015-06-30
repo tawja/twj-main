@@ -48,6 +48,7 @@
 	
     <modules>
         <module>twj-utils</module>
+        <module>twj-maven-skin-tools</module>
         <!--<module>twj-infra</module>-->
         <module>twj-design</module>
         <module>twj-docs</module>
@@ -303,48 +304,6 @@
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
-        </profile>
-        <profile>
-            <id>tawja-site</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-site-plugin</artifactId>
-                            <version>${maven-site-plugin.version}</version>
-                            <dependencies>
-                                <dependency>
-                                    <groupId>org.tawja.maven.skin</groupId>
-                                    <artifactId>twj-maven-skin-tools</artifactId>
-                                    <version>1.0.0-SNAPSHOT</version>
-                                </dependency>
-                                <!-- Reflow skin requires Velocity >= 1.7  -->
-                                <dependency>
-                                    <groupId>org.apache.velocity</groupId>
-                                    <artifactId>velocity</artifactId>
-                                    <version>${velocity.version}</version>
-                                </dependency>
-                            </dependencies>
-                            <configuration>
-                                <generateReports>true</generateReports>
-                                <inputEncoding>UTF-8</inputEncoding>
-                                <outputEncoding>UTF-8</outputEncoding>
-                                <!-- Default documentation language should be english -->
-                                <!--
-                                    <locales>en,fr</locales>
-                                -->
-                                <locales>en</locales>
-                                <skipDeploy>false</skipDeploy>
-                                <stagingDirectory>${tawja.home.dev.site.doc.dir}</stagingDirectory>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
         </profile>
         <profile>
             <id>tawja-javadoc</id>
@@ -685,6 +644,36 @@
         </extensions>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${maven-site-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.tawja</groupId>
+                            <artifactId>twj-maven-skin-tools</artifactId>
+                            <version>1.0.0-SNAPSHOT</version>
+                        </dependency>
+                        <!-- Reflow skin requires Velocity >= 1.7  -->
+                        <dependency>
+                            <groupId>org.apache.velocity</groupId>
+                            <artifactId>velocity</artifactId>
+                            <version>${velocity.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <generateReports>true</generateReports>
+                        <inputEncoding>UTF-8</inputEncoding>
+                        <outputEncoding>UTF-8</outputEncoding>
+                        <!-- Default documentation language should be english -->
+                        <!--
+                            <locales>en,fr</locales>
+                        -->
+                        <locales>en</locales>
+                        <skipDeploy>false</skipDeploy>
+                        <stagingDirectory>${tawja.home.dev.site.doc.dir}</stagingDirectory>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-antrun-plugin</artifactId>

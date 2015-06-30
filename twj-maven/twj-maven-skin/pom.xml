@@ -22,7 +22,9 @@
     <url>${project.organization.url}/project/maven/maven/skin/</url>
 
     <modules>
+        <!-- Done at the main project root to solve cyclic dependency issue...
         <module>twj-maven-skin-tools</module>
+        -->
         <module>twj-maven-skin-base</module>
         <module>twj-maven-skin-impl</module>
     </modules>
