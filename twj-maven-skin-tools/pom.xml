@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 	
     <parent>
-        <groupId>org.tawja.maven.skin</groupId>
+        <groupId>org.tawja</groupId>
         <artifactId>parent</artifactId>
         <version>2015.06.30173418</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 
-    <groupId>org.tawja.maven.skin</groupId>
+    <groupId>org.tawja</groupId>
     <artifactId>twj-maven-skin-tools</artifactId>
     <version>2015.06.30173418</version>
 
