@@ -19,7 +19,7 @@
 	
     <name>Tawja : Maven : Skin</name>
 
-    <url>${project.organization.url}/project/maven/maven/skin/</url>
+    <url>${project.organization.url}/project/maven/skin/</url>
 
     <modules>
         <!-- Done at the main project root to solve cyclic dependency issue...

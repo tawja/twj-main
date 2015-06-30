@@ -17,7 +17,7 @@
     <name>Tawja : Maven : Plugin : ParallelExec</name>
     <description>Parallel Process Executor Maven Plugin Allows to manage a thread pool of command line executions</description>
 
-    <url>${project.organization.url}/project/maven/maven/plugins/twj-parallelexec-maven-plugin/</url>
+    <url>${project.organization.url}/project/maven/plugins/twj-parallelexec-maven-plugin/</url>
     <!--<url>${project.organization.url}/project/doc/maven/plugins/${project.artifactId}</url>-->
 
 	<!--

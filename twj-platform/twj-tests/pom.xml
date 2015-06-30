@@ -36,7 +36,7 @@
 
     <name>Tawja : Platform : Tests</name>
 
-	<url>${project.organization.url}/project/maven/platform/tests/</url>
+	<url>${project.organization.url}/project/platform/tests/</url>
 
     <modules>
         <module>twj-test-dependencies</module>

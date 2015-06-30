@@ -18,7 +18,7 @@
 
     <name>Tawja : WebSite : Impl</name>
 
-    <url>${project.organization.url}/project/maven/website/impl/</url>
+    <url>${project.organization.url}/project/website/impl/</url>
 
     <modules>
         <module>twj-website-root</module>

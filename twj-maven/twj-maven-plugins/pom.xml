@@ -19,7 +19,7 @@
 	
     <name>Tawja : Maven : Plugins</name>
 
-    <url>${project.organization.url}/project/maven/maven/plugins/</url>
+    <url>${project.organization.url}/project/maven/plugins/</url>
 
     <modules>
         <module>twj-parallelexec-maven-plugin</module>

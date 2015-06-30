@@ -19,7 +19,7 @@
 	
     <name>Tawja : Maven</name>
 
-    <url>${project.organization.url}/project/maven/maven/</url>
+    <url>${project.organization.url}/project/maven/</url>
 
 	<modules>
 		<module>twj-maven-utils</module>

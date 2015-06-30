@@ -36,7 +36,7 @@
 
     <name>Tawja : Platform</name>
 
-    <url>${project.organization.url}/project/maven/platform/</url>
+    <url>${project.organization.url}/project/platform/</url>
 
     <modules>
         <module>twj-api</module>

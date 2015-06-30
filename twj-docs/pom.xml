@@ -19,6 +19,6 @@
 	
     <name>Tawja : Documents</name>
 
-    <url>${project.organization.url}/project/maven/docs/</url>
+    <url>${project.organization.url}/project/docs/</url>
 
 </project>

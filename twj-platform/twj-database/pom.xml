@@ -19,6 +19,6 @@
 	
     <name>Tawja : Database</name>
 	
-    <url>${project.organization.url}/project/maven/platform/database/</url>
+    <url>${project.organization.url}/project/platform/database/</url>
 
 </project>
