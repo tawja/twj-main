@@ -118,14 +118,14 @@
 <tawja.scm.connexion.dev>scm:git:git@bitbucket.org:tawja/twj-main.git</tawja.scm.connexion.dev>
         -->
         <!-- Others -->
-        <tawja.deploy.protocol>ftp</tawja.deploy.protocol>
-        <!--
         <tawja.deploy.protocol>scp</tawja.deploy.protocol>
+        <!--
+        <tawja.deploy.protocol>ftp</tawja.deploy.protocol>
         <tawja.deploy.protocol>sftp</tawja.deploy.protocol>
         -->
-        <tawja.deploy.path></tawja.deploy.path>
-        <!--
         <tawja.deploy.path>/home/tawja</tawja.deploy.path>
+        <!--
+        <tawja.deploy.path></tawja.deploy.path>
         -->
         <!-- Java Versions -->
         <java.version.source>1.8</java.version.source>
