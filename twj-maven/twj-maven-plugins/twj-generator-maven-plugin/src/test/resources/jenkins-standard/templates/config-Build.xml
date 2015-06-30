@@ -8,7 +8,12 @@
   <actions/>
   <description>${project.Name} : ${project.Description} : 00 : Build and Deploy</description>
   <keepDependencies>false</keepDependencies>
-  <properties/>
+  <properties>
+    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.25">
+      <autoRebuild>false</autoRebuild>
+      <rebuildDisabled>false</rebuildDisabled>
+    </com.sonyericsson.rebuild.RebuildSettings>
+  </properties>
   <scm class="hudson.plugins.git.GitSCM" plugin="git@2.3.5">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
@@ -42,7 +47,7 @@
     <groupId>${project.GroupId}</groupId>
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
-  <goals>install site site:deploy deploy</goals>
+  <goals>deploy site site:deploy</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>

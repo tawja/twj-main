@@ -8,7 +8,12 @@
   <actions/>
   <description>${project.Name} : ${project.Description} : 01 : Build Develop Branch</description>
   <keepDependencies>false</keepDependencies>
-  <properties/>
+  <properties>
+    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.25">
+      <autoRebuild>false</autoRebuild>
+      <rebuildDisabled>false</rebuildDisabled>
+    </com.sonyericsson.rebuild.RebuildSettings>
+  </properties>
   <scm class="hudson.plugins.git.GitSCM" plugin="git@2.3.5">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
@@ -35,10 +40,9 @@
   <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
   <jdk>JDK 8</jdk>
   <triggers>
-    <hudson.triggers.SCMTrigger>
-      <spec>* 5 * * *</spec>
-      <ignorePostCommitHooks>true</ignorePostCommitHooks>
-    </hudson.triggers.SCMTrigger>
+    <com.cloudbees.jenkins.plugins.BitBucketTrigger plugin="bitbucket@1.1.0">
+      <spec></spec>
+    </com.cloudbees.jenkins.plugins.BitBucketTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <customWorkspace>/var/jenkins/workspaces/${project.Id}</customWorkspace>
@@ -49,10 +53,10 @@
   <goals>install</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
-  <ignoreUpstremChanges>true</ignoreUpstremChanges>
-  <archivingDisabled>false</archivingDisabled>
-  <siteArchivingDisabled>false</siteArchivingDisabled>
-  <fingerprintingDisabled>false</fingerprintingDisabled>
+  <ignoreUpstremChanges>false</ignoreUpstremChanges>
+  <archivingDisabled>true</archivingDisabled>
+  <siteArchivingDisabled>true</siteArchivingDisabled>
+  <fingerprintingDisabled>true</fingerprintingDisabled>
   <resolveDependencies>false</resolveDependencies>
   <processPlugins>false</processPlugins>
   <mavenValidationLevel>-1</mavenValidationLevel>

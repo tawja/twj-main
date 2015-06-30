@@ -13,6 +13,10 @@
       <changeBUILDID>true</changeBUILDID>
       <pattern>yyyy.MM.ddHHmmss</pattern>
     </hudson.plugins.zentimestamp.ZenTimestampJobProperty>
+    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.25">
+      <autoRebuild>false</autoRebuild>
+      <rebuildDisabled>false</rebuildDisabled>
+    </com.sonyericsson.rebuild.RebuildSettings>
   </properties>
   <scm class="hudson.plugins.git.GitSCM" plugin="git@2.3.5">
     <configVersion>2</configVersion>
@@ -53,7 +57,7 @@
     <groupId>${project.GroupId}</groupId>
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
-  <goals>install</goals>
+  <goals>deploy</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>true</ignoreUpstremChanges>
@@ -80,15 +84,25 @@
       <intervalNumToKeep>-1</intervalNumToKeep>
       <regexp></regexp>
     </org.jenkinsci.plugins.discardbuild.DiscardBuildPublisher>
-    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.26">
+    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.27">
       <configs>
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-              <properties>BUILD_VERSION=${r"${BUILD_TIMESTAMP}"}</properties>
+              <properties>BUILD_VERSION=v${r"${BUILD_TIMESTAMP}"}</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
           </configs>
           <projects>${project.Id}-02-MavenSite</projects>
+          <condition>UNSTABLE_OR_BETTER</condition>
+          <triggerWithNoParameters>false</triggerWithNoParameters>
+        </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+        <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+          <configs>
+            <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+              <properties>BUILD_VERSION=v${r"${BUILD_TIMESTAMP}"}</properties>
+            </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+          </configs>
+          <projects>${project.Id}-03-DeployPROD</projects>
           <condition>UNSTABLE_OR_BETTER</condition>
           <triggerWithNoParameters>false</triggerWithNoParameters>
         </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
@@ -96,7 +110,6 @@
     </hudson.plugins.parameterizedtrigger.BuildTrigger>
   </publishers>
   <buildWrappers/>
-  <prebuilders>
   <prebuilders>
     <hudson.tasks.Maven>
       <targets>clean</targets>
@@ -106,10 +119,9 @@
       <settings class="jenkins.mvn.DefaultSettingsProvider"/>
       <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
     </hudson.tasks.Maven>
-  </prebuilders>
-  <hudson.tasks.Maven>
+    <hudson.tasks.Maven>
       <targets>versions:update-parent versions:set -DgenerateBackupPoms=false -DnewVersion=${r"${BUILD_TIMESTAMP}"} </targets>
-      <mavenName>Maven</mavenName>
+      <mavenName>Maven 3</mavenName>
       <usePrivateRepository>false</usePrivateRepository>
       <settings class="jenkins.mvn.DefaultSettingsProvider"/>
       <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
