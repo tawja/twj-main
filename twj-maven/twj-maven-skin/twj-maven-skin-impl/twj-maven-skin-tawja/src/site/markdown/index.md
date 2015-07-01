@@ -128,4 +128,4 @@ The source code is [available on GitHub][twj-src].
 Look for the site configuration and web page sources in `/src/site` of each module;
 and for plug-in configuration in respective POM files.
 
-[twj-src]: http://github.com/tawja/twj-maven-skins "Tawja Maven Skin source code"
+[twj-src]: http://github.com/tawja/twj-maven-skin "Tawja Maven Skin source code"

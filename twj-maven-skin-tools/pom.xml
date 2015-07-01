@@ -18,6 +18,16 @@
     <name>Tawja : Maven : Skin Tools</name>
     <description>Tools (Velocity, ...) supporting Tawja Maven skin</description>
 
+	<url>${project.organization.url}/project/maven/skin/twj-maven-skin-tools/</url>
+	
+    <distributionManagement>
+        <site>
+            <id>tawja-website</id>
+            <name>Tawja Documentation Website</name>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/maven/skin/twj-maven-skin-tools/</url>
+        </site>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.velocity</groupId>

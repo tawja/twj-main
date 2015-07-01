@@ -50,15 +50,15 @@
     <groupId>${project.GroupId}</groupId>
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
-  <goals>deploy</goals>
+  <goals>deploy -DskipITs</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
   <archivingDisabled>true</archivingDisabled>
   <siteArchivingDisabled>true</siteArchivingDisabled>
-  <fingerprintingDisabled>true</fingerprintingDisabled>
-  <resolveDependencies>false</resolveDependencies>
-  <processPlugins>false</processPlugins>
+  <fingerprintingDisabled>false</fingerprintingDisabled>
+  <resolveDependencies>true</resolveDependencies>
+  <processPlugins>true</processPlugins>
   <mavenValidationLevel>-1</mavenValidationLevel>
   <runHeadless>false</runHeadless>
   <disableTriggerDownstreamProjects>true</disableTriggerDownstreamProjects>
