@@ -27,4 +27,12 @@
         <module>twj-generator-maven-plugin</module>
     </modules>
 
+    <distributionManagement>
+        <site>
+            <id>tawja-website</id>
+            <name>Tawja Documentation Website</name>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/plugins/</url>
+        </site>
+    </distributionManagement>
+
 </project>

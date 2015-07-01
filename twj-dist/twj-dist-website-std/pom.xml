@@ -97,16 +97,16 @@
                     </execution>
                 </executions>
             </plugin>
+			<!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>${maven-deploy-plugin.version}</version>
-                <!-- Remove during simple site deployment
-                -->
                 <configuration>
                     <skip>true</skip>
                 </configuration>
-            </plugin>            
+            </plugin>
+			-->           
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>wagon-maven-plugin</artifactId>

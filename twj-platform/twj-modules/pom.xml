@@ -24,6 +24,14 @@
         <module>twj-module-website</module>
     </modules>
 
+    <distributionManagement>
+        <site>
+            <id>tawja-website</id>
+            <name>Tawja Documentation Website</name>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/platform/modules/</url>
+        </site>
+    </distributionManagement>
+
     <profiles>
         <profile>
             <id>tawja-update-home</id>

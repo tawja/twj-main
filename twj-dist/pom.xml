@@ -23,8 +23,8 @@
     <modules>
         <module>twj-dist-website-std</module>
         <module>twj-dist-webapp-std</module>
-		<!--
         <module>twj-dist-karaf-std</module>
+		<!--
         <module>twj-dist-karaf-light</module>
 		-->
         <!--
@@ -32,5 +32,13 @@
 <module>twj-dist-platform</module>
         -->
     </modules>
+
+    <distributionManagement>
+        <site>
+            <id>tawja-website</id>
+            <name>Tawja Documentation Website</name>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/dist/</url>
+        </site>
+    </distributionManagement>
 
 </project>
