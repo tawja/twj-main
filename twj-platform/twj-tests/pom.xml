@@ -44,5 +44,14 @@
         <module>twj-test-global</module>
     </modules>
 
+    <distributionManagement>
+        <site>
+            <id>tawja-website</id>
+            <name>Tawja Documentation Website</name>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/platform/tests/</url>
+        </site>
+    </distributionManagement>
+
+
 </project>
 

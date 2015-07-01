@@ -21,11 +21,19 @@
 
     <url>${project.organization.url}/project/maven/</url>
 
-	<modules>
-		<module>twj-maven-utils</module>
-		<module>twj-maven-plugins</module>
-		<!-- <module>twj-maven-archetypes</module> -->
-		<module>twj-maven-skin</module>
-	</modules>
+    <modules>
+        <module>twj-maven-utils</module>
+        <module>twj-maven-plugins</module>
+        <!-- <module>twj-maven-archetypes</module> -->
+        <module>twj-maven-skin</module>
+    </modules>
+
+    <distributionManagement>
+        <site>
+            <id>tawja-website</id>
+            <name>Tawja Documentation Website</name>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/maven/</url>
+        </site>
+    </distributionManagement>
 
 </project>

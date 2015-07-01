@@ -21,4 +21,12 @@
 
     <url>${project.organization.url}/project/docs/</url>
 
+    <distributionManagement>
+        <site>
+            <id>tawja-website</id>
+            <name>Tawja Documentation Website</name>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/docs/</url>
+        </site>
+    </distributionManagement>
+
 </project>

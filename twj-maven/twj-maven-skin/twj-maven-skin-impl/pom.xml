@@ -19,10 +19,18 @@
 	
     <name>Tawja : Maven : Skin : Impl</name>
 
-    <url>${project.organization.url}/project/maven/skins/</url>
+    <url>${project.organization.url}/project/maven/skin/impl/</url>
 
     <modules>
         <module>twj-maven-skin-tawja</module>
     </modules>
+
+    <distributionManagement>
+        <site>
+            <id>tawja-website</id>
+            <name>Tawja Documentation Website</name>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/maven/skin/impl/</url>
+        </site>
+    </distributionManagement>
 
 </project>

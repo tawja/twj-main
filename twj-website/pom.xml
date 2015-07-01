@@ -18,12 +18,21 @@
 
     <name>Tawja : WebSite</name>
 
-    <url>${project.organization.url}/project/websites/</url>
+    <url>${project.organization.url}/project/website/</url>
 
     <modules>
         <module>twj-website-base</module>
         <module>twj-website-impl</module>
     </modules>
+
+    <distributionManagement>
+        <site>
+            <id>tawja-website</id>
+            <name>Tawja Documentation Website</name>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/platform/website/</url>
+        </site>
+    </distributionManagement>
+
 
     <build>
         <pluginManagement>

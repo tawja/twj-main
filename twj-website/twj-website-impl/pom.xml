@@ -26,6 +26,14 @@
         <module>twj-website-fr</module>
     </modules>
 
+    <distributionManagement>
+        <site>
+            <id>tawja-website</id>
+            <name>Tawja Documentation Website</name>
+            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/website/impl/</url>
+        </site>
+    </distributionManagement>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -98,46 +106,7 @@
                         </execution>
                     </executions>
                 </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>${maven-deploy-plugin.version}</version>
-                    <!-- Remove during simple site deployment
-                    -->
-                    <configuration>
-                        <skip>true</skip>
-                    </configuration>
-                </plugin>            
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>wagon-maven-plugin</artifactId>
-                    <version>${wagon-maven-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>upload-website</id>
-                            <phase>deploy</phase>
-                            <goals>
-                                <goal>upload</goal>
-                            </goals>
-                            <!-- Upload War directly to avoid latency due to huge amount of file (remove version from file name)
-                            <configuration>
-                                <fromFile>${project.build.directory}/${project.build.finalName}.war</fromFile>
-                                <serverId>tawja-website</serverId>
-                                <url>${tawja.deploy.protocol}://ftp.tawja.org</url>
-                                <toDir>/home/tawja/www-contexts</toDir>
-                            </configuration>
-                            -->
-                            <configuration>
-                                <fromDir>${project.build.directory}/webapp</fromDir>
-                                <includes>**</includes>
-                                <excludes>META-INF/**,WEB-INF/**</excludes>
-                                <serverId>tawja-website</serverId>
-                                <url>${tawja.deploy.protocol}://ftp.tawja.org</url>
-                                <toDir>/home/tawja/www/${tawja.project.webcontext}</toDir>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>        
+				<!-- TODO : Once stable - Working with Felix AND Karaf, apply the WAR and Web Bundle logic to other projects -->
                 <plugin>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${maven-war-plugin.version}</version>
