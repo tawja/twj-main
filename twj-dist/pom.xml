@@ -7,7 +7,7 @@
         <groupId>org.tawja</groupId>
         <artifactId>parent</artifactId>
         <version>2015.06.30204234</version>
-        <!--<relativePath>../twj-parent/pom.xml</relativePath>-->
+        <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.dist</groupId>

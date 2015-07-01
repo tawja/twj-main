@@ -509,6 +509,14 @@
             </roles>
         </developer>
         <developer>
+            <name>Christophe DAGUES</name>
+            <organization>Quintecia</organization>
+            <roles>
+                <role>manager</role>
+                <role>advisor</role>
+            </roles>
+        </developer>
+        <developer>
             <name>Olivier DUPACQ</name>
             <organization>Nethia</organization>
             <roles>
@@ -518,17 +526,20 @@
         </developer>
     </developers>
     
+	<!--
     <contributors>
         <contributor>
-            <name>Christophe DAGUES</name>
-            <organization>Quintecia</organization>
+            <name>FirstName LASTNAME</name>
+            <organization>Company</organization>
             <roles>
                 <role>manager</role>
                 <role>advisor</role>
+                <role>developper</role>
                 <role>tester</role>
             </roles>
         </contributor>
     </contributors>
+	-->
     
     <distributionManagement>
         <site>
