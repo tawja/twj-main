@@ -6,13 +6,13 @@
     <parent>
         <groupId>org.tawja.platform</groupId>
         <artifactId>parent</artifactId>
-        <version>2015.07.01015058</version>
+        <version>2015.07.01104751</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.platform.commons</groupId>
     <artifactId>parent</artifactId>
-    <version>2015.07.01015058</version>
+    <version>2015.07.01104751</version>
 
     <packaging>pom</packaging>
 	
