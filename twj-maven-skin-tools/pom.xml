@@ -7,13 +7,13 @@
     <parent>
         <groupId>org.tawja</groupId>
         <artifactId>parent</artifactId>
-        <version>2015.07.01104751</version>
+        <version>2015.07.01160728</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 
     <groupId>org.tawja</groupId>
     <artifactId>twj-maven-skin-tools</artifactId>
-    <version>2015.07.01104751</version>
+    <version>2015.07.01160728</version>
 
     <name>Tawja : Maven : Skin Tools</name>
     <description>Tools (Velocity, ...) supporting Tawja Maven skin</description>

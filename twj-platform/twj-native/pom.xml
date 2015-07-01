@@ -24,13 +24,13 @@
     <parent>
         <groupId>org.tawja.platform</groupId>
         <artifactId>parent</artifactId>
-        <version>2015.07.01104751</version>
+        <version>2015.07.01160728</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
     
     <groupId>org.tawja.platform</groupId>
     <artifactId>twj-native</artifactId>
-    <version>2015.07.01104751</version>
+    <version>2015.07.01160728</version>
 
     <packaging>pom</packaging>
 
@@ -69,7 +69,7 @@
                     <dependency>
                         <groupId>org.tawja.maven</groupId>
                         <artifactId>twj-maven-utils</artifactId>
-                        <version>2015.07.01104751</version>
+                        <version>2015.07.01160728</version>
                     </dependency>
                 </dependencies>
                 <executions>
