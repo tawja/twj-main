@@ -1405,6 +1405,30 @@
     </reporting>
     
     <repositories>
+        <!-- Tawja Snapshots Repository -->
+        <repository> 
+            <id>twj-snapshots-repository</id> 
+            <name>Tawja Snapshots Repository</name>
+            <url>http://www.tawja.org/repo/maven/snapshots//</url> 
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <!-- Tawja Releases Repository -->
+        <repository> 
+            <id>twj-releases-repository</id> 
+            <name>Tawja Releases Repository</name>
+            <url>http://www.tawja.org/repo/maven/releases/</url> 
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
         <!-- Main Repository -->
         <repository> 
             <id>main-releases-repository</id> 
