@@ -191,6 +191,8 @@ footer.well p,
 .navbar-nav > li > a:hover {
     padding-top: 3px;
     padding-bottom: 3px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .affix,
 .affix-top {

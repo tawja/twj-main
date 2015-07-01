@@ -148,23 +148,23 @@
         </head>
   
         <links>
-            <item name="GitHub" href="http://github.com/tawja/twj-maven-skins/" />
+            <item name="Sources" href="http://github.com/tawja/twj-maven-skins/" />
         </links>
 
         <breadcrumbs>
-            <item name="Documentation" href="http://www.tawja.org/project/doc/index.html" />
-            <item name="Maven : Skins" href="./index.html" />
+            <item name="Documentation" href="http://www.tawja.org/project/docs/index.html" />
+            <item name="Maven : Skin" href="./index.html" />
         </breadcrumbs>
   
-        <menu name="Documentation" inherit="bottom">
-            <item name="Usage" href="skin/" />
-            <item name="Configuration" href="skin/config.html" />
-            <item name="Themes" href="skin/themes/" />
-            <item name="Layouts" href="skin/layouts.html" />
-            <item name="Components" href="skin/components.html" />
-            <item name="Other" href="skin/misc.html" />
-            <item name="Multi-module site" href="skin/multi-module.html" />
-            <item name="Local resources" href="skin/resources.html" />
+        <menu name="Basis" inherit="bottom">
+            <item name="Usage" href="twj-maven-skin/index.html" />
+            <item name="Configuration" href="twj-maven-skin/config.html" />
+            <item name="Themes" href="twj-maven-skin/themes/index.html" />
+            <item name="Layouts" href="twj-maven-skin/layouts.html" />
+            <item name="Components" href="twj-maven-skin/components.html" />
+            <item name="Other" href="twj-maven-skin/misc.html" />
+            <item name="Multi-module site" href="twj-maven-skin/multi-module.html" />
+            <item name="Local resources" href="twj-maven-skin/resources.html" />
             <item name="Release Notes" href="release-notes.html" />
         </menu>
 

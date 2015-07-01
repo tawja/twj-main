@@ -60,6 +60,7 @@
             <titleTemplate>%2$s - %1$s</titleTemplate>
             <!-- Use Table of Contents at the top of the page (max 6 elements) -->
             <toc>top</toc>
+            <tocTopMax>6</tocTopMax>
             <!-- Include the documentation and tools in the top navigation (in addition to links) -->
             <topNav>Documentation|reports|parent|modules|Child Projects</topNav>
             <!-- Show project name on top left-->
@@ -119,16 +120,7 @@
         <menu ref="parent" inherit="top" />
         <menu ref="modules" inherit="top" />
         <menu name="Child Projects" inherit="top">
-            <item name="Tawja : Maven : Utils" href="maven/utils/index.html" />
-            <item name="Tawja : Maven : Skins" href="maven/skins/index.html" />
-            <item name="Tawja : Maven : Plugins" href="maven/plugins/index.html" />
-            <item name="Tawja : Design" href="design/index.html" />
-            <item name="Tawja : Documents" href="documents/index.html" />
-            <item name="Tawja : Website" href="website/index.html" />
-            <item name="Tawja : Database" href="database/index.html" />
-            <item name="Tawja : Platform" href="platform/index.html" />
-            <item name="Tawja : Modules" href="modules/index.html" />
-            <item name="Tawja : Sandbox" href="sandbox/index.html" />
+            <item name="Tawja : Distribution" href="dist/index.html" />
         </menu>
         <menu ref="parent" inherit="bottom"/>
         <menu ref="modules" inherit="bottom"/>

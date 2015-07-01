@@ -1211,7 +1211,6 @@
                     </reportSet>
                 </reportSets>
             </plugin>
-            <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
@@ -1222,7 +1221,6 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco-maven-plugin.version}</version>
             </plugin>
-            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -1409,7 +1407,7 @@
         <repository> 
             <id>twj-snapshots-repository</id> 
             <name>Tawja Snapshots Repository</name>
-            <url>http://www.tawja.org/repo/maven/snapshots//</url> 
+            <url>http://www.tawja.org/repo/maven/snapshots/</url> 
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -1573,6 +1571,31 @@
         -->
     </repositories>
     <pluginRepositories>
+        <!-- Tawja Snapshots Repository -->
+        <pluginRepository> 
+            <id>twj-snapshots-repository</id> 
+            <name>Tawja Snapshots Repository</name>
+            <url>http://www.tawja.org/repo/maven/snapshots/</url> 
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+        <!-- Tawja Releases Repository -->
+        <pluginRepository> 
+            <id>twj-releases-repository</id> 
+            <name>Tawja Releases Repository</name>
+            <url>http://www.tawja.org/repo/maven/releases/</url> 
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+		<!-- Others -->
         <pluginRepository>
             <id>maven</id>
             <name>Main Repository</name>

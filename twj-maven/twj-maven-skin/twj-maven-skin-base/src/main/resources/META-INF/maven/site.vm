@@ -1517,7 +1517,7 @@
 						<span class="icon-bar"></span>
 					</a>
 
-					<a class="navbar-brand" style="padding: 1px 50px 0px 0px;" href="${project.organization.url}">
+					<a class="navbar-brand" style="padding: 1px 15px 0px 0px;" href="${project.organization.url}">
                                             <img src="${resourcePath}/img/logo.png" alt="${project.organization.name}" />
                                         </a>
 #*
