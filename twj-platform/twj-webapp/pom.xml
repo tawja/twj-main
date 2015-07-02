@@ -6,13 +6,13 @@
     <parent>
         <groupId>org.tawja.platform</groupId>
         <artifactId>parent</artifactId>
-        <version>2015.07.01194146</version>
+        <version>2015.07.02151654</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.platform</groupId>
     <artifactId>twj-webapp</artifactId>
-    <version>2015.07.01194146</version>
+    <version>2015.07.02151654</version>
 	
     <packaging>war</packaging>
 
@@ -64,7 +64,7 @@
                     <dependency>
                         <groupId>org.tawja.maven</groupId>
                         <artifactId>twj-maven-utils</artifactId>
-                        <version>2015.07.01194146</version>
+                        <version>2015.07.02151654</version>
                     </dependency>
                 </dependencies>
                 <executions>
@@ -136,7 +136,7 @@
             <plugin>
                 <groupId>org.tawja.maven.plugins</groupId>
                 <artifactId>twj-frontend-maven-plugin</artifactId>
-                <version>2015.07.01194146</version>
+                <version>2015.07.02151654</version>
                 <executions>
                     <execution>
                         <id>create-resources</id>
@@ -170,7 +170,7 @@
         <dependency>                                    
             <groupId>org.tawja.website</groupId>
             <artifactId>twj-website-base</artifactId>
-            <version>2015.07.01194146</version>
+            <version>2015.07.02151654</version>
             <type>zip</type>
             <classifier>twj-grunt</classifier>
         </dependency>
