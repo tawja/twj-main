@@ -44,7 +44,7 @@
     <description>Methodology &amp; Toolbox to build modular modern applications</description>
     <inceptionYear>2015</inceptionYear>
 
-    <url>${project.organization.url}/project/</url>
+    <url>${project.organization.url}/project</url>
 	
     <modules>
         <module>twj-utils</module>
@@ -119,16 +119,19 @@
 <tawja.scm.connexion>scm:git@github.com:tawja/twj-main.git</tawja.scm.connexion>
 <tawja.scm.connexion.dev>scm:git:git@bitbucket.org:tawja/twj-main.git</tawja.scm.connexion.dev>
         -->
-        <!-- Others -->
+        <!-- Deployment Distribution -->
         <tawja.deploy.protocol>scp</tawja.deploy.protocol>
-        <!--
-        <tawja.deploy.protocol>ftp</tawja.deploy.protocol>
-        <tawja.deploy.protocol>sftp</tawja.deploy.protocol>
-        -->
-        <tawja.deploy.path>/home/tawja</tawja.deploy.path>
-        <!--
-        <tawja.deploy.path></tawja.deploy.path>
-        -->
+        <tawja.deploy.host>ftp.tawja.org</tawja.deploy.host>
+        <tawja.deploy.deployPath>/home/tawja/deploy</tawja.deploy.deployPath>
+        <tawja.deploy.webPath>/home/tawja/www</tawja.deploy.webPath>
+        <tawja.deploy.backupPath>/home/tawja/backup</tawja.deploy.backupPath>
+        <!-- Deployment Maven Site -->
+        <tawja.deploy.site.protocol>scp</tawja.deploy.site.protocol>
+        <tawja.deploy.site.host>ftp.tawja.org</tawja.deploy.site.host>
+        <tawja.deploy.site.webPath>/home/tawja/www</tawja.deploy.site.webPath>
+        <!-- Environment name with tawja-env-* profiles -->
+        <tawja.settings.envName>dev</tawja.settings.envName>
+        <!-- Others -->
         <!-- Java Versions -->
         <java.version.source>1.8</java.version.source>
         <java.version.target>1.8</java.version.target>
@@ -175,7 +178,7 @@
         <maven-changes-plugin.version>2.9</maven-changes-plugin.version>
         <maven-plugin-plugin.version>3.4</maven-plugin-plugin.version>
         <maven-clean-plugin.version>2.6.1</maven-clean-plugin.version>
-        <buildnumber-maven-plugin.version>1.3</buildnumber-maven-plugin.version>
+        <!--<buildnumber-maven-plugin.version>1.3</buildnumber-maven-plugin.version>-->
         <versions-maven-plugin.version>2.2</versions-maven-plugin.version>
         <!-- Doclet Plugins Versions -->
         <!-- Memo : Must install Graphviz in the PATH -->
@@ -215,6 +218,34 @@
     </properties>
     
     <profiles>
+        <!-- Environment to sub-domains -->
+        <profile>
+            <id>tawja-env-TEST</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <tawja.deploy.envName>test</tawja.deploy.envName>
+            </properties>
+        </profile>
+        <profile>
+            <id>tawja-env-UAT</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <tawja.deploy.envName>uat</tawja.deploy.envName>
+            </properties>
+        </profile>
+        <profile>
+            <id>tawja-env-PROD</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <tawja.deploy.envName>www</tawja.deploy.envName>
+            </properties>
+        </profile>
         <!-- Set Tools environment variables if not set from system environment variables -->
         <profile>
             <id>env-tools-home</id>
@@ -545,19 +576,19 @@
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/</url>
+            <url>${tawja.deploy.site.protocol}://${tawja.deploy.site.host}${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}/project</url>
         </site>
         <snapshotRepository>
             <uniqueVersion>false</uniqueVersion>
             <id>tawja-snapshots</id>
             <name>Tawja Snapshots Repository</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/repo/maven/snapshots</url>
+            <url>${tawja.deploy.protocol}://${tawja.deploy.host}/${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}/repo/maven/snapshots</url>
         </snapshotRepository>
         <repository>
             <uniqueVersion>false</uniqueVersion>
             <id>tawja-releases</id>
             <name>Tawja Releases Repository</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/repo/maven/releases</url>
+            <url>${tawja.deploy.protocol}://${tawja.deploy.host}/${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}/repo/maven/releases</url>
         </repository>
     </distributionManagement>
     
@@ -1097,27 +1128,29 @@
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>${maven-clean-plugin.version}</version>
                 </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>buildnumber-maven-plugin</artifactId>
-                    <version>${buildnumber-maven-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <phase>initialize</phase>
-                            <goals>
-                                <goal>create</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <doCheck>false</doCheck>
-                        <doUpdate>false</doUpdate>
-                        <format>{0,date,yyyyMMddHHmmss}</format>
-                        <items>
-                            <item>timestamp</item>
-                        </items>
-                    </configuration>
-                </plugin>
+                <!--
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>buildnumber-maven-plugin</artifactId>
+    <version>${buildnumber-maven-plugin.version}</version>
+    <executions>
+        <execution>
+            <phase>initialize</phase>
+            <goals>
+                <goal>create</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <doCheck>false</doCheck>
+        <doUpdate>false</doUpdate>
+        <format>{0,date,yyyyMMddHHmmss}</format>
+        <items>
+            <item>timestamp</item>
+        </items>
+    </configuration>
+</plugin>
+                -->
                 <plugin>
                     <groupId>com.github.jeluard</groupId>
                     <artifactId>plantuml-maven-plugin</artifactId>
@@ -1165,10 +1198,12 @@
                 <groupId>com.mycila</groupId>
                 <artifactId>license-maven-plugin</artifactId>
             </plugin>
+			<!--
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>buildnumber-maven-plugin</artifactId>
             </plugin>
+			-->
             <plugin>
                 <groupId>com.github.jeluard</groupId>
                 <artifactId>plantuml-maven-plugin</artifactId>
@@ -1418,7 +1453,7 @@
         <repository> 
             <id>twj-snapshots-repository</id> 
             <name>Tawja Snapshots Repository</name>
-            <url>http://www.tawja.org/repo/maven/snapshots/</url> 
+            <url>http://www.tawja.org/repo/maven/snapshots</url> 
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -1430,7 +1465,7 @@
         <repository> 
             <id>twj-releases-repository</id> 
             <name>Tawja Releases Repository</name>
-            <url>http://www.tawja.org/repo/maven/releases/</url> 
+            <url>http://www.tawja.org/repo/maven/releases</url> 
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -1442,7 +1477,7 @@
         <repository> 
             <id>main-releases-repository</id> 
             <name>Main Repository</name>
-            <url>http://repo.maven.apache.org/maven2/</url> 
+            <url>http://repo.maven.apache.org/maven2</url> 
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -1454,7 +1489,7 @@
         <repository> 
             <id>sonatype-oss-releases-repository</id> 
             <name>Sonatype OSS Public Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/releases/</url> 
+            <url>https://oss.sonatype.org/content/repositories/releases</url> 
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -1480,7 +1515,7 @@
         <repository>
             <id>ops4j.sonatype.releases.deploy</id>
             <name>OPS4J release repository</name>
-            <url>https://oss.sonatype.org/content/repositories/ops4j-releases/</url>
+            <url>https://oss.sonatype.org/content/repositories/ops4j-releases</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -1507,7 +1542,7 @@
         <repository> 
             <id>sonatype-releases-repository</id> 
             <name>Sonatype Public Releases Repository</name>
-            <url>http://repository.sonatype.org/content/repositories/releases/</url> 
+            <url>http://repository.sonatype.org/content/repositories/releases</url> 
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -1586,7 +1621,7 @@
         <pluginRepository> 
             <id>twj-snapshots-repository</id> 
             <name>Tawja Snapshots Repository</name>
-            <url>http://www.tawja.org/repo/maven/snapshots/</url> 
+            <url>http://www.tawja.org/repo/maven/snapshots</url> 
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -1598,7 +1633,7 @@
         <pluginRepository> 
             <id>twj-releases-repository</id> 
             <name>Tawja Releases Repository</name>
-            <url>http://www.tawja.org/repo/maven/releases/</url> 
+            <url>http://www.tawja.org/repo/maven/releases</url> 
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -1606,11 +1641,11 @@
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
-		<!-- Others -->
+        <!-- Others -->
         <pluginRepository>
             <id>maven</id>
             <name>Main Repository</name>
-            <url>http://repo.maven.apache.org/maven2/</url>
+            <url>http://repo.maven.apache.org/maven2</url>
             <layout>default</layout>
         </pluginRepository>
         <pluginRepository>
@@ -1627,7 +1662,7 @@
         -->
         <!--
             <pluginRepository> <id>apache-snapshots</id>
-            <url>http://people.apache.org/repo/m2-snapshot-repository/</url>
+            <url>http://people.apache.org/repo/m2-snapshot-repository</url>
             </pluginRepository>
         -->
         <!--

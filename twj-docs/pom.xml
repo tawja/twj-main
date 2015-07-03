@@ -19,13 +19,13 @@
 	
     <name>Tawja : Documents</name>
 
-    <url>${project.organization.url}/project/docs/</url>
+    <url>${project.organization.url}/project/docs</url>
 
     <distributionManagement>
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/docs/</url>
+            <url>${tawja.deploy.site.protocol}://${tawja.deploy.site.host}${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}/project/docs</url>
         </site>
     </distributionManagement>
 

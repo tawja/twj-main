@@ -18,7 +18,7 @@
 
     <name>Tawja : WebSite : Impl</name>
 
-    <url>${project.organization.url}/project/website/impl/</url>
+    <url>${project.organization.url}/project/website/impl</url>
 
     <modules>
         <module>twj-website-root</module>
@@ -30,7 +30,7 @@
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/website/impl/</url>
+            <url>${tawja.deploy.site.protocol}://${tawja.deploy.site.host}${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}/project/website/impl</url>
         </site>
     </distributionManagement>
 

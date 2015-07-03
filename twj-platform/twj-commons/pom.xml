@@ -18,7 +18,7 @@
 	
     <name>Tawja : Platform : Commons</name>
 	
-    <url>${project.organization.url}/project/platform/commons/</url>
+    <url>${project.organization.url}/project/platform/commons</url>
 
     <modules>
         <module>twj-commons-osgi</module>
@@ -28,7 +28,7 @@
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/commons/</url>
+            <url>${tawja.deploy.site.protocol}://${tawja.deploy.site.host}${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}/project/commons</url>
         </site>
     </distributionManagement>
 
