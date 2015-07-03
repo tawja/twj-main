@@ -1,7 +1,7 @@
 <@pp.dropOutputFile />
 <#assign base = "/" + pp.outputDirectory>
 <#list projects as project>
-<#if (project.Activated == "true" && (project.BuildType == "ContinuousDelivery")) >
+<#if (project.Activated == "true" && (project.BuildType == "ContinuousDelivery" || project.BuildType == "ContinuousDeliveryOSS")) >
 <@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-07-MavenRepoPROD/"+"config.xml" />
 <?xml version='1.0' encoding='UTF-8'?>
 <maven2-moduleset plugin="maven-plugin@2.10">
