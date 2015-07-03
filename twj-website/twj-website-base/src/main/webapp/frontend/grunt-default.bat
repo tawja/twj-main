@@ -1,3 +1,0 @@
-rem grunt -v
-grunt
-

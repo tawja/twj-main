@@ -54,7 +54,9 @@
         <module>twj-docs</module>
         <module>twj-maven</module>
         <module>twj-platform</module>
+		<!-- Done in a dedicated Git repository 
         <module>twj-website</module>
+		-->
         <!-- Done by the factory
         <module>twj-dist</module>
         -->

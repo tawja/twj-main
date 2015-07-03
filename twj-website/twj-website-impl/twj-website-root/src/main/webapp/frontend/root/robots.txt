@@ -1,4 +1,0 @@
-User-agent: *
-
-
-Sitemap: http://www.tawja.org/sitemap-global.xml
