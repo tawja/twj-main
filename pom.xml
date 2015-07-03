@@ -1444,7 +1444,7 @@
         <repository> 
             <id>twj-snapshots-repository</id> 
             <name>Tawja Snapshots Repository</name>
-            <url>http://www.tawja.org/repo/maven/snapshots</url> 
+            <url>http://${tawja.deploy.envName}.tawja.org/repo/maven/snapshots</url> 
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -1456,7 +1456,7 @@
         <repository> 
             <id>twj-releases-repository</id> 
             <name>Tawja Releases Repository</name>
-            <url>http://www.tawja.org/repo/maven/releases</url> 
+            <url>http://${tawja.deploy.envName}.tawja.org/repo/maven/releases</url> 
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -1612,7 +1612,7 @@
         <pluginRepository> 
             <id>twj-snapshots-repository</id> 
             <name>Tawja Snapshots Repository</name>
-            <url>http://www.tawja.org/repo/maven/snapshots</url> 
+            <url>http://${tawja.deploy.envName}.tawja.org/repo/maven/snapshots</url> 
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -1624,7 +1624,7 @@
         <pluginRepository> 
             <id>twj-releases-repository</id> 
             <name>Tawja Releases Repository</name>
-            <url>http://www.tawja.org/repo/maven/releases</url> 
+            <url>http://${tawja.deploy.envName}.tawja.org/repo/maven/releases</url> 
             <releases>
                 <enabled>true</enabled>
             </releases>
