@@ -117,6 +117,7 @@
                             <displayCommandOutputs>true</displayCommandOutputs>
                             <commands>
                                 <command>unzip -uo ${tawja.deploy.deployPath}/${tawja.deploy.envName}/${organization.domain}/${project.artifactId}-${project.version}-dist.zip -d ${tawja.deploy.webPath}/${tawja.deploy.envName}/${organization.domain}</command>
+								<command>mkdir -p ${tawja.deploy.backupPath}/${tawja.deploy.envName}</command>
                                 <command>mv ${tawja.deploy.deployPath}/${tawja.deploy.envName}/${organization.domain}/${project.artifactId}-${project.version}-dist.zip ${tawja.deploy.backupPath}/${tawja.deploy.envName}/${organization.domain}</command>
                             </commands>
                         </configuration>

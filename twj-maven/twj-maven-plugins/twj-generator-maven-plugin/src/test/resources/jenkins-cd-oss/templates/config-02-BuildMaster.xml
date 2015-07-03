@@ -62,7 +62,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
-  <goals>deploy -DskipITs</goals>
+  <goals>deploy -P tawja-env-TEST -DskipITs</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>true</ignoreUpstremChanges>
