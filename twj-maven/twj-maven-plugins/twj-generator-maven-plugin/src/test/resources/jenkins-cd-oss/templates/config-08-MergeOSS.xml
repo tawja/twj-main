@@ -2,11 +2,11 @@
 <#assign base = "/" + pp.outputDirectory>
 <#list projects as project>
 <#if (project.Activated == "true" && (project.BuildType == "ContinuousDeliveryOSS")) >
-<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-07-MergeOSS/"+"config.xml" />
+<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-08-MergeOSS/"+"config.xml" />
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>${project.Name} : ${project.Description} : 07 : Merge Master Branch to OpenSource Software Git Repository</description>
+  <description>${project.Name} : ${project.Description} : 08 : Merge Master Branch to OpenSource Software Git Repository</description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <hudson.model.ParametersDefinitionProperty>

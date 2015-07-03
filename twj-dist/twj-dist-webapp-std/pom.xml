@@ -100,7 +100,7 @@
                         </goals>
                         <configuration>
                             <serverId>tawja-website</serverId>
-                            <url>sftp://${tawja.deploy.host}/${tawja.deploy.deployPath}/${tawja.settings.envName}/${organization.domain}</url>
+                            <url>sftp://${tawja.deploy.host}/${tawja.deploy.deployPath}/${tawja.deploy.envName}/${organization.domain}</url>
                             <fromFile>${project.build.directory}/${project.artifactId}-${project.version}-twj-distribution.zip</fromFile>
                             <toFile>${project.artifactId}-${project.version}-dist.zip</toFile>
                         </configuration>
@@ -113,11 +113,11 @@
                         </goals>
                         <configuration>
                             <serverId>tawja-website</serverId>
-                            <url>sftp://${tawja.deploy.host}/${tawja.deploy.deployPath}/${tawja.settings.envName}/${organization.domain}</url>
+                            <url>sftp://${tawja.deploy.host}/${tawja.deploy.deployPath}/${tawja.deploy.envName}/${organization.domain}</url>
                             <displayCommandOutputs>true</displayCommandOutputs>
                             <commands>
-                                <command>unzip -uo ${tawja.deploy.deployPath}/${tawja.settings.envName}/${organization.domain}/${project.artifactId}-${project.version}-dist.zip -d ${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}</command>
-                                <command>mv ${tawja.deploy.deployPath}/${tawja.settings.envName}/${organization.domain}/${project.artifactId}-${project.version}-dist.zip ${tawja.deploy.backupPath}/${tawja.settings.envName}/${organization.domain}</command>
+                                <command>unzip -uo ${tawja.deploy.deployPath}/${tawja.deploy.envName}/${organization.domain}/${project.artifactId}-${project.version}-dist.zip -d ${tawja.deploy.webPath}/${tawja.deploy.envName}/${organization.domain}</command>
+                                <command>mv ${tawja.deploy.deployPath}/${tawja.deploy.envName}/${organization.domain}/${project.artifactId}-${project.version}-dist.zip ${tawja.deploy.backupPath}/${tawja.deploy.envName}/${organization.domain}</command>
                             </commands>
                         </configuration>
                     </execution>

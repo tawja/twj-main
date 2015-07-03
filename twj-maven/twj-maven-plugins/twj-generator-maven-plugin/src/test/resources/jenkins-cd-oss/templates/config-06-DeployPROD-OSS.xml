@@ -60,7 +60,15 @@
           <properties>BUILD_VERSION=${r"${BUILD_VERSION}"}</properties>
         </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
       </configs>
-      <downstreamProjectNames>${project.Id}-07-MergeOSS</downstreamProjectNames>
+      <downstreamProjectNames>${project.Id}-07-MavenRepoPROD</downstreamProjectNames>
+    </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger plugin="build-pipeline-plugin@1.4.7">
+      <configs>
+        <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.27">
+          <properties>BUILD_VERSION=${r"${BUILD_VERSION}"}</properties>
+        </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+      </configs>
+      <downstreamProjectNames>${project.Id}-08-MergeOSS</downstreamProjectNames>
     </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
   </publishers>
   <buildWrappers/>

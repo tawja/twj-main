@@ -37,7 +37,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.DistPath}/pom.xml</rootPOM>
-  <goals>deploy site site:deploy -P tawja-env-TEST</goals>
+  <goals>deploy -P tawja-env-TEST</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>true</ignoreUpstremChanges>
