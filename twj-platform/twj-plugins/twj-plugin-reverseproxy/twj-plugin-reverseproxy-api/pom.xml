@@ -24,13 +24,13 @@
     <parent>
         <groupId>org.tawja.platform.plugins</groupId>
         <artifactId>twj-plugin-reverseproxy</artifactId>
-        <version>2015.07.03161429</version>
+        <version>2015.07.03175105</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.platform.plugins</groupId>
     <artifactId>twj-plugin-reverseproxy-api</artifactId>
-    <version>2015.07.03161429</version>
+    <version>2015.07.03175105</version>
 
     <packaging>bundle</packaging>
 

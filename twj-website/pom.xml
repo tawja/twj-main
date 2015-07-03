@@ -6,13 +6,13 @@
     <parent>
         <groupId>org.tawja</groupId>
         <artifactId>parent</artifactId>
-        <version>2015.07.03161429</version>
+        <version>2015.07.03175105</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.website</groupId>
     <artifactId>parent</artifactId>
-    <version>2015.07.03161429</version>
+    <version>2015.07.03175105</version>
 	
     <packaging>pom</packaging>
 
@@ -67,7 +67,7 @@
                 <plugin>
                     <groupId>org.tawja.maven.plugins</groupId>
                     <artifactId>twj-frontend-maven-plugin</artifactId>
-                    <version>2015.07.03161429</version>
+                    <version>2015.07.03175105</version>
                     <executions>
                         <execution>
                             <id>create-resources</id>

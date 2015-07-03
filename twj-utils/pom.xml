@@ -24,13 +24,13 @@
     <parent>
         <groupId>org.tawja</groupId>
         <artifactId>parent</artifactId>
-        <version>2015.07.03161429</version>
+        <version>2015.07.03175105</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
     
     <groupId>org.tawja.utils</groupId>
     <artifactId>twj-utils</artifactId>
-    <version>2015.07.03161429</version>
+    <version>2015.07.03175105</version>
 
     <packaging>pom</packaging>
 
