@@ -19,7 +19,7 @@
 	
     <name>Tawja : Maven : Plugins</name>
 
-    <url>${project.organization.url}/project/maven/plugins/</url>
+    <url>${project.organization.url}/project/maven/plugins</url>
 
     <modules>
         <module>twj-parallelexec-maven-plugin</module>
@@ -31,7 +31,7 @@
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/maven/plugins/</url>
+            <url>${tawja.deploy.site.protocol}://${tawja.deploy.site.host}${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}/project/maven/plugins</url>
         </site>
     </distributionManagement>
 

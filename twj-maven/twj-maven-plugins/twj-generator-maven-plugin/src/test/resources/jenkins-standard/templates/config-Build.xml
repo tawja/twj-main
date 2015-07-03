@@ -47,7 +47,8 @@
     <groupId>${project.GroupId}</groupId>
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
-  <goals>deploy site site:deploy</goals>
+  <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
+  <goals>deploy site site:deploy -P tawja-env-PROD</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>

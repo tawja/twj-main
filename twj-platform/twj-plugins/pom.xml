@@ -18,7 +18,7 @@
 
     <name>Tawja : Platform : Plugins</name>
 
-    <url>${project.organization.url}/project/platform/plugins/</url>
+    <url>${project.organization.url}/project/platform/plugins</url>
 
     <modules>
         <module>twj-plugin-utils</module>
@@ -32,7 +32,7 @@
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/platform/plugins/</url>
+            <url>${tawja.deploy.site.protocol}://${tawja.deploy.site.host}${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}/project/platform/plugins</url>
         </site>
     </distributionManagement>
 

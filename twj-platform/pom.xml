@@ -36,7 +36,7 @@
 
     <name>Tawja : Platform</name>
 
-    <url>${project.organization.url}/project/platform/</url>
+    <url>${project.organization.url}/project/platform</url>
 
     <modules>
         <module>twj-api</module>
@@ -58,7 +58,7 @@
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/platform/</url>
+            <url>${tawja.deploy.site.protocol}://${tawja.deploy.site.host}${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}/project/platform</url>
         </site>
     </distributionManagement>
 

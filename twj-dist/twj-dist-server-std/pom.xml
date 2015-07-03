@@ -11,12 +11,12 @@
     </parent>
 	
     <groupId>org.tawja.dist</groupId>
-    <artifactId>twj-dist-karaf-std</artifactId>
+    <artifactId>twj-dist-server-std</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 	
     <packaging>pom</packaging>
 
-    <name>Tawja : Distribution : Karaf Standard</name>
+    <name>Tawja : Distribution : Server Standard</name>
 
     <dependencies>
         <dependency>

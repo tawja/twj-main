@@ -18,6 +18,6 @@
 	
     <name>Tawja : Maven : Utils</name>
 
-    <url>${project.organization.url}/project/maven/utils/</url>
+    <url>${project.organization.url}/project/maven/utils</url>
 
 </project>

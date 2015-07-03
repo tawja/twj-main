@@ -1,2 +1,0 @@
-# twj-design
-Tawja : Design

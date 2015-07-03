@@ -1,2 +1,0 @@
-# twj-distribution
-Tawja : Distribution

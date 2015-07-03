@@ -19,7 +19,7 @@
 	
     <name>Tawja : Maven : Skin</name>
 
-    <url>${project.organization.url}/project/maven/skin/</url>
+    <url>${project.organization.url}/project/maven/skin</url>
 
     <modules>
         <!-- Done at the main project root to solve cyclic dependency issue...
@@ -33,7 +33,7 @@
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/maven/skin/</url>
+            <url>${tawja.deploy.site.protocol}://${tawja.deploy.site.host}${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}/project/maven/skin</url>
         </site>
     </distributionManagement>
 

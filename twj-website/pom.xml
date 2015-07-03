@@ -18,7 +18,7 @@
 
     <name>Tawja : WebSite</name>
 
-    <url>${project.organization.url}/project/website/</url>
+    <url>${project.organization.url}/project/website</url>
 
     <modules>
         <module>twj-website-base</module>
@@ -29,7 +29,7 @@
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/platform/website/</url>
+            <url>${tawja.deploy.site.protocol}://${tawja.deploy.site.host}${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}/project/platform/website</url>
         </site>
     </distributionManagement>
 

@@ -1,2 +1,0 @@
-# twj-platform
-Tawja : Platform

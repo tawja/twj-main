@@ -36,7 +36,7 @@
 
     <name>Tawja : Platform : Tests</name>
 
-	<url>${project.organization.url}/project/platform/tests/</url>
+	<url>${project.organization.url}/project/platform/tests</url>
 
     <modules>
         <module>twj-test-dependencies</module>
@@ -48,7 +48,7 @@
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>${tawja.deploy.protocol}://ftp.tawja.org${tawja.deploy.path}/www/project/platform/tests/</url>
+            <url>${tawja.deploy.site.protocol}://${tawja.deploy.site.host}${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}/project/platform/tests</url>
         </site>
     </distributionManagement>
 
