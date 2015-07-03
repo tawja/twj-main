@@ -48,7 +48,9 @@
         <module>twj-native</module>
         <module>twj-database</module>
         <module>twj-server</module>
+		<!-- Done in a dedicated Git repository 
         <module>twj-webapp</module>
+		-->
         <module>twj-desktop</module>
         <module>twj-android</module>
         <module>twj-tests</module>
