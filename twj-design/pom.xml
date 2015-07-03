@@ -35,7 +35,7 @@
         <site>
             <id>tawja-website</id>
             <name>Tawja Documentation Website</name>
-            <url>${tawja.deploy.site.protocol}://${tawja.deploy.site.host}${tawja.deploy.webPath}/${tawja.settings.envName}/${organization.domain}/project/design</url>
+            <url>${tawja.deploy.site.protocol}://${tawja.deploy.site.host}${tawja.deploy.webPath}/${tawja.deploy.envName}/${organization.domain}/project/design</url>
         </site>
     </distributionManagement>
 

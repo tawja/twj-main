@@ -130,7 +130,7 @@
         <tawja.deploy.site.host>ftp.tawja.org</tawja.deploy.site.host>
         <tawja.deploy.site.webPath>/home/tawja/www</tawja.deploy.site.webPath>
         <!-- Environment name with tawja-env-* profiles -->
-        <tawja.settings.envName>dev</tawja.settings.envName>
+        <tawja.deploy.envName>dev</tawja.deploy.envName>
         <!-- Others -->
         <!-- Java Versions -->
         <java.version.source>1.8</java.version.source>
