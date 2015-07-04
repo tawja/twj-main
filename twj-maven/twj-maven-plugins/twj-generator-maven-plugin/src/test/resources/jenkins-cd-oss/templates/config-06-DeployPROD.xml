@@ -53,7 +53,16 @@
   <settings class="jenkins.mvn.DefaultSettingsProvider"/>
   <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
   <reporters/>
-  <publishers/>
+  <publishers>
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger plugin="build-pipeline-plugin@1.4.7">
+      <configs>
+        <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.27">
+          <properties>BUILD_VERSION=${r"${BUILD_VERSION}"}</properties>
+        </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+      </configs>
+      <downstreamProjectNames>${project.Id}-07-MavenRepoPROD</downstreamProjectNames>
+    </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
+  </publishers>
   <buildWrappers/>
   <prebuilders/>
   <postbuilders/>

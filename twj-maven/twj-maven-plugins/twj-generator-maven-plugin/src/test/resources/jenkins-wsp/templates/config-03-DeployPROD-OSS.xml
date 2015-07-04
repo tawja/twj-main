@@ -36,7 +36,7 @@
     <groupId>${project.GroupId}</groupId>
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
-  <rootPOM>${project.DistPath}/pom.xml</rootPOM>
+  <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
   <goals>deploy -P tawja-env-PROD -DskipTests -DskipITs</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
@@ -60,7 +60,15 @@
           <properties>BUILD_VERSION=${r"${BUILD_VERSION}"}</properties>
         </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
       </configs>
-      <downstreamProjectNames>${project.Id}-04-MergeOSS</downstreamProjectNames>
+      <downstreamProjectNames>${project.Id}-04-MavenRepoPROD</downstreamProjectNames>
+    </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger plugin="build-pipeline-plugin@1.4.7">
+      <configs>
+        <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.27">
+          <properties>BUILD_VERSION=${r"${BUILD_VERSION}"}</properties>
+        </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+      </configs>
+      <downstreamProjectNames>${project.Id}-05-MergeOSS</downstreamProjectNames>
     </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
   </publishers>
   <buildWrappers/>
