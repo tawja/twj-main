@@ -133,7 +133,7 @@
         <tawja.deploy.site.webPath>/home/tawja/www</tawja.deploy.site.webPath>
         <!-- Environment name with tawja-env-* profiles -->
         <tawja.deploy.envName>test</tawja.deploy.envName>
-        <tawja.repo.envName>test</tawja.repo.envName>
+        <tawja.repo.envName>www</tawja.repo.envName>
         <!-- Others -->
         <!-- Java Versions -->
         <java.version.source>1.8</java.version.source>
@@ -229,7 +229,7 @@
             </activation>
             <properties>
                 <tawja.deploy.envName>test</tawja.deploy.envName>
-                <tawja.repo.envName>test</tawja.repo.envName>
+                <tawja.repo.envName>www</tawja.repo.envName>
             </properties>
         </profile>
         <profile>
@@ -239,7 +239,7 @@
             </activation>
             <properties>
                 <tawja.deploy.envName>uat</tawja.deploy.envName>
-                <tawja.repo.envName>test</tawja.repo.envName>
+                <tawja.repo.envName>www</tawja.repo.envName>
             </properties>
         </profile>
         <profile>
@@ -249,7 +249,7 @@
             </activation>
             <properties>
                 <tawja.deploy.envName>www</tawja.deploy.envName>
-                <tawja.repo.envName>test</tawja.repo.envName>
+                <tawja.repo.envName>www</tawja.repo.envName>
             </properties>
         </profile>
         <!-- Set Tools environment variables if not set from system environment variables -->
@@ -588,13 +588,13 @@
             <uniqueVersion>false</uniqueVersion>
             <id>tawja-snapshots</id>
             <name>Tawja Snapshots Repository</name>
-            <url>${tawja.deploy.protocol}://${tawja.deploy.host}/${tawja.deploy.webPath}/${tawja.deploy.envName}/${organization.domain}/repo/maven/snapshots</url>
+            <url>${tawja.deploy.protocol}://${tawja.deploy.host}/${tawja.deploy.webPath}/${tawja.repo.envName}/${organization.domain}/repo/maven/snapshots</url>
         </snapshotRepository>
         <repository>
             <uniqueVersion>false</uniqueVersion>
             <id>tawja-releases</id>
             <name>Tawja Releases Repository</name>
-            <url>${tawja.deploy.protocol}://${tawja.deploy.host}/${tawja.deploy.webPath}/${tawja.deploy.envName}/${organization.domain}/repo/maven/releases</url>
+            <url>${tawja.deploy.protocol}://${tawja.deploy.host}/${tawja.deploy.webPath}/${tawja.repo.envName}/${organization.domain}/repo/maven/releases</url>
         </repository>
     </distributionManagement>
     
@@ -1240,6 +1240,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>${maven-project-info-reports-plugin.version}</version>
+		<configuration>
+                   <!-- Disable Dependency Report because it is toww slow!!! -->
+		  <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+		</configuration>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -1483,7 +1487,7 @@
         <repository> 
             <id>twj-releases-lts-repository</id> 
             <name>Tawja Releases LTS Repository</name>
-            <url>http://repo.tawja.org/repo/maven/releases</url> 
+            <url>http://repo.tawja.org/maven/releases</url> 
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -1663,7 +1667,7 @@
         <pluginRepository> 
             <id>twj-releases-lts-repository</id> 
             <name>Tawja Releases LTS Repository</name>
-            <url>http://repo.tawja.org/repo/maven/releases</url> 
+            <url>http://repo.tawja.org/maven/releases</url> 
             <releases>
                 <enabled>true</enabled>
             </releases>
