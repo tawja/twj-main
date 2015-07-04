@@ -132,7 +132,8 @@
         <tawja.deploy.site.host>ftp.tawja.org</tawja.deploy.site.host>
         <tawja.deploy.site.webPath>/home/tawja/www</tawja.deploy.site.webPath>
         <!-- Environment name with tawja-env-* profiles -->
-        <tawja.deploy.envName>dev</tawja.deploy.envName>
+        <tawja.deploy.envName>test</tawja.deploy.envName>
+        <tawja.repo.envName>test</tawja.repo.envName>
         <!-- Others -->
         <!-- Java Versions -->
         <java.version.source>1.8</java.version.source>
@@ -228,6 +229,7 @@
             </activation>
             <properties>
                 <tawja.deploy.envName>test</tawja.deploy.envName>
+                <tawja.repo.envName>test</tawja.repo.envName>
             </properties>
         </profile>
         <profile>
@@ -237,6 +239,7 @@
             </activation>
             <properties>
                 <tawja.deploy.envName>uat</tawja.deploy.envName>
+                <tawja.repo.envName>test</tawja.repo.envName>
             </properties>
         </profile>
         <profile>
@@ -246,6 +249,7 @@
             </activation>
             <properties>
                 <tawja.deploy.envName>www</tawja.deploy.envName>
+                <tawja.repo.envName>test</tawja.repo.envName>
             </properties>
         </profile>
         <!-- Set Tools environment variables if not set from system environment variables -->
@@ -1475,6 +1479,18 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <!-- Tawja Releases LTS Repository -->
+        <repository> 
+            <id>twj-releases-lts-repository</id> 
+            <name>Tawja Releases LTS Repository</name>
+            <url>http://repo.tawja.org/repo/maven/releases</url> 
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
         <!-- Main Repository -->
         <repository> 
             <id>main-releases-repository</id> 
@@ -1636,6 +1652,18 @@
             <id>twj-releases-repository</id> 
             <name>Tawja Releases Repository</name>
             <url>http://www.tawja.org/repo/maven/releases</url> 
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <!-- Tawja Releases LTS Repository -->
+        <pluginRepository> 
+            <id>twj-releases-lts-repository</id> 
+            <name>Tawja Releases LTS Repository</name>
+            <url>http://repo.tawja.org/repo/maven/releases</url> 
             <releases>
                 <enabled>true</enabled>
             </releases>
