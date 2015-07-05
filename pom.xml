@@ -54,9 +54,9 @@
         <module>twj-docs</module>
         <module>twj-maven</module>
         <module>twj-platform</module>
-		<!-- Done in a dedicated Git repository 
-        <module>twj-website</module>
-		-->
+        <!-- Done in a dedicated Git repository 
+<module>twj-website</module>
+        -->
         <!-- Done by the factory
         <module>twj-dist</module>
         -->
@@ -1117,6 +1117,9 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>${maven-deploy-plugin.version}</version>
+                    <configuration>
+                        <deployAtEnd>true</deployAtEnd>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1193,12 +1196,12 @@
                 <groupId>com.mycila</groupId>
                 <artifactId>license-maven-plugin</artifactId>
             </plugin>
-			<!--
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>buildnumber-maven-plugin</artifactId>
-            </plugin>
-			-->
+            <!--
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>buildnumber-maven-plugin</artifactId>
+</plugin>
+            -->
             <plugin>
                 <groupId>com.github.jeluard</groupId>
                 <artifactId>plantuml-maven-plugin</artifactId>
@@ -1229,10 +1232,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>${maven-project-info-reports-plugin.version}</version>
-		<configuration>
-                   <!-- Disable Dependency Report because it is toww slow!!! -->
-		  <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
-		</configuration>
+                <configuration>
+                    <!-- Disable Dependency Report because it is toww slow!!! -->
+                    <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+                </configuration>
                 <reportSets>
                     <reportSet>
                         <reports>

@@ -30,11 +30,11 @@ import org.apache.maven.plugin.testing.AbstractMojoTestCase;
 import org.apache.maven.plugin.testing.stubs.MavenProjectStub;
 import org.junit.Test;
 
-public class GeneratorMojoForJenkinsCdOssTest extends AbstractMojoTestCase {
+public class GeneratorMojoForJenkinContinuousTest extends AbstractMojoTestCase {
 
-    private final File outputDirectory = new File("generated-sources/jenkins-cd-oss/");
-    private final File templateDirectory = new File("../../src/test/resources/jenkins-cd-oss/templates/");
-    private final File cfgFile = new File("../../src/test/resources/jenkins-cd-oss/");
+    private final File outputDirectory = new File("generated-sources/jenkins-continuous/");
+    private final File templateDirectory = new File("../../src/test/resources/jenkins-continuous/templates/");
+    private final File cfgFile = new File("../../src/test/resources/jenkins-continuous/");
 
     @Override
     protected void setUp() throws Exception {
@@ -60,7 +60,7 @@ public class GeneratorMojoForJenkinsCdOssTest extends AbstractMojoTestCase {
      */
     private Mojo getConfiguredMojo() throws Exception {
 
-        File pluginXml = new File(getBasedir(), "src/test/resources/jenkins-cd-oss/plugin-config.xml");
+        File pluginXml = new File(getBasedir(), "src/test/resources/jenkins-continuous/plugin-config.xml");
         Mojo mojo = lookupMojo("generate", pluginXml);
 
         setVariableValueToObject(mojo, "project", new MavenProjectStub());

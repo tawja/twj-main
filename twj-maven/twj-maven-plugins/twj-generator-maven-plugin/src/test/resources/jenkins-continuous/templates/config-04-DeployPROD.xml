@@ -2,7 +2,7 @@
 <#assign base = "/" + pp.outputDirectory>
 <#list projects as project>
 <#if (project.Activated == "true" && (project.BuildType == "ContinuousDelivery")) >
-<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-06-DeployPROD/"+"config.xml" />
+<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-04-DeployPROD/"+"config.xml" />
 <?xml version='1.0' encoding='UTF-8'?>
 <maven2-moduleset plugin="maven-plugin@2.10">
   <actions/>
@@ -36,7 +36,7 @@
     <groupId>${project.GroupId}</groupId>
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
-  <rootPOM>${project.DistPath}/pom.xml</rootPOM>
+  <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
   <goals>deploy -P tawja-env-PROD -DskipTests -DskipITs</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
@@ -60,7 +60,7 @@
           <properties>BUILD_VERSION=${r"${BUILD_VERSION}"}</properties>
         </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
       </configs>
-      <downstreamProjectNames>${project.Id}-07-MavenRepoPROD</downstreamProjectNames>
+      <downstreamProjectNames>${project.Id}-05-MavenRepoPROD</downstreamProjectNames>
     </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
   </publishers>
   <buildWrappers/>

@@ -1,12 +1,12 @@
 <@pp.dropOutputFile />
 <#assign base = "/" + pp.outputDirectory>
 <#list projects as project>
-<#if  (project.Activated == "true" && (project.BuildType == "ContinuousDeliveryOSS" || project.BuildType == "ContinuousDelivery")) >
-<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-00-Check/"+"config.xml" />
+<#if  (project.Activated == "true" && (project.BuildType == "ContinuousDeliveryDistOSS" || project.BuildType == "ContinuousDeliveryDist")) >
+<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-01-BuildDevelop/"+"config.xml" />
 <?xml version='1.0' encoding='UTF-8'?>
 <maven2-moduleset plugin="maven-plugin@2.10">
   <actions/>
-  <description>${project.Name} : ${project.Description} : 00 : Check Build</description>
+  <description>${project.Name} : ${project.Description} : 01 : Build Develop Branch</description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.25">
@@ -30,12 +30,14 @@
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <submoduleCfg class="list"/>
-    <extensions/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.CleanBeforeCheckout/>
+    </extensions>
   </scm>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
-  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
-  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
   <jdk>JDK 8</jdk>
   <triggers>
     <com.cloudbees.jenkins.plugins.BitBucketTrigger plugin="bitbucket@1.1.0">
@@ -43,12 +45,13 @@
     </com.cloudbees.jenkins.plugins.BitBucketTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
+  <customWorkspace>/var/jenkins/workspaces/${project.Id}</customWorkspace>
   <rootModule>
     <groupId>${project.GroupId}</groupId>
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
-  <goals>install</goals>
+  <goals>deploy -P tawja-env-TEST -DskipITs</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
@@ -59,8 +62,7 @@
   <processPlugins>true</processPlugins>
   <mavenValidationLevel>-1</mavenValidationLevel>
   <runHeadless>false</runHeadless>
-  <disableTriggerDownstreamProjects>false</disableTriggerDownstreamProjects>
-  <blockTriggerWhenBuilding>true</blockTriggerWhenBuilding>
+  <disableTriggerDownstreamProjects>true</disableTriggerDownstreamProjects>
   <settings class="jenkins.mvn.DefaultSettingsProvider"/>
   <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
   <reporters/>
@@ -75,6 +77,18 @@
       <intervalNumToKeep>-1</intervalNumToKeep>
       <regexp></regexp>
     </org.jenkinsci.plugins.discardbuild.DiscardBuildPublisher>
+    <hudson.plugins.downstream__ext.DownstreamTrigger plugin="downstream-ext@1.8">
+      <childProjects>${project.Id}-02-BuildMaster</childProjects>
+      <threshold>
+        <name>UNSTABLE</name>
+        <ordinal>1</ordinal>
+        <color>YELLOW</color>
+        <completeBuild>true</completeBuild>
+      </threshold>
+      <thresholdStrategy>AND_HIGHER</thresholdStrategy>
+      <onlyIfSCMChanges>false</onlyIfSCMChanges>
+      <onlyIfLocalSCMChanges>false</onlyIfLocalSCMChanges>
+    </hudson.plugins.downstream__ext.DownstreamTrigger>
   </publishers>
   <buildWrappers/>
   <prebuilders>
