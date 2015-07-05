@@ -1,12 +1,12 @@
 <@pp.dropOutputFile />
 <#assign base = "/" + pp.outputDirectory>
 <#list projects as project>
-<#if (project.Activated == "true" && (project.BuildType == "ContinuousDeliveryOSS" || project.BuildType == "ContinuousDelivery")) >
-<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-04-DeployTEST/"+"config.xml" />
+<#if (project.Activated == "true" && (project.BuildType == "ContinuousDeliveryDistOSS" || project.BuildType == "ContinuousDeliveryDist")) >
+<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-05-DeployUAT/"+"config.xml" />
 <?xml version='1.0' encoding='UTF-8'?>
 <maven2-moduleset plugin="maven-plugin@2.10">
   <actions/>
-  <description>${project.Name} : ${project.Description} : 04 : Deploy Distribution to TEST environment</description>
+  <description>${project.Name} : ${project.Description} : 05 : Deploy Distribution to UAT environment</description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <hudson.model.ParametersDefinitionProperty>
@@ -37,7 +37,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.DistPath}/pom.xml</rootPOM>
-  <goals>deploy -P tawja-env-TEST</goals>
+  <goals>deploy -P tawja-env-UAT</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>true</ignoreUpstremChanges>
@@ -60,7 +60,7 @@
           <properties>BUILD_VERSION=${r"${BUILD_VERSION}"}</properties>
         </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
       </configs>
-      <downstreamProjectNames>${project.Id}-05-DeployUAT</downstreamProjectNames>
+      <downstreamProjectNames>${project.Id}-06-DeployPROD</downstreamProjectNames>
     </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
   </publishers>
   <buildWrappers/>
@@ -75,6 +75,3 @@
 </maven2-moduleset>
 </#if>
 </#list>
-
-
-

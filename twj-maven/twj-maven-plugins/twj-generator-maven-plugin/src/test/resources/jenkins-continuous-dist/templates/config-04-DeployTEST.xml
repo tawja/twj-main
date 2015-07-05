@@ -1,12 +1,12 @@
 <@pp.dropOutputFile />
 <#assign base = "/" + pp.outputDirectory>
 <#list projects as project>
-<#if (project.Activated == "true" && (project.BuildType == "ContinuousDeliveryOSS")) >
-<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-06-DeployPROD/"+"config.xml" />
+<#if (project.Activated == "true" && (project.BuildType == "ContinuousDeliveryDistOSS" || project.BuildType == "ContinuousDeliveryDist")) >
+<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-04-DeployTEST/"+"config.xml" />
 <?xml version='1.0' encoding='UTF-8'?>
 <maven2-moduleset plugin="maven-plugin@2.10">
   <actions/>
-  <description>${project.Name} : ${project.Description} : 06 : Deploy Distribution to PROD environment</description>
+  <description>${project.Name} : ${project.Description} : 04 : Deploy Distribution to TEST environment</description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <hudson.model.ParametersDefinitionProperty>
@@ -37,7 +37,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.DistPath}/pom.xml</rootPOM>
-  <goals>deploy -P tawja-env-PROD</goals>
+  <goals>deploy -P tawja-env-TEST</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>true</ignoreUpstremChanges>
@@ -60,15 +60,7 @@
           <properties>BUILD_VERSION=${r"${BUILD_VERSION}"}</properties>
         </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
       </configs>
-      <downstreamProjectNames>${project.Id}-07-MavenRepoPROD</downstreamProjectNames>
-    </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
-    <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger plugin="build-pipeline-plugin@1.4.7">
-      <configs>
-        <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.27">
-          <properties>BUILD_VERSION=${r"${BUILD_VERSION}"}</properties>
-        </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-      </configs>
-      <downstreamProjectNames>${project.Id}-08-MergeOSS</downstreamProjectNames>
+      <downstreamProjectNames>${project.Id}-05-DeployUAT</downstreamProjectNames>
     </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
   </publishers>
   <buildWrappers/>
@@ -83,3 +75,6 @@
 </maven2-moduleset>
 </#if>
 </#list>
+
+
+

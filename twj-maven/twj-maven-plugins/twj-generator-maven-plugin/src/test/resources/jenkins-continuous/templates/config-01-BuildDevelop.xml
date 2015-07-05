@@ -2,17 +2,13 @@
 <#assign base = "/" + pp.outputDirectory>
 <#list projects as project>
 <#if  (project.Activated == "true" && (project.BuildType == "ContinuousDeliveryOSS" || project.BuildType == "ContinuousDelivery")) >
-<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-02-BuildMaster/"+"config.xml" />
+<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-01-BuildDevelop/"+"config.xml" />
 <?xml version='1.0' encoding='UTF-8'?>
 <maven2-moduleset plugin="maven-plugin@2.10">
   <actions/>
-  <description>${project.Name} : ${project.Description} : 02 : Build Master Branch</description>
+  <description>${project.Name} : ${project.Description} : 01 : Build Develop Branch</description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <hudson.plugins.zentimestamp.ZenTimestampJobProperty plugin="zentimestamp@4.1">
-      <changeBUILDID>true</changeBUILDID>
-      <pattern>yyyy.MM.ddHHmmss</pattern>
-    </hudson.plugins.zentimestamp.ZenTimestampJobProperty>
     <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.25">
       <autoRebuild>false</autoRebuild>
       <rebuildDisabled>false</rebuildDisabled>
@@ -36,17 +32,6 @@
     <submoduleCfg class="list"/>
     <extensions>
       <hudson.plugins.git.extensions.impl.CleanBeforeCheckout/>
-      <hudson.plugins.git.extensions.impl.LocalBranch>
-        <localBranch>master</localBranch>
-      </hudson.plugins.git.extensions.impl.LocalBranch>
-      <hudson.plugins.git.extensions.impl.PreBuildMerge>
-        <options>
-          <mergeRemote>origin</mergeRemote>
-          <mergeTarget>master</mergeTarget>
-          <mergeStrategy>default</mergeStrategy>
-          <fastForwardMode>NO_FF</fastForwardMode>
-        </options>
-      </hudson.plugins.git.extensions.impl.PreBuildMerge>
     </extensions>
   </scm>
   <canRoam>true</canRoam>
@@ -54,7 +39,11 @@
   <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
   <jdk>JDK 8</jdk>
-  <triggers/>
+  <triggers>
+    <com.cloudbees.jenkins.plugins.BitBucketTrigger plugin="bitbucket@1.1.0">
+      <spec></spec>
+    </com.cloudbees.jenkins.plugins.BitBucketTrigger>
+  </triggers>
   <concurrentBuild>false</concurrentBuild>
   <customWorkspace>/var/jenkins/workspaces/${project.Id}</customWorkspace>
   <rootModule>
@@ -65,16 +54,15 @@
   <goals>deploy -P tawja-env-TEST -DskipITs</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
-  <ignoreUpstremChanges>true</ignoreUpstremChanges>
+  <ignoreUpstremChanges>false</ignoreUpstremChanges>
   <archivingDisabled>true</archivingDisabled>
   <siteArchivingDisabled>true</siteArchivingDisabled>
   <fingerprintingDisabled>false</fingerprintingDisabled>
-  <resolveDependencies>false</resolveDependencies>
-  <processPlugins>false</processPlugins>
+  <resolveDependencies>true</resolveDependencies>
+  <processPlugins>true</processPlugins>
   <mavenValidationLevel>-1</mavenValidationLevel>
   <runHeadless>false</runHeadless>
-  <disableTriggerDownstreamProjects>false</disableTriggerDownstreamProjects>
-  <blockTriggerWhenBuilding>true</blockTriggerWhenBuilding>
+  <disableTriggerDownstreamProjects>true</disableTriggerDownstreamProjects>
   <settings class="jenkins.mvn.DefaultSettingsProvider"/>
   <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
   <reporters/>
@@ -89,51 +77,18 @@
       <intervalNumToKeep>-1</intervalNumToKeep>
       <regexp></regexp>
     </org.jenkinsci.plugins.discardbuild.DiscardBuildPublisher>
-    <hudson.plugins.git.GitPublisher plugin="git@2.3.5">
-      <configVersion>2</configVersion>
-      <pushMerge>true</pushMerge>
-      <pushOnlyIfSuccess>true</pushOnlyIfSuccess>
-      <forcePush>false</forcePush>
-      <tagsToPush>
-        <hudson.plugins.git.GitPublisher_-TagToPush>
-          <targetRepoName>origin</targetRepoName>
-          <tagName>v${r"${BUILD_TIMESTAMP}"}</tagName>
-          <tagMessage></tagMessage>
-          <createTag>true</createTag>
-          <updateTag>false</updateTag>
-        </hudson.plugins.git.GitPublisher_-TagToPush>
-      </tagsToPush>
-      <branchesToPush>
-        <hudson.plugins.git.GitPublisher_-BranchToPush>
-          <targetRepoName>origin</targetRepoName>
-          <branchName>master</branchName>
-        </hudson.plugins.git.GitPublisher_-BranchToPush>
-      </branchesToPush>
-    </hudson.plugins.git.GitPublisher>
-    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.27">
-      <configs>
-        <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
-          <configs>
-            <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-              <properties>BUILD_VERSION=v${r"${BUILD_TIMESTAMP}"}</properties>
-            </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-          </configs>
-          <projects>${project.Id}-03-MavenSite</projects>
-          <condition>UNSTABLE_OR_BETTER</condition>
-          <triggerWithNoParameters>false</triggerWithNoParameters>
-        </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
-        <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
-          <configs>
-            <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-              <properties>BUILD_VERSION=v${r"${BUILD_TIMESTAMP}"}</properties>
-            </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-          </configs>
-          <projects>${project.Id}-04-DeployTEST</projects>
-          <condition>UNSTABLE_OR_BETTER</condition>
-          <triggerWithNoParameters>false</triggerWithNoParameters>
-        </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
-      </configs>
-    </hudson.plugins.parameterizedtrigger.BuildTrigger>
+    <hudson.plugins.downstream__ext.DownstreamTrigger plugin="downstream-ext@1.8">
+      <childProjects>${project.Id}-02-BuildDeployMaster</childProjects>
+      <threshold>
+        <name>UNSTABLE</name>
+        <ordinal>1</ordinal>
+        <color>YELLOW</color>
+        <completeBuild>true</completeBuild>
+      </threshold>
+      <thresholdStrategy>AND_HIGHER</thresholdStrategy>
+      <onlyIfSCMChanges>false</onlyIfSCMChanges>
+      <onlyIfLocalSCMChanges>false</onlyIfLocalSCMChanges>
+    </hudson.plugins.downstream__ext.DownstreamTrigger>
   </publishers>
   <buildWrappers/>
   <prebuilders>
@@ -145,18 +100,17 @@
       <settings class="jenkins.mvn.DefaultSettingsProvider"/>
       <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
     </hudson.tasks.Maven>
+  </prebuilders>
+  <postbuilders>
     <hudson.tasks.Maven>
-      <targets>versions:update-parent versions:set -DgenerateBackupPoms=false -DnewVersion=${r"${BUILD_TIMESTAMP}"} </targets>
+      <targets>clean</targets>
       <mavenName>Maven 3</mavenName>
+      <pom>pom.xml</pom>
       <usePrivateRepository>false</usePrivateRepository>
       <settings class="jenkins.mvn.DefaultSettingsProvider"/>
       <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
     </hudson.tasks.Maven>
-    <hudson.tasks.Shell>
-      <command>git commit -a -m &quot;FACTORY : Update Versions : ${r"${BUILD_TIMESTAMP}"}&quot;</command>
-    </hudson.tasks.Shell>
-  </prebuilders>
-  <postbuilders/>
+  </postbuilders>
   <runPostStepsIfResult>
     <name>FAILURE</name>
     <ordinal>2</ordinal>

@@ -21,9 +21,9 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <cfgFile>src/main/resources/jenkins-cd-oss/config.fmpp</cfgFile>
-                    <templateDirectory>src/test/resources/jenkins-cd-oss/</templateDirectory>
-                    <outputDirectory>target/test/generated-sources/jenkins-cd-oss/</outputDirectory>
+                    <cfgFile>src/main/resources/jenkins-continuous-dist/config.fmpp</cfgFile>
+                    <templateDirectory>src/test/resources/jenkins-continuous-dist/</templateDirectory>
+                    <outputDirectory>target/test/generated-sources/jenkins-continuous-dist/</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
