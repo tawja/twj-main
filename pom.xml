@@ -687,6 +687,14 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>${maven-site-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-descriptor</id>
+                            <goals>
+                                <goal>attach-descriptor</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                     <dependencies>
                         <dependency>
                             <groupId>org.tawja</groupId>
@@ -1117,9 +1125,11 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>${maven-deploy-plugin.version}</version>
+                    <!-- Not working on factories!!! check with install at the end...
                     <configuration>
-                        <deployAtEnd>true</deployAtEnd>
+                        <>true</deployAtEnd>
                     </configuration>
+                    -->
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
