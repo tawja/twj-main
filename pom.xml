@@ -664,6 +664,7 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>${maven-site-plugin.version}</version>
+                    <!--
                     <executions>
                         <execution>
                             <id>attach-descriptor</id>
@@ -672,9 +673,10 @@
                             </goals>
                         </execution>
                     </executions>
+                    -->
                     <dependencies>
                         <dependency>
-                            <groupId>org.tawja</groupId>
+                            <groupId>org.tawja.maven.skin</groupId>
                             <artifactId>twj-maven-skin-tools</artifactId>
                             <version>2015.07.05190001</version>
                         </dependency>
