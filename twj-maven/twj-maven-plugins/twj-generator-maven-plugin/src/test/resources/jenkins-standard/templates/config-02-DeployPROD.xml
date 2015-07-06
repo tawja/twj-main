@@ -1,12 +1,12 @@
 <@pp.dropOutputFile />
 <#assign base = "/" + pp.outputDirectory>
 <#list projects as project>
-<#if (project.Activated == "true" && (project.BuildType == "ContinuousDeliveryOSS" || project.BuildType == "ContinuousDelivery")) >
-<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-03-MavenSite/"+"config.xml" />
+<#if (project.Activated == "true" && (project.BuildType == "MavenBuildDeployDist")) >
+<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-02-DeployPROD/"+"config.xml" />
 <?xml version='1.0' encoding='UTF-8'?>
 <maven2-moduleset plugin="maven-plugin@2.10">
   <actions/>
-  <description>${project.Name} : ${project.Description} : 03 : Generate Maven Site</description>
+  <description>${project.Name} : ${project.Description} : 02 : Deploy Distribution to PROD environment</description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <hudson.model.ParametersDefinitionProperty>
@@ -36,8 +36,8 @@
     <groupId>${project.GroupId}</groupId>
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
-  <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
-  <goals>site site:deploy -P tawja-env-PROD</goals>
+  <rootPOM>${project.DistPath}/pom.xml</rootPOM>
+  <goals>deploy site site:deploy -P tawja-env-PROD -DskipTests -DskipITs</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>true</ignoreUpstremChanges>
@@ -64,19 +64,18 @@
       <intervalNumToKeep>-1</intervalNumToKeep>
       <regexp></regexp>
     </org.jenkinsci.plugins.discardbuild.DiscardBuildPublisher>
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger plugin="build-pipeline-plugin@1.4.7">
+      <configs>
+        <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.27">
+          <properties>BUILD_VERSION=${r"${BUILD_VERSION}"}</properties>
+        </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+      </configs>
+      <downstreamProjectNames>${project.Id}-07-MavenRepoPROD</downstreamProjectNames>
+    </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
   </publishers>
   <buildWrappers/>
   <prebuilders/>
-  <postbuilders>
-    <hudson.tasks.Maven>
-      <targets>clean</targets>
-      <mavenName>Maven 3</mavenName>
-      <pom>pom.xml</pom>
-      <usePrivateRepository>false</usePrivateRepository>
-      <settings class="jenkins.mvn.DefaultSettingsProvider"/>
-      <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
-    </hudson.tasks.Maven>
-  </postbuilders>
+  <postbuilders/>
   <runPostStepsIfResult>
     <name>FAILURE</name>
     <ordinal>2</ordinal>

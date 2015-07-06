@@ -7,7 +7,7 @@
         <groupId>org.tawja</groupId>
         <artifactId>parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <!--<relativePath>../twj-parent/pom.xml</relativePath>-->
+        <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.dist</groupId>
@@ -21,9 +21,10 @@
     <url>${project.organization.url}/project/dist</url>
 
     <modules>
-        <module>twj-dist-website-std</module>
-        <module>twj-dist-webapp-std</module>
         <module>twj-dist-server-std</module>
+		<!--
+        <module>twj-dist-webapi-std</module>
+		-->
 		<!--
         <module>twj-dist-karaf-light</module>
 		-->
