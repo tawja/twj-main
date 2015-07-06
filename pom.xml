@@ -128,9 +128,6 @@
         <tawja.deploy.site.protocol>scp</tawja.deploy.site.protocol>
         <tawja.deploy.site.host>ftp.tawja.org</tawja.deploy.site.host>
         <tawja.deploy.site.webPath>/home/tawja/www</tawja.deploy.site.webPath>
-        <!-- Environment name with tawja-env-* profiles -->
-        <tawja.deploy.envName>test</tawja.deploy.envName>
-        <tawja.repo.envName>prod</tawja.repo.envName>
         <!-- Others -->
         <!-- Java Versions -->
         <java.version.source>1.8</java.version.source>
@@ -221,6 +218,18 @@
     </properties>
     
     <profiles>
+        <!-- Environment to sub-domains -->
+        <profile>
+            <id>tawja-env</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+				<!-- Environment name with tawja-env-* profiles -->
+				<tawja.deploy.envName>test</tawja.deploy.envName>
+				<tawja.repo.envName>prod</tawja.repo.envName>
+            </properties>
+		</profile>
         <!-- Set Tools environment variables if not set from system environment variables -->
         <profile>
             <id>env-tools-home</id>
