@@ -59,6 +59,7 @@
                     <dependency>
                         <groupId>org.tawja.maven</groupId>
                         <artifactId>twj-maven-utils</artifactId>
+                        <version>${twj-maven-utils.version}</version>
                     </dependency>
                 </dependencies>
                 <executions>

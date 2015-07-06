@@ -137,6 +137,7 @@
         <java.version.target>1.8</java.version.target>
         <!-- Inner Dependencies Versions -->
         <twj-maven-skin.version>1.0.0-SNAPSHOT</twj-maven-skin.version>
+        <twj-maven-utils.version>1.0.0-SNAPSHOT</twj-maven-utils.version>
         <!-- Dependencies Versions -->
         <junit.version>4.11</junit.version>
         <!-- Plugins Versions -->
@@ -368,6 +369,7 @@
                             <dependency>
                                 <groupId>org.tawja.maven</groupId>
                                 <artifactId>twj-maven-utils</artifactId>
+                        <version>${twj-maven-utils.version}</version>
                             </dependency>
                         </dependencies>
                         <executions>
@@ -403,6 +405,7 @@
                             <dependency>
                                 <groupId>org.tawja.maven</groupId>
                                 <artifactId>twj-maven-utils</artifactId>
+                        <version>${twj-maven-utils.version}</version>
                             </dependency>
                         </dependencies>
                         <executions>
