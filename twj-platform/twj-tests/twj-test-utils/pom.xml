@@ -24,13 +24,13 @@
     <parent>
         <groupId>org.tawja.platform.tests</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>2015.07.06174826</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.platform.tests</groupId>
     <artifactId>twj-test-utils</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>2015.07.06174826</version>
 
     <packaging>bundle</packaging>
 
@@ -96,7 +96,7 @@
         <dependency>
             <groupId>org.tawja.platform.tests</groupId>
             <artifactId>twj-test-dependencies</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>2015.07.06174826</version>
         </dependency>
     </dependencies>
 	
