@@ -25,7 +25,9 @@
         <module>twj-maven-utils</module>
         <module>twj-maven-plugins</module>
         <!-- <module>twj-maven-archetypes</module> -->
+		<!-- Done in a standalone repository
         <module>twj-maven-skin</module>
+		-->
     </modules>
 
     <distributionManagement>

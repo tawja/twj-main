@@ -113,17 +113,17 @@
     <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger plugin="build-pipeline-plugin@1.4.7">
       <configs>
         <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.27">
-          <properties>BUILD_VERSION=v${r"${BUILD_TIMESTAMP}"}</properties>
+          <properties>BUILD_VERSION=${r"${BUILD_TIMESTAMP}"}</properties>
         </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
       </configs>
-      <downstreamProjectNames>twj-website-base-05-DeployPROD</downstreamProjectNames>
+      <downstreamProjectNames>${project.Id}-04-DeployPROD</downstreamProjectNames>
     </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
     <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.27">
       <configs>
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-              <properties>BUILD_VERSION=v${r"${BUILD_TIMESTAMP}"}</properties>
+              <properties>BUILD_VERSION=${r"${BUILD_TIMESTAMP}"}</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
           </configs>
           <projects>${project.Id}-03-MavenSite</projects>

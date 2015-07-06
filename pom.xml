@@ -21,13 +21,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
-    <!--
     <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>9</version>
+		 <groupId>org.tawja</groupId>
+		<artifactId>root</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
     </parent>
-    -->
 
     <groupId>org.tawja</groupId>
     <artifactId>parent</artifactId>
@@ -48,14 +46,13 @@
 	
     <modules>
         <module>twj-utils</module>
-        <module>twj-maven-skin-tools</module>
         <!--<module>twj-infra</module>-->
         <module>twj-design</module>
         <module>twj-docs</module>
         <module>twj-maven</module>
         <module>twj-platform</module>
         <!-- Done in a dedicated Git repository 
-<module>twj-website</module>
+		<module>twj-website</module>
         -->
         <!-- Done by the factory
         <module>twj-dist</module>
@@ -221,37 +218,6 @@
     </properties>
     
     <profiles>
-        <!-- Environment to sub-domains -->
-        <profile>
-            <id>tawja-env-TEST</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <tawja.deploy.envName>test</tawja.deploy.envName>
-                <tawja.repo.envName>prod</tawja.repo.envName>
-            </properties>
-        </profile>
-        <profile>
-            <id>tawja-env-UAT</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <tawja.deploy.envName>uat</tawja.deploy.envName>
-                <tawja.repo.envName>prod</tawja.repo.envName>
-            </properties>
-        </profile>
-        <profile>
-            <id>tawja-env-PROD</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <tawja.deploy.envName>prod</tawja.deploy.envName>
-                <tawja.repo.envName>prod</tawja.repo.envName>
-            </properties>
-        </profile>
         <!-- Set Tools environment variables if not set from system environment variables -->
         <profile>
             <id>env-tools-home</id>
@@ -698,6 +664,14 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>${maven-site-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-descriptor</id>
+                            <goals>
+                                <goal>attach-descriptor</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                     <dependencies>
                         <dependency>
                             <groupId>org.tawja</groupId>
@@ -719,7 +693,9 @@
                         <!--
                             <locales>en,fr</locales>
                         -->
+                        <!-- Default and do not need site_en.xml
                         <locales>en</locales>
+                        -->
                         <skipDeploy>false</skipDeploy>
                         <stagingDirectory>${tawja.home.dev.site.doc.dir}</stagingDirectory>
                     </configuration>
@@ -1128,9 +1104,11 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>${maven-deploy-plugin.version}</version>
+                    <!-- Not working on factories!!! check with install at the end...
                     <configuration>
-                        <deployAtEnd>true</deployAtEnd>
+                        <>true</deployAtEnd>
                     </configuration>
+                    -->
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>

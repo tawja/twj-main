@@ -115,7 +115,7 @@
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-              <properties>BUILD_VERSION=v${r"${BUILD_TIMESTAMP}"}</properties>
+              <properties>BUILD_VERSION=${r"${BUILD_TIMESTAMP}"}</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
           </configs>
           <projects>${project.Id}-03-MavenSite</projects>
@@ -125,7 +125,7 @@
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-              <properties>BUILD_VERSION=v${r"${BUILD_TIMESTAMP}"}</properties>
+              <properties>BUILD_VERSION=${r"${BUILD_TIMESTAMP}"}</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
           </configs>
           <projects>${project.Id}-04-DeployTEST</projects>
