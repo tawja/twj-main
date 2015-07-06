@@ -37,16 +37,8 @@
     <extensions>
       <hudson.plugins.git.extensions.impl.CleanBeforeCheckout/>
       <hudson.plugins.git.extensions.impl.LocalBranch>
-        <localBranch>master</localBranch>
+        <localBranch>develop</localBranch>
       </hudson.plugins.git.extensions.impl.LocalBranch>
-      <hudson.plugins.git.extensions.impl.PreBuildMerge>
-        <options>
-          <mergeRemote>origin</mergeRemote>
-          <mergeTarget>master</mergeTarget>
-          <mergeStrategy>default</mergeStrategy>
-          <fastForwardMode>NO_FF</fastForwardMode>
-        </options>
-      </hudson.plugins.git.extensions.impl.PreBuildMerge>
     </extensions>
   </scm>
   <canRoam>true</canRoam>
@@ -91,7 +83,7 @@
     </org.jenkinsci.plugins.discardbuild.DiscardBuildPublisher>
     <hudson.plugins.git.GitPublisher plugin="git@2.3.5">
       <configVersion>2</configVersion>
-      <pushMerge>true</pushMerge>
+      <pushMerge>false</pushMerge>
       <pushOnlyIfSuccess>true</pushOnlyIfSuccess>
       <forcePush>false</forcePush>
       <tagsToPush>
@@ -145,7 +137,11 @@
       <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
     </hudson.tasks.Maven>
     <hudson.tasks.Shell>
-      <command>git commit -a -m &quot;FACTORY : Update Versions : ${r"${BUILD_TIMESTAMP}"}&quot;</command>
+      <command>git commit -a -m &quot;FACTORY : Update Versions :${r"${BUILD_TIMESTAMP}"}&quot;</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>git checkout -B master origin/master
+git merge --no-ff -X theirs develop -m &quot;FACTORY : Merge with Updated Versions : ${r"${BUILD_TIMESTAMP}"}&quot;</command>
     </hudson.tasks.Shell>
   </prebuilders>
   <postbuilders/>
