@@ -4,13 +4,13 @@
     <parent>
         <groupId>org.tawja.maven.plugins</groupId>
         <artifactId>parent</artifactId>
-        <version>2015.07.05190001</version>
+        <version>2015.07.06040429</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 
     <groupId>org.tawja.maven.plugins</groupId>
     <artifactId>twj-frontend-maven-plugin</artifactId>
-    <version>2015.07.05190001</version>
+    <version>2015.07.06040429</version>
     <packaging>maven-plugin</packaging>
 
     <name>Tawja : Maven : Plugin : FrontEnd</name>
