@@ -54,7 +54,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
-  <goals>clean deploy -P tawja-env-TEST -DskipITs</goals>
+  <goals>clean deploy -P tawja-env-TEST -DskipITs -Dtawja.check.release=true</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>true</ignoreUpstremChanges>
@@ -128,7 +128,7 @@
   <buildWrappers/>
   <prebuilders>
     <hudson.tasks.Maven>
-      <targets>versions:update-parent versions:set -DgenerateBackupPoms=false -DnewVersion=${r"${BUILD_TIMESTAMP}"} </targets>
+      <targets>versions:update-parent versions:set -DnewVersion=${r"${BUILD_TIMESTAMP}"} -DgenerateBackupPoms=false versions:use-latest-releases versions:update-properties -Dincludes=${project.MavenVersionsUpdate}</targets>
       <mavenName>Maven 3</mavenName>
       <usePrivateRepository>false</usePrivateRepository>
       <settings class="jenkins.mvn.DefaultSettingsProvider"/>
