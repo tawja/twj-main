@@ -51,7 +51,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
-  <goals>deploy -P tawja-env-TEST -DskipITs</goals>
+  <goals>clean deploy -P tawja-env-TEST -DskipITs</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
@@ -91,16 +91,7 @@
     </hudson.plugins.downstream__ext.DownstreamTrigger>
   </publishers>
   <buildWrappers/>
-  <prebuilders>
-    <hudson.tasks.Maven>
-      <targets>clean</targets>
-      <mavenName>Maven 3</mavenName>
-      <pom>pom.xml</pom>
-      <usePrivateRepository>false</usePrivateRepository>
-      <settings class="jenkins.mvn.DefaultSettingsProvider"/>
-      <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
-    </hudson.tasks.Maven>
-  </prebuilders>
+  <prebuilders/>
   <postbuilders>
     <hudson.tasks.Maven>
       <targets>clean</targets>
