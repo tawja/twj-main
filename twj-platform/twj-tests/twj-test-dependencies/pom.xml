@@ -7,12 +7,12 @@
     <parent>
         <groupId>org.tawja.platform.tests</groupId>
         <artifactId>parent</artifactId>
-        <version>2015.07.06040429</version>
+        <version>2015.07.06044527</version>
     </parent>
 	
     <groupId>org.tawja.platform.tests</groupId>
     <artifactId>twj-test-dependencies</artifactId>
-    <version>2015.07.06040429</version>
+    <version>2015.07.06044527</version>
 
     <packaging>jar</packaging>
 
