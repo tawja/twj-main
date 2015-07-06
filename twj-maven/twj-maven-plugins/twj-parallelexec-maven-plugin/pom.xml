@@ -4,13 +4,13 @@
     <parent>
         <groupId>org.tawja.maven.plugins</groupId>
         <artifactId>parent</artifactId>
-        <version>2015.07.06154941</version>
+        <version>2015.07.06162846</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 
     <groupId>org.tawja.maven.plugins</groupId>
     <artifactId>twj-parallelexec-maven-plugin</artifactId>
-    <version>2015.07.06154941</version>
+    <version>2015.07.06162846</version>
 	
     <packaging>maven-plugin</packaging>
 

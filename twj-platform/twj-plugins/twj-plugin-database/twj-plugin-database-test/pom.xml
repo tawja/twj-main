@@ -24,12 +24,12 @@
     <parent>
         <groupId>org.tawja.platform.plugins</groupId>
         <artifactId>twj-plugin-database</artifactId>
-        <version>2015.07.06154941</version>
+        <version>2015.07.06162846</version>
     </parent>
 	
     <groupId>org.tawja.platform.plugins</groupId>
     <artifactId>twj-plugin-database-test</artifactId>
-    <version>2015.07.06154941</version>
+    <version>2015.07.06162846</version>
 
     <packaging>jar</packaging>
 
