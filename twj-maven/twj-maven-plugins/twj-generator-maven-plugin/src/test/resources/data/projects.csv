@@ -1,12 +1,14 @@
 Id;ExecPath;DistPath;Activated;ContextName;ContextAlias;ContextPrefix;Name;Description;ProjectType;BuildType;GroupId;ArtifactId;GitOriginUrl;GitRemoteName;GitRemoteUrl;JenkinsPrefix;JenkinsCredentialId
 twj-testing;.;#NA#;false;Tawja;tawja;twj;Tawja Testing;Testing Continuous Delivery for Tawja Project;maven;ContinuousDeliveryOSS;org.tawja.testing;parent;bitbucket.org;github;github.com;;microsfair-factory
 twj-workspace;.;#NA#;true;Tawja;tawja;twj;Tawja Workspace;Tawja Project Documents;maven;WorkspaceOSS;org.tawja.workspace;parent;bitbucket.org;github;github.com;;microsfair-factory
-twj-main;.;twj-dist;true;Tawja;tawja;twj;Tawja;Tawja Project Development;maven;ContinuousDeliveryDistOSS;org.tawja;parent;bitbucket.org;github;github.com;;microsfair-factory
+twj-root;.;#NA#;true;Tawja;tawja;twj;Tawja;Tawja ROOT Project;maven;ContinuousDeliveryOSS;org.tawja;root;bitbucket.org;github;github.com;;microsfair-factory
+twj-maven-skin;.;#NA#;true;Tawja;tawja;twj;Tawja;Tawja Project Maven Skin;maven;ContinuousDeliveryOSS;org.tawja;parent;bitbucket.org;github;github.com;;microsfair-factory
+twj-main;.;twj-dist;true;Tawja;tawja;twj;Tawja;Tawja Project Development;maven;ContinuousDeliveryDistOSS;org.tawja.maven.skin;parent;bitbucket.org;github;github.com;;microsfair-factory
 twj-website-base;.;#NA#;true;Tawja;tawja;twj;Tawja;Tawja Project  WebSite Base;maven;ContinuousDeliveryOSS;org.tawja,website;parent;bitbucket.org;github;github.com;;microsfair-factory
 twj-website;.;#NA#;true;Tawja;tawja;twj;Tawja;Tawja Project WebSite;maven;ContinuousDeliveryOSS;org.tawja.website;twj-website-base;bitbucket.org;github;github.com;;microsfair-factory
 twj-webapp;.;#NA#;true;Tawja;tawja;twj;Tawja;Tawja Project WebApp;maven;ContinuousDeliveryOSS;org.tawja.platform;twj-webapp;bitbucket.org;github;github.com;;microsfair-factory
 twj-sandbox;.;#NA#;true;Tawja;tawja;twj;Tawja Sandbox;Tawja Project Proof Of Concepts;maven;MavenBuildDeploy;org.tawja.sandbox;parent;bitbucket.org;github;github.com;;microsfair-factory
-misf-testing;.;#NA#;false;Microsfair;microsfair;misf;Microsfair Testing;Testing Continuous Delivery for Microsfair Project;maven;ContinuousDelivery;com.microsfair.testing;parent;bitbucket.org;github;github.com;;microsfair-factory
+misf-testing;.;#NA#;false;Microsfair;microsfair;misf;Microsfair Testing;Testing Continuous Delivery for Microsfair Project;maven;ContinuousDelivery;com.microsfair.testing;parent;bitbucket.org;github;;;microsfair-factory
 misf-workspace;.;#NA#;true;Microsfair;microsfair;misf;Microsfair;Microsfair Project Documents;maven;Workspace;com.microsfair.workspace;parent;bitbucket.org;;;;microsfair-factory
 misf-main;.;misf-dist;true;Microsfair;microsfair;misf;Microsfair;Microsfair Project Development;maven;ContinuousDeliveryDist;com.microsfair;parent;bitbucket.org;;;;microsfair-factory
 misf-website;.;#NA#;true;Microsfair;microsfair;misf;Microsfair;Microsfair Project WebSite;maven;ContinuousDelivery;com.microsfair.website;parent;bitbucket.org;;;;microsfair-factory
@@ -23,4 +25,4 @@ jbs-main;.;jbs-dist;true;JBennani;jbennani;jbs;JBennani;JBennani Project Develop
 jbs-workspace;.;#NA#;true;JBennani;jbennani;jbs;JBennani Workspace;JBennani Project Documents;maven;Workspace;name.bennani-smires.jaafar.workspace;parent;bitbucket.org;;;;microsfair-factory
 jbs-website;.;#NA#;true;JBennani;jbennani;jbs;JBennani;JBennani Project WebSite;maven;ContinuousDelivery;name.bennani-smires.jaafar.website;parent;bitbucket.org;;;;microsfair-factory
 jbs-sandbox;.;#NA#;true;JBennani;jbennani;jbs;JBennani Sandbox;JBennani Project Proof Of Concepts;maven;MavenBuild;name.bennani-smires.jaafar..sandbox;parent;bitbucket.org;;;;microsfair-factory
-misf-main-wsp;./misf-dist/misf-dist-website-workspace-std;./misf-dist/misf-dist-website-workspace-std;false;Microsfair;microsfair;misf;Microsfair Workspace WebSite;Microsfair Project Workspace WebSite;maven;Workspace;com.microsfair.dist;misf-dist-website-workspace-std;bitbucket.org;;;;microsfair-factory
+misf-main-wsp;./misf-dist/misf-dist-website-workspace-std;./misf-dist/misf-dist-website-workspace-std;false;Microsfair;microsfair;misf;Microsfair Workspace WebSite;Microsfair Project Workspace WebSite;maven;Workspace;com.microsfair.dist;misf-dist-website-workspace-std;bitbucket.org;;;;
