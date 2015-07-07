@@ -37,9 +37,9 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.DistPath}/pom.xml</rootPOM>
-  <goals>deploy site site:deploy -P tawja-env-PROD -DskipTests -DskipITs</goals>
+  <goals>deploy site site:deploy -P !tawja-env,tawja-env-PROD -DskipTests -DskipITs -U</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
-  <incrementalBuild>true</incrementalBuild>
+  <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>true</ignoreUpstremChanges>
   <archivingDisabled>true</archivingDisabled>
   <siteArchivingDisabled>true</siteArchivingDisabled>

@@ -51,7 +51,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
-  <goals>clean deploy -P tawja-env-TEST -DskipITs</goals>
+  <goals>clean deploy -P !tawja-env,tawja-env-TEST -DskipITs -U</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>

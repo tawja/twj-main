@@ -37,9 +37,9 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
-  <goals>site site:deploy -P tawja-env-PROD</goals>
+  <goals>site site:deploy -P !tawja-env,tawja-env-PROD -U</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
-  <incrementalBuild>true</incrementalBuild>
+  <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>true</ignoreUpstremChanges>
   <archivingDisabled>true</archivingDisabled>
   <siteArchivingDisabled>true</siteArchivingDisabled>
