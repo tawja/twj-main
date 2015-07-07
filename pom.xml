@@ -24,12 +24,12 @@
     <parent>
         <groupId>org.tawja</groupId>
         <artifactId>root</artifactId>
-        <version>2015.07.07002041</version>
+        <version>2015.07.07015251</version>
     </parent>
 
     <groupId>org.tawja</groupId>
     <artifactId>parent</artifactId>
-    <version>2015.07.07003626</version>
+    <version>2015.07.07021816</version>
 	
     <packaging>pom</packaging>
 
@@ -1713,7 +1713,7 @@
             <dependency>
                 <groupId>org.tawja.maven</groupId>
                 <artifactId>twj-maven-utils</artifactId>
-                <version>2015.07.07003626</version>
+                <version>2015.07.07021816</version>
             </dependency>
             <dependency>
                 <groupId>org.tawja.maven.skin</groupId>
