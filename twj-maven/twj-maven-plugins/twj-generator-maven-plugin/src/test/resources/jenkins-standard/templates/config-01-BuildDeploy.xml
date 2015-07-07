@@ -1,8 +1,8 @@
 <@pp.dropOutputFile />
 <#assign base = "/" + pp.outputDirectory>
 <#list projects as project>
-<#if  (project.Activated == "true" && (project.BuildType == "MavenBuildDeploy")) >
-<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-BuildDeploy/"+"config.xml" />
+<#if  (project.Activated == "true" && (project.BuildType == "MavenBuildDeploy" || project.BuildType == "MavenBuildDeployDist")) >
+<@pp.changeOutputFile name=base+"/"+project.JenkinsPrefix+project.Id+"-01-BuildDeploy/"+"config.xml" />
 <?xml version='1.0' encoding='UTF-8'?>
 <maven2-moduleset plugin="maven-plugin@2.10">
   <actions/>
@@ -48,7 +48,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
-  <goals>clean deploy site site:deploy -P tawja-env-PROD -Dtawja.repo.envName=repo</goals>
+  <goals>clean deploy site site:deploy -P tawja-env-REPO</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
@@ -75,9 +75,38 @@
       <intervalNumToKeep>-1</intervalNumToKeep>
       <regexp></regexp>
     </org.jenkinsci.plugins.discardbuild.DiscardBuildPublisher>
+<#if  (project.BuildType == "MavenBuildDeployDist") >
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger plugin="build-pipeline-plugin@1.4.7">
+      <configs>
+        <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.27">
+          <properties>BUILD_VERSION=${r"${BUILD_TIMESTAMP}"}</properties>
+        </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+      </configs>
+      <downstreamProjectNames>${project.Id}-02-DeployPROD</downstreamProjectNames>
+    </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
+</#if>
   </publishers>
   <buildWrappers/>
-  <prebuilders/>
+  <prebuilders>
+    <hudson.tasks.Maven>
+      <targets>versions:update-parent versions:set -DnewVersion=${r"${BUILD_TIMESTAMP}"} -DgenerateBackupPoms=false versions:use-latest-releases versions:update-properties -Dincludes=${project.MavenVersionsUpdate}</targets>
+      <mavenName>Maven 3</mavenName>
+      <pom>pom.xml</pom>
+      <usePrivateRepository>false</usePrivateRepository>
+      <settings class="jenkins.mvn.DefaultSettingsProvider"/>
+      <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
+    </hudson.tasks.Maven>
+<#if  (project.BuildType == "MavenBuildDeployDist") >
+    <hudson.tasks.Maven>
+      <targets>versions:update-parent versions:set -DnewVersion=${r"${BUILD_TIMESTAMP}"} -DgenerateBackupPoms=false versions:use-latest-releases versions:update-properties -Dincludes=${project.MavenVersionsUpdate}</targets>
+      <mavenName>Maven 3</mavenName>
+      <pom>${project.DistPath}/pom.xml</pom>
+      <usePrivateRepository>false</usePrivateRepository>
+      <settings class="jenkins.mvn.DefaultSettingsProvider"/>
+      <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
+    </hudson.tasks.Maven>
+</#if>
+  </prebuilders>
   <postbuilders>
     <hudson.tasks.Maven>
       <targets>clean</targets>
