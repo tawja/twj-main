@@ -48,7 +48,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
-  <goals>clean install</goals>
+  <goals>clean install -U</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>true</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
