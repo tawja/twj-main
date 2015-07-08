@@ -29,7 +29,7 @@
 
     <groupId>org.tawja</groupId>
     <artifactId>parent</artifactId>
-    <version>2015.07.07125135</version>
+    <version>2015.07.08183918</version>
 	
     <packaging>pom</packaging>
 
@@ -1713,7 +1713,7 @@
             <dependency>
                 <groupId>org.tawja.maven</groupId>
                 <artifactId>twj-maven-utils</artifactId>
-                <version>2015.07.07125135</version>
+                <version>2015.07.08183918</version>
             </dependency>
             <dependency>
                 <groupId>org.tawja.maven.skin</groupId>
