@@ -6,13 +6,13 @@
     <parent>
         <groupId>org.tawja.maven</groupId>
         <artifactId>parent</artifactId>
-        <version>2015.07.08183918</version>
+        <version>2015.07.08234358</version>
         <!--<relativePath>../twj-parent/pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.maven</groupId>
     <artifactId>twj-maven-utils</artifactId>
-    <version>2015.07.08183918</version>
+    <version>2015.07.08234358</version>
 	
     <packaging>jar</packaging>
 	
