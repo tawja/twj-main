@@ -1227,7 +1227,7 @@
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>${maven-project-info-reports-plugin.version}</version>
                 <configuration>
-                    <!-- Disable Dependency Report because it is toww slow!!! -->
+                    <!-- Disable Dependency Report because it is too slow!!! -->
                     <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
                 </configuration>
                 <reportSets>
@@ -1427,6 +1427,7 @@
                     <artifactId>maven-changelog-plugin</artifactId>
             </plugin>
             -->
+			<!-- Deactivated as very slow (connect to all repositories for all artifacts...)
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
@@ -1441,6 +1442,7 @@
                     </reportSet>
                 </reportSets>
             </plugin>
+			-->
         </plugins>
     </reporting>
     
