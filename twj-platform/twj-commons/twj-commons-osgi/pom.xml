@@ -6,13 +6,13 @@
     <parent>
         <groupId>org.tawja.platform.commons</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>2015.07.09002159</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.platform.commons</groupId>
     <artifactId>twj-commons-osgi</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>2015.07.09002159</version>
 	
     <packaging>bundle</packaging>
 	
