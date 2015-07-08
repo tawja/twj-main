@@ -24,13 +24,13 @@
     <parent>
         <groupId>org.tawja.platform.plugins</groupId>
         <artifactId>twj-plugin-database</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>2015.07.09004101</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.platform.plugins</groupId>
     <artifactId>twj-plugin-database-impl-h2</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>2015.07.09004101</version>
 
     <packaging>bundle</packaging>
 
