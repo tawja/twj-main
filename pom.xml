@@ -54,9 +54,8 @@
         <!-- Done in a dedicated Git repository 
                 <module>twj-website</module>
         -->
-        <!-- Done by the factory
+        <!-- Skipped by the factory during build, but used for versions update -->
         <module>twj-dist</module>
-        -->
     </modules>
 
     <properties>
@@ -124,7 +123,7 @@
         <tawja.deploy.deployPath>/home/tawja/deploy</tawja.deploy.deployPath>
         <tawja.deploy.webPath>/home/tawja/www</tawja.deploy.webPath>
         <tawja.deploy.backupPath>/home/tawja/backup</tawja.deploy.backupPath>
-		<!-- -->
+        <!-- -->
         <tawja.deploy.site.protocol>scp</tawja.deploy.site.protocol>
         <tawja.deploy.site.host>ftp.tawja.org</tawja.deploy.site.host>
         <tawja.deploy.site.deployPath>/home/tawja/deploy</tawja.deploy.site.deployPath>
@@ -227,11 +226,11 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-				<!-- Environment name with tawja-env-* profiles -->
-				<tawja.deploy.envName>test</tawja.deploy.envName>
-				<tawja.repo.envName>prod</tawja.repo.envName>
+                <!-- Environment name with tawja-env-* profiles -->
+                <tawja.deploy.envName>test</tawja.deploy.envName>
+                <tawja.repo.envName>prod</tawja.repo.envName>
             </properties>
-		</profile>
+        </profile>
         <!-- Set Tools environment variables if not set from system environment variables -->
         <profile>
             <id>env-tools-home</id>
@@ -380,7 +379,7 @@
                             <dependency>
                                 <groupId>org.tawja.maven</groupId>
                                 <artifactId>twj-maven-utils</artifactId>
-                        <version>${twj-maven-utils.version}</version>
+                                <version>${twj-maven-utils.version}</version>
                             </dependency>
                         </dependencies>
                         <executions>
@@ -416,7 +415,7 @@
                             <dependency>
                                 <groupId>org.tawja.maven</groupId>
                                 <artifactId>twj-maven-utils</artifactId>
-                        <version>${twj-maven-utils.version}</version>
+                                <version>${twj-maven-utils.version}</version>
                             </dependency>
                         </dependencies>
                         <executions>
@@ -1427,22 +1426,22 @@
                     <artifactId>maven-changelog-plugin</artifactId>
             </plugin>
             -->
-			<!-- Deactivated as very slow (connect to all repositories for all artifacts...)
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>2.2</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>dependency-updates-report</report>
-                            <report>plugin-updates-report</report>
-                            <report>property-updates-report</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-			-->
+            <!-- Deactivated as very slow (connect to all repositories for all artifacts...)
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>versions-maven-plugin</artifactId>
+    <version>2.2</version>
+    <reportSets>
+        <reportSet>
+            <reports>
+                <report>dependency-updates-report</report>
+                <report>plugin-updates-report</report>
+                <report>property-updates-report</report>
+            </reports>
+        </reportSet>
+    </reportSets>
+</plugin>
+            -->
         </plugins>
     </reporting>
     
