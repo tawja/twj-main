@@ -7,13 +7,13 @@
     <parent>
         <groupId>org.tawja.design</groupId>
         <artifactId>parent</artifactId>
-        <version>2015.07.09051423</version>
+        <version>2015.07.10110445</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.design</groupId>
     <artifactId>twj-design-schemas</artifactId>
-    <version>2015.07.09051423</version>
+    <version>2015.07.10110445</version>
 	
     <packaging>pom</packaging>
 	
@@ -28,7 +28,7 @@
             <plugin>
                 <groupId>org.tawja.maven.plugins</groupId>
                 <artifactId>twj-parallelexec-maven-plugin</artifactId>
-                <version>2015.07.09051423</version>
+                <version>2015.07.10110445</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
