@@ -136,14 +136,6 @@
       <settings class="jenkins.mvn.DefaultSettingsProvider"/>
       <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
     </hudson.tasks.Maven>
-    <hudson.tasks.Maven>
-      <targets>versions:update-parent versions:set -DnewVersion=${r"${BUILD_TIMESTAMP}"} -DgenerateBackupPoms=false versions:use-latest-releases versions:update-properties versions:use-releases versions:use-latest-versions -Dincludes=${project.MavenVersionsUpdate}</targets>
-      <mavenName>Maven 3</mavenName>
-      <pom>${project.DistPath}/pom.xml</pom>
-      <usePrivateRepository>false</usePrivateRepository>
-      <settings class="jenkins.mvn.DefaultSettingsProvider"/>
-      <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
-    </hudson.tasks.Maven>
     <hudson.tasks.Shell>
       <command>git commit -a -m &quot;FACTORY : Update Versions :${r"${BUILD_TIMESTAMP}"}&quot;</command>
     </hudson.tasks.Shell>
