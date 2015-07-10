@@ -24,12 +24,12 @@
     <parent>
         <groupId>org.tawja</groupId>
         <artifactId>root</artifactId>
-        <version>2015.07.09222958</version>
+        <version>2015.07.10152850</version>
     </parent>
 
     <groupId>org.tawja</groupId>
     <artifactId>parent</artifactId>
-    <version>2015.07.10113330</version>
+    <version>2015.07.10164706</version>
 	
     <packaging>pom</packaging>
 
@@ -119,10 +119,10 @@
         -->
         <!-- Deployment Distribution -->
         <tawja.deploy.protocol>scp</tawja.deploy.protocol>
-        <tawja.deploy.host>ftp.tawja.org</tawja.deploy.host>
-        <tawja.deploy.deployPath>/home/tawja/deploy</tawja.deploy.deployPath>
-        <tawja.deploy.webPath>/home/tawja/www</tawja.deploy.webPath>
-        <tawja.deploy.backupPath>/home/tawja/backup</tawja.deploy.backupPath>
+        <tawja.deploy.host>deploy.tawja.org:8085</tawja.deploy.host>
+        <tawja.deploy.deployPath>/var/tawja/deploy</tawja.deploy.deployPath>
+        <tawja.deploy.webPath>/var/tawja/www</tawja.deploy.webPath>
+        <tawja.deploy.backupPath>/var/tawja/backup</tawja.deploy.backupPath>
         <!-- -->
         <tawja.deploy.site.protocol>scp</tawja.deploy.site.protocol>
         <tawja.deploy.site.host>ftp.tawja.org</tawja.deploy.site.host>
@@ -134,7 +134,7 @@
         <java.version.source>1.8</java.version.source>
         <java.version.target>1.8</java.version.target>
         <!-- Inner Dependencies Versions -->
-        <twj-maven-skin.version>2015.07.09222923</twj-maven-skin.version>
+        <twj-maven-skin.version>2015.07.10153113</twj-maven-skin.version>
         <twj-maven-utils.version>1.0.0-SNAPSHOT</twj-maven-utils.version>
         <!-- Dependencies Versions -->
         <junit.version>4.11</junit.version>
@@ -567,13 +567,13 @@
             <uniqueVersion>false</uniqueVersion>
             <id>tawja-snapshots</id>
             <name>Tawja Snapshots Repository</name>
-            <url>${tawja.deploy.protocol}://${tawja.deploy.host}${tawja.deploy.webPath}/${tawja.repo.envName}/${organization.domain}/repo/maven/snapshots</url>
+            <url>${tawja.deploy.protocol}://${tawja.deploy.host}${tawja.deploy.webPath}/${tawja.repo.envName}/repo/maven/snapshots</url>
         </snapshotRepository>
         <repository>
             <uniqueVersion>false</uniqueVersion>
             <id>tawja-releases</id>
             <name>Tawja Releases Repository</name>
-            <url>${tawja.deploy.protocol}://${tawja.deploy.host}${tawja.deploy.webPath}/${tawja.repo.envName}/${organization.domain}/repo/maven/releases</url>
+            <url>${tawja.deploy.protocol}://${tawja.deploy.host}${tawja.deploy.webPath}/${tawja.repo.envName}/repo/maven/releases</url>
         </repository>
     </distributionManagement>
     
@@ -1461,7 +1461,7 @@
         <repository> 
             <id>twj-snapshots-repository</id> 
             <name>Tawja Snapshots Repository</name>
-            <url>http://www.tawja.org/repo/maven/snapshots</url> 
+            <url>http://tawja.microsfair.com/repo/maven/snapshots</url> 
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -1473,7 +1473,7 @@
         <repository> 
             <id>twj-releases-repository</id> 
             <name>Tawja Releases Repository</name>
-            <url>http://www.tawja.org/repo/maven/releases</url> 
+            <url>http://tawja.microsfair.com/repo/maven/releases</url> 
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -1641,7 +1641,7 @@
         <pluginRepository> 
             <id>twj-snapshots-repository</id> 
             <name>Tawja Snapshots Repository</name>
-            <url>http://www.tawja.org/repo/maven/snapshots</url> 
+            <url>http://tawja.microsfair.com/repo/maven/snapshots</url> 
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -1653,7 +1653,7 @@
         <pluginRepository> 
             <id>twj-releases-repository</id> 
             <name>Tawja Releases Repository</name>
-            <url>http://www.tawja.org/repo/maven/releases</url> 
+            <url>http://tawja.microsfair.com/repo/maven/releases</url> 
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -1716,12 +1716,12 @@
             <dependency>
                 <groupId>org.tawja.maven</groupId>
                 <artifactId>twj-maven-utils</artifactId>
-                <version>2015.07.10113330</version>
+                <version>2015.07.10164706</version>
             </dependency>
             <dependency>
                 <groupId>org.tawja.maven.skin</groupId>
                 <artifactId>twj-maven-skin-tools</artifactId>
-                <version>2015.07.09222923</version>
+                <version>2015.07.10153113</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
