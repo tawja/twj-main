@@ -65,8 +65,7 @@
   <processPlugins>false</processPlugins>
   <mavenValidationLevel>-1</mavenValidationLevel>
   <runHeadless>false</runHeadless>
-  <disableTriggerDownstreamProjects>false</disableTriggerDownstreamProjects>
-  <blockTriggerWhenBuilding>true</blockTriggerWhenBuilding>
+  <disableTriggerDownstreamProjects>true</disableTriggerDownstreamProjects>
   <settings class="jenkins.mvn.DefaultSettingsProvider"/>
   <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
   <reporters/>

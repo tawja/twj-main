@@ -43,6 +43,7 @@
     </com.cloudbees.jenkins.plugins.BitBucketTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
+  <customWorkspace>/var/jenkins/workspaces/${project.Id}</customWorkspace>
   <rootModule>
     <groupId>${project.GroupId}</groupId>
     <artifactId>${project.ArtifactId}</artifactId>
@@ -59,8 +60,11 @@
   <processPlugins>true</processPlugins>
   <mavenValidationLevel>-1</mavenValidationLevel>
   <runHeadless>false</runHeadless>
+  <disableTriggerDownstreamProjects>true</disableTriggerDownstreamProjects>
+  <!--
   <disableTriggerDownstreamProjects>false</disableTriggerDownstreamProjects>
   <blockTriggerWhenBuilding>true</blockTriggerWhenBuilding>
+  -->
   <settings class="jenkins.mvn.DefaultSettingsProvider"/>
   <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
   <reporters/>

@@ -37,7 +37,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.DistPath}/pom.xml</rootPOM>
-  <goals>deploy site site:deploy -P !tawja-env,tawja-env-PROD -DskipTests -DskipITs -U</goals>
+  <goals>deploy -P !tawja-env,tawja-env-REPO -DskipTests -DskipITs -U</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>true</ignoreUpstremChanges>
@@ -48,8 +48,7 @@
   <processPlugins>false</processPlugins>
   <mavenValidationLevel>-1</mavenValidationLevel>
   <runHeadless>false</runHeadless>
-  <disableTriggerDownstreamProjects>false</disableTriggerDownstreamProjects>
-  <blockTriggerWhenBuilding>true</blockTriggerWhenBuilding>
+  <disableTriggerDownstreamProjects>true</disableTriggerDownstreamProjects>
   <settings class="jenkins.mvn.DefaultSettingsProvider"/>
   <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
   <reporters/>
@@ -64,14 +63,6 @@
       <intervalNumToKeep>-1</intervalNumToKeep>
       <regexp></regexp>
     </org.jenkinsci.plugins.discardbuild.DiscardBuildPublisher>
-    <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger plugin="build-pipeline-plugin@1.4.7">
-      <configs>
-        <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters plugin="parameterized-trigger@2.27">
-          <properties>BUILD_VERSION=${r"${BUILD_VERSION}"}</properties>
-        </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-      </configs>
-      <downstreamProjectNames>${project.Id}-07-MavenRepoPROD</downstreamProjectNames>
-    </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
   </publishers>
   <buildWrappers/>
   <prebuilders/>

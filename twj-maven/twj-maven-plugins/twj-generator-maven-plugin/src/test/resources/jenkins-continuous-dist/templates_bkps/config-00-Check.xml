@@ -43,6 +43,7 @@
     </com.cloudbees.jenkins.plugins.BitBucketTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
+  <customWorkspace>/var/jenkins/workspaces/${project.Id}</customWorkspace>
   <rootModule>
     <groupId>${project.GroupId}</groupId>
     <artifactId>${project.ArtifactId}</artifactId>
