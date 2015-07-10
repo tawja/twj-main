@@ -7,13 +7,13 @@
     <parent>
         <groupId>org.tawja.platform</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>2015.07.10113330</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.platform</groupId>
     <artifactId>twj-server</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>2015.07.10113330</version>
 
     <packaging>jar</packaging>
 
