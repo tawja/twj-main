@@ -24,12 +24,12 @@
     <parent>
         <groupId>org.tawja</groupId>
         <artifactId>root</artifactId>
-        <version>2015.07.10152850</version>
+        <version>2015.07.11161628</version>
     </parent>
 
     <groupId>org.tawja</groupId>
     <artifactId>parent</artifactId>
-    <version>2015.07.10164706</version>
+    <version>2015.07.11162619</version>
 	
     <packaging>pom</packaging>
 
@@ -134,7 +134,7 @@
         <java.version.source>1.8</java.version.source>
         <java.version.target>1.8</java.version.target>
         <!-- Inner Dependencies Versions -->
-        <twj-maven-skin.version>2015.07.10153113</twj-maven-skin.version>
+        <twj-maven-skin.version>2015.07.11162547</twj-maven-skin.version>
         <twj-maven-utils.version>1.0.0-SNAPSHOT</twj-maven-utils.version>
         <!-- Dependencies Versions -->
         <junit.version>4.11</junit.version>
@@ -1478,7 +1478,7 @@
                 <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
         </repository>
         <!-- Tawja Releases LTS Repository -->
@@ -1490,7 +1490,7 @@
                 <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
         </repository>
         <!-- Main Repository -->
@@ -1502,7 +1502,7 @@
                 <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
         </repository>
         <!-- Sonatype OSS Public Repository -->
@@ -1658,7 +1658,7 @@
                 <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
         <!-- Tawja Releases LTS Repository -->
@@ -1716,12 +1716,12 @@
             <dependency>
                 <groupId>org.tawja.maven</groupId>
                 <artifactId>twj-maven-utils</artifactId>
-                <version>2015.07.10164706</version>
+                <version>2015.07.11162619</version>
             </dependency>
             <dependency>
                 <groupId>org.tawja.maven.skin</groupId>
                 <artifactId>twj-maven-skin-tools</artifactId>
-                <version>2015.07.10153113</version>
+                <version>2015.07.11162547</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

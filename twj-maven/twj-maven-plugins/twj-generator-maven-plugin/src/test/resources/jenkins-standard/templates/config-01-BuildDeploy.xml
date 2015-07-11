@@ -49,7 +49,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
-  <goals>clean deploy site site:deploy -pl !${project.ContextPrefix}-dist -P !tawja-env,tawja-env-PROD -U</goals>
+  <goals>clean deploy site site:deploy<#if  (project.BuildType == "MavenBuildDeployDist") > -pl !${project.ContextPrefix}-dist</#if> -P !tawja-env,tawja-env-PROD -U</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
