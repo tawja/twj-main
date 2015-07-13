@@ -9,6 +9,10 @@
   <description>${project.Name} : ${project.Description} : 00 : Build and Deploy</description>
   <keepDependencies>false</keepDependencies>
   <properties>
+    <hudson.plugins.zentimestamp.ZenTimestampJobProperty plugin="zentimestamp@4.1">
+      <changeBUILDID>true</changeBUILDID>
+      <pattern>yyyy.MM.ddHHmmss</pattern>
+    </hudson.plugins.zentimestamp.ZenTimestampJobProperty>
     <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.25">
       <autoRebuild>false</autoRebuild>
       <rebuildDisabled>false</rebuildDisabled>
@@ -100,16 +104,6 @@
       <settings class="jenkins.mvn.DefaultSettingsProvider"/>
       <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
     </hudson.tasks.Maven>
-<#if  (project.BuildType == "MavenBuildDeployDist") >
-    <hudson.tasks.Maven>
-      <targets>versions:update-parent versions:set -DnewVersion=${r"${BUILD_TIMESTAMP}"} -DgenerateBackupPoms=false versions:use-latest-releases versions:update-properties versions:use-releases versions:use-latest-versions -Dincludes=${project.MavenVersionsUpdate}</targets>
-      <mavenName>Maven 3</mavenName>
-      <pom>${project.DistPath}/pom.xml</pom>
-      <usePrivateRepository>false</usePrivateRepository>
-      <settings class="jenkins.mvn.DefaultSettingsProvider"/>
-      <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
-    </hudson.tasks.Maven>
-</#if>
   </prebuilders>
   <postbuilders>
     <hudson.tasks.Maven>
