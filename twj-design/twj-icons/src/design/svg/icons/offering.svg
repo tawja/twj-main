@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -10,19 +10,20 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   id="Capa_1"
+   id="Layer_9"
    x="0px"
    y="0px"
    width="1000"
    height="1000"
-   viewBox="0 0 1000 999.99998"
+   viewBox="0 0 1000 1000"
+   enable-background="new 0 0 100 100"
    xml:space="preserve"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="offering.svg"><metadata
-   id="metadata3244"><rdf:RDF><cc:Work
+   sodipodi:docname="box41.svg"><metadata
+   id="metadata3041"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
-   id="defs3242" /><sodipodi:namedview
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs3039" /><sodipodi:namedview
    pagecolor="#ffffff"
    bordercolor="#666666"
    borderopacity="1"
@@ -33,78 +34,17 @@
    inkscape:pageshadow="2"
    inkscape:window-width="1920"
    inkscape:window-height="1018"
-   id="namedview3240"
+   id="namedview3037"
    showgrid="false"
-   inkscape:zoom="0.29791667"
-   inkscape:cx="-478.96008"
-   inkscape:cy="553.10253"
+   inkscape:zoom="0.295"
+   inkscape:cx="-15.013329"
+   inkscape:cy="-237.29963"
    inkscape:window-x="-8"
    inkscape:window-y="-8"
    inkscape:window-maximized="1"
-   inkscape:current-layer="Capa_1" />
+   inkscape:current-layer="Layer_9" />
 <path
-   style="fill:#010002"
-   d="m 249.46667,290.26666 c 0,63.26666 -51.33334,114.46666 -114.33334,114.46666 -63.399997,0 -114.599997,-51.2 -114.599997,-114.46666 0.06667,-63.13334 51.2,-114.46667 114.599997,-114.46667 63.06667,0 114.33334,51.33333 114.33334,114.46667 z m 501.06666,0 c 0,63.26666 51.33334,114.46666 114.33334,114.46666 63.4,0 114.73333,-51.2 114.73333,-114.46666 -0.0667,-63.13334 -51.33333,-114.46667 -114.73333,-114.46667 -63.06667,0 -114.33334,51.33333 -114.33334,114.46667 z m -313.8,393.33333 c -2.6,-24.33333 6.8,-46.86667 22.66667,-63.26667 -96.86667,-18.46666 -136.6,-65.73333 -171.13333,-108.46666 -16.8,-20.93334 -32.8,-40.86667 -54,-54.93334 -0.66667,-0.4 -1.4,-0.4 -1.93334,-0.93333 C 214.2,441.06666 191.26667,431.53332 166,431.53332 H 104.13333 C 46.866667,431.53332 0,478.26666 0,535.53332 V 824.19999 H 270.2 V 637.66666 c 39.46667,34.53333 95.2,67.33333 180.86667,81.66666 -7.2,-10.46666 -12.8,-22.2 -14.33334,-35.73333 z m 459.2,-252.06667 h -62 c -25.13333,0 -48.2,9.53334 -66.13333,24.46667 -0.66667,0.53333 -1.4,0.53333 -1.93333,0.93333 -21.2,14.06667 -37.26667,33.86667 -54.13334,54.93334 -37.93333,46.86666 -80.86666,100.4 -201.06666,113.66666 -27.2,3.13334 -46.73334,27.6 -43.73334,54.8 2.73334,25.4 24.2,44.13334 49.2,44.13334 1.8,0 3.66667,-0.13334 5.6,-0.26667 101.8,-11.33333 164.86667,-47.53333 208.2,-85.93333 V 824.19999 H 1000 V 535.53332 c 0,-57.26666 -46.86667,-104 -104.06667,-104 z"
-   id="path3208"
+   d="m 1000,467.14475 -97.82215,-210.63318 -1.40965,0.64663 v -4.0867 l -0.90529,0.3621 0.58197,-1.46139 L 520.00672,97.013865 107.75438,253.60172 l -1.31912,-0.5173 v 0.24573 L 0,409.94388 106.43526,400.55481 V 751.32559 L 489.4082,902.39124 v 0.5949 h 28.36119 v -0.5949 L 900.74233,751.32559 V 509.79643 L 1000,467.14475 z M 520.58869,403.03786 520.56283,127.87104 863.78097,267.69826 520.58869,403.03786 z M 489.42114,871.88324 134.80937,732.01723 V 294.76618 L 489.42114,434.64512 V 871.88324 z M 872.39408,732.01723 517.78232,871.87031 V 434.65807 L 595.72707,640.9071 872.39408,521.99188 v 210.02535 z"
+   id="path3035"
    inkscape:connector-curvature="0" />
-<g
-   id="g3210"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3212"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3214"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3216"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3218"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3220"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3222"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3224"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3226"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3228"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3230"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3232"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3234"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3236"
-   transform="translate(0,990.273)">
-</g>
-<g
-   id="g3238"
-   transform="translate(0,990.273)">
-</g>
 </svg>
