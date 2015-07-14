@@ -6,13 +6,13 @@
     <parent>
         <groupId>org.tawja.platform.plugins</groupId>
         <artifactId>parent</artifactId>
-        <version>2015.07.14033755</version>
+        <version>2015.07.14112053</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.platform.plugins</groupId>
     <artifactId>twj-plugin-reverseproxy</artifactId>
-    <version>2015.07.14033755</version>
+    <version>2015.07.14112053</version>
 	
     <packaging>pom</packaging>
 

@@ -7,13 +7,13 @@
     <parent>
     <groupId>org.tawja.design</groupId>
     <artifactId>parent</artifactId>
-        <version>2015.07.14033755</version>
+        <version>2015.07.14112053</version>
         <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
 	
     <groupId>org.tawja.design</groupId>
     <artifactId>twj-design-icons</artifactId>
-    <version>2015.07.14033755</version>
+    <version>2015.07.14112053</version>
 	
     <packaging>pom</packaging>
 	
@@ -76,7 +76,7 @@
                 <plugin>
                     <groupId>org.tawja.maven.plugins</groupId>
                     <artifactId>twj-parallelexec-maven-plugin</artifactId>
-                    <version>2015.07.14033755</version>
+                    <version>2015.07.14112053</version>
                     <executions>
                         <execution>
                             <id>generate-bitmap-default</id>
@@ -120,7 +120,7 @@
             <plugin>
                 <groupId>org.tawja.maven.plugins</groupId>
                 <artifactId>twj-frontend-maven-plugin</artifactId>
-                <version>2015.07.14033755</version>
+                <version>2015.07.14112053</version>
                 <executions>
                     <execution>
                         <id>create-resources</id>
