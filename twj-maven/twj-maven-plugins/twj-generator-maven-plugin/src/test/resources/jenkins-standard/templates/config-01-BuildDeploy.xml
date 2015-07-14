@@ -53,7 +53,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
-  <goals>clean deploy site site:deploy<#if  (project.BuildType == "MavenBuildDeployDist") >${project.MavenDistToExcludeCmd}</#if> -P !tawja-env,tawja-env-PROD -U</goals>
+  <goals>clean deploy site site:deploy<#if  (project.BuildType == "MavenBuildDeployDist") > ${project.MavenDistToExcludeCmd}</#if> -P !tawja-env,tawja-env-PROD -U</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>

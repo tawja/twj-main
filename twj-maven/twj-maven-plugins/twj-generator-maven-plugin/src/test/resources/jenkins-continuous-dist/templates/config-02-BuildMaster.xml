@@ -54,7 +54,7 @@
     <artifactId>${project.ArtifactId}</artifactId>
   </rootModule>
   <rootPOM>${project.ExecPath}/pom.xml</rootPOM>
-  <goals>clean deploy${project.MavenDistToExcludeCmd} -P !tawja-env,tawja-env-TEST -DskipITs -Dtawja.check.release=true -U</goals>
+  <goals>clean deploy ${project.MavenDistToExcludeCmd} -P !tawja-env,tawja-env-TEST -DskipITs -Dtawja.check.release=true -U</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>true</ignoreUpstremChanges>
