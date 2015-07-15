@@ -1506,6 +1506,18 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <!-- Sonatype OSS Public Repository -->
+        <repository> 
+            <id>servicemix-releases-repository</id> 
+            <name>ServiceMix Repository</name>
+            <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url> 
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
         <!-- Codehaus Repository -->
         <!-- DEAD REPO
 <repository> 
